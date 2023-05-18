@@ -19,8 +19,13 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+// minisys 32 CPU Top Module
 module cpu_top(
-    
+    // Inputs
+    clk,
+    rst,
+    // Outputs
+    led
     );
+    
 endmodule
