@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`include "definitions.v"
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -20,12 +21,50 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 // minisys 32 CPU Top Module
+
 module cpu_top(
     // Inputs
-    clk,
-    rst,
+    input clk,
+    input rst,
     // Outputs
-    led
+    output led
     );
+
+
+// Controller
+    //Input
+    wire [31:0] Inst;
+    //Output
+    wire Jr;
+    wire Jmp;
+    wire Jal;
+    wire Branch;
+    wire nBranch;
+    wire RegDST;
+    wire MemtoReg;
+    wire RegWrite;
+    wire MemWrite;
+    wire ALUSrc;
+    wire Sftmd;
+    wire I_format;
+    wire ALUOp;
+    Controller cl(
+        .Op(Inst[31:26]),
+        .Func(Inst[5:0]),
+        .Jr(Jr),
+        .Jmp(Jmp),
+        .Jal(Jal),
+        .Branch(Branch),
+        .nBranch(nBranch),
+        .RegDST(RegDST),
+        .MemtoReg(MemtoReg),
+        .RegWrite(RegWrite),
+        .MemWrite(MemWrite),
+        .ALUSrc(ALUSrc),
+        .Sftmd(Sftmd),
+        .I_format(I_format),
+        .ALUOp(ALUOp)
+        );
     
+//    
 endmodule

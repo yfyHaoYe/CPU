@@ -4,9 +4,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2023/05/18 14:41:33
+// Create Date: 2023/05/21 20:08:47
 // Design Name: 
-// Module Name: Controller
+// Module Name: Data_mem
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -21,21 +21,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Controller(
-    input [4:0] Op,
-    input [4:0] Func,
-    output Jr,
-    output Jmp,
-    output Jal,
-    output Branch,
-    output nBranch,
-    output RegDST,
-    output MemtoReg,
-    output RegWrite,
-    output MemWrite,
-    output ALUSrc,
-    output Sftmd,
-    output I_format,
-    output [1:0] ALUOp
+module Data_mem(
+    input Clock,
+    input MemWrite,
+    input [31:0] Address,
+    input [31:0] WriteData,
+    output [31:0] ReadData
     );
 endmodule

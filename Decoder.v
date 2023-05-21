@@ -4,9 +4,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2023/05/18 14:41:33
+// Create Date: 2023/05/21 20:08:47
 // Design Name: 
-// Module Name: Controller
+// Module Name: Decoder
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -21,21 +21,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Controller(
-    input [4:0] Op,
-    input [4:0] Func,
-    output Jr,
-    output Jmp,
-    output Jal,
-    output Branch,
-    output nBranch,
-    output RegDST,
-    output MemtoReg,
-    output RegWrite,
-    output MemWrite,
-    output ALUSrc,
-    output Sftmd,
-    output I_format,
-    output [1:0] ALUOp
+module Decoder(
+    input [4:0] Rs,
+    input [4:0] Rt,
+    input [4:0] Rd,
+    input [31:0] ALU_result,
+    input [31:0] Mem_Data,
+    input WriteRegister,
+    input Jal,
+    input MemtoReg,
+    input RegDST,
+    output [31:0] Decoder_Data1,
+    output [31:0] Decoder_Data2,
+    output [31:0] Imme
     );
 endmodule
