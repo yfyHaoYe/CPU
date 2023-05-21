@@ -22,6 +22,18 @@
 
 
 module IFetch(
-
+    input Clock,
+    input Reset,
+    input [31:0] Address,
+    input Zero,
+    input [31:0] Read_Data_1,
+    input Branch,
+    input nBranch,
+    input Jmp,
+    input Jal,
+    input Jr,
+    output [31:0] Instruction,
+    output [31:0] branch_base_addr,
+    output [31:0] link_addr
     );
 endmodule
