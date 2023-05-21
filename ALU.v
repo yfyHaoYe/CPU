@@ -33,7 +33,7 @@ module ALU(
     input ALUSrc,
     input I_format,
     input Sftmd,
-    output [31:0] ALU_Result,
+    output [31:0] ALU_result,
     output [31:0] Zero,
     output [31:0] Addr_Result
     );

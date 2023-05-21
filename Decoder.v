@@ -26,7 +26,7 @@ module Decoder(
     input [4:0] Rt,
     input [4:0] Rd,
     input [31:0] ALU_result,
-    input [31:0] Mem_Data,
+    input [31:0] Mem_data,
     input WriteRegister,
     input Jal,
     input MemtoReg,

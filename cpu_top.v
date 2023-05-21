@@ -33,22 +33,22 @@ module cpu_top(
 
 // Controller
     //Input
-    wire [31:0] Inst;
+    wire [31:0] Inst = 32'b0;
     //Output
-    wire Jr;
-    wire Jmp;
-    wire Jal;
-    wire Branch;
-    wire nBranch;
-    wire RegDST;
-    wire MemtoReg;
-    wire RegWrite;
-    wire MemWrite;
-    wire ALUSrc;
-    wire Sftmd;
-    wire I_format;
-    wire ALUOp;
-    Controller cl(
+    wire Jr = 1'b0;
+    wire Jmp = 1'b0;
+    wire Jal = 1'b0;
+    wire Branch = 1'b0;
+    wire nBranch = 1'b0;
+    wire RegDST = 1'b0;
+    wire MemtoReg = 1'b0;
+    wire RegWrite = 1'b0;
+    wire MemWrite = 1'b0;
+    wire ALUSrc = 1'b0;
+    wire Sftmd = 1'b0;
+    wire I_format = 1'b0;
+    wire [1:0] ALUOp = 1'b0;
+    Controller ctrl(
         .Op(Inst[31:26]),
         .Func(Inst[5:0]),
         .Jr(Jr),
@@ -66,5 +66,38 @@ module cpu_top(
         .ALUOp(ALUOp)
         );
     
-//    
+// Decoder
+    //Input
+    wire [31:0] ALU_result = 32'b0;
+    wire [31:0] Mem_data = 32'b0;
+    //Output
+    wire [31:0] Decoder_Data1 = 32'b0;
+    wire [31:0] Decoder_Data2 = 32'b0;
+    wire [31:0] Imme;
+    Decoder de(
+        .Rs(Inst[25:21]),
+        .Rt(Inst[20:16]),
+        .Rd(Inst[15:11]),
+        .ALU_result(ALU_result),
+        .Mem_data(Mem_data),
+        .WriteRegister(RegWrite),
+        .Jal(Jal),
+        .MemtoReg(MemtoReg),
+        .RegDST(RegDST),
+        .Decoder_Data1(Decoder_Data1),
+        .Decoder_Data2(Decoder_Data2),
+        .Imme(Imme)
+        );
+
+//Data_mem
+    //Input
+    //Output
+
+//IFetch
+    //Input
+    //Output
+
+//ALU
+    //Input
+    //Output
 endmodule

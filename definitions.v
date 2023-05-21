@@ -28,6 +28,15 @@
 `define OP_CODE_WIDTH       6                   // width of oepration code
 `define FUNC_CODE_WIDTH     6                   // width of function code
 
+`define OP_R_FORMAT         6'b00_0000
+`define OP_LW               6'b10_0011
+`define FUNC_JR             6'b00_1000
+`define OP_JMP              6'b00_0010
+`define OP_JAL              6'b00_0011
+`define OP_BRANCH           6'b00_0100
+`define OP_NBRANCH          6'b00_0101
+`define OP_MEMTOREG         6'b10_0011
+`define OP_I_FORMAT         3'b001
 `define OP_SLL              6'b00_0000
 `define OP_SRL              6'b00_0010
 `define OP_SLLV             6'b00_0100
