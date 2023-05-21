@@ -30,6 +30,7 @@
 
 `define OP_R_FORMAT         6'b00_0000
 `define OP_LW               6'b10_0011
+`define OP_SW               6'b10_1011
 `define FUNC_JR             6'b00_1000
 `define OP_JMP              6'b00_0010
 `define OP_JAL              6'b00_0011
