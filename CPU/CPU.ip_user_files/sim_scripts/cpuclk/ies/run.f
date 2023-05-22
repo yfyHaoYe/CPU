@@ -5,8 +5,8 @@
   "C:/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../../CPU.srcs/sources_1/ip/cpuclk/cpuclk_clk_wiz.v" \
-  "../../../../CPU.srcs/sources_1/ip/cpuclk/cpuclk.v" \
+  "../../../../../cpuclk/cpuclk_clk_wiz.v" \
+  "../../../../../cpuclk/cpuclk.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v

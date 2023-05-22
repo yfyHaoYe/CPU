@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Mon May 22 23:38:20 2023
+-- Date        : Mon May 22 23:38:19 2023
 -- Host        : Yang running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {c:/Users/29266/Desktop/Homework/Computer
---               Organization/CPU/CPU/CPU.srcs/sources_1/ip/cpuclk/cpuclk_sim_netlist.vhdl}
+-- Command     : write_vhdl -force -mode funcsim -rename_top cpuclk -prefix
+--               cpuclk_ cpuclk_sim_netlist.vhdl
 -- Design      : cpuclk
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,8 +19,6 @@ entity cpuclk_cpuclk_clk_wiz is
     clk_out1 : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of cpuclk_cpuclk_clk_wiz : entity is "cpuclk_clk_wiz";
 end cpuclk_cpuclk_clk_wiz;
 
 architecture STRUCTURE of cpuclk_cpuclk_clk_wiz is
