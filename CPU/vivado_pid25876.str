@@ -254,3 +254,7 @@ selectButton("PAResourceQtoS.SimpleOutputProductDialog_OUT_OF_CONTEXT_MODULE_RUN
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// [GUI Memory]: 113 MB (+278kb) [00:04:52]
+// TclEventType: FILE_SET_CHANGE
