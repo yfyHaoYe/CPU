@@ -49,8 +49,8 @@ module cpu_top(
     wire I_format = 1'b0;
     wire [1:0] ALUOp = 1'b0;
     Controller ctrl(
-        .Op(Inst[31:26]),
-        .Func(Inst[5:0]),
+        .Opcode(Inst[31:26]),
+        .Function_opcode(Inst[5:0]),
         .Jr(Jr),
         .Jmp(Jmp),
         .Jal(Jal),
@@ -91,7 +91,18 @@ module cpu_top(
 
 //Data_mem
     //Input
+    wire Clock;
+    wire Address;
+    wire WriteData;
     //Output
+    wire ReadData;
+
+    Data_mem dm(
+        .Clock(clk),
+        .MemWrite(MemWrite),
+        .Address(ALU_result),
+        .WriteData(Decoder_Data2),
+        .ReadData(ReadData))
 
 //IFetch
     //Input

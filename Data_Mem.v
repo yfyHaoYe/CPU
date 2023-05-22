@@ -21,11 +21,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Data_mem(
-    input Clock,
-    input MemWrite,
-    input [31:0] Address,
-    input [31:0] WriteData,
-    output [31:0] ReadData
-    );
+module Data_mem(clock, memWrite, address, writeData, readData);
+    input clock;   //Clock signal.
+    input memWrite;  //From controller. 1'b1 indicates write operations to data-memory.
+    input [31:0] address;  //The unit is byte. The address of memory unit which is to be read/writen.
+    input [31:0] writeData; //Data to be wirten to the memory unit.
+    output[31:0] readData;  //Data read from memory unit.
 endmodule
