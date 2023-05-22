@@ -258,3 +258,5 @@ selectButton("PAResourceQtoS.SimpleOutputProductDialog_OUT_OF_CONTEXT_MODULE_RUN
 // TclEventType: DG_GRAPH_GENERATED
 // [GUI Memory]: 113 MB (+278kb) [00:04:52]
 // TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
