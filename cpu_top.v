@@ -109,9 +109,47 @@ module cpu_top(
 
 //IFetch
     //Input
+    wire Zero;
     //Output
+    wire branch_base_addr;
+
+    IFetch ife(
+        .clock(clk),
+        .reset(rst),
+        .Addr_result(ALU_result),
+        .Zero(Zero),
+        .Read_Data_1(Decoder_Data1),
+        .Branch(Branch),
+        .nBranch(nBranch),
+        .Jmp(Jmp),
+        .Jal(Jal),
+        .Jr(Jr),
+        .Instruction(Instruction),
+        .branch_base_addr(branch_base_addr),
+        .link_addr(link_addr)
+        );
 
 //ALU
     //Input
+
     //Output
+
+    ALU alu(
+        .Read_data_1(Decoder_Data1),
+        .Read_data_2(Decoder_Data2),
+        .Sign_extend(Sign_extend),
+        .Exe_opcode(Exe_opcode),
+        .Function_opcode(Function_opcode),
+        .Shamt(Shamt),
+        .PC_plus_4(branch_base_addr),
+        .ALUOp(ALUOp),
+        .ALUSrc(ALUSrc),
+        .I_format(I_format),
+        .Sftmd(Sftmd),
+        .Jr(Jr),
+        .ALU_Result(ALU_result),
+        .Zero(Zero),
+        .Addr_Result(Addr_result),
+        .PC_plus_4(PC_plus_4)
+        );
 endmodule
