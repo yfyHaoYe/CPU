@@ -33,7 +33,7 @@ module cpu_top(
 
 // Controller
     //Input
-    wire [31:0] Inst = 32'b0;
+    wire [31:0] Instruction = 32'b0;
     //Output
     wire Jr = 1'b0;
     wire Jmp = 1'b0;
@@ -49,8 +49,8 @@ module cpu_top(
     wire I_format = 1'b0;
     wire [1:0] ALUOp = 1'b0;
     Controller ctrl(
-        .Opcode(Inst[31:26]),
-        .Function_opcode(Inst[5:0]),
+        .Opcode(Instruction[31:26]),
+        .Function_opcode(Instruction[5:0]),
         .Jr(Jr),
         .Jmp(Jmp),
         .Jal(Jal),
@@ -69,24 +69,27 @@ module cpu_top(
 // Decoder
     //Input
     wire [31:0] ALU_result = 32'b0;
+    wire [31:0] opcplus4 = 32'b0;
     wire [31:0] Mem_data = 32'b0;
     //Output
     wire [31:0] Decoder_Data1 = 32'b0;
     wire [31:0] Decoder_Data2 = 32'b0;
-    wire [31:0] Imme;
+    wire [31:0] Sign_extend;
+
     Decoder de(
-        .Rs(Inst[25:21]),
-        .Rt(Inst[20:16]),
-        .Rd(Inst[15:11]),
+        .clock(clk),
+        .reset(rst),
+        .Instruction(Instruction),
+        .opcplus4(link_addr),
         .ALU_result(ALU_result),
-        .Mem_data(Mem_data),
-        .WriteRegister(RegWrite),
+        .mem_data(Mem_data),
+        .RegWrite(RegWrite),
         .Jal(Jal),
         .MemtoReg(MemtoReg),
         .RegDST(RegDST),
-        .Decoder_Data1(Decoder_Data1),
-        .Decoder_Data2(Decoder_Data2),
-        .Imme(Imme)
+        .read_data_1(Decoder_Data1),
+        .read_data_2(Decoder_Data2),
+        .Sign_extend(Sign_extend)
         );
 
 //Data_mem
@@ -95,14 +98,14 @@ module cpu_top(
     wire Address;
     wire WriteData;
     //Output
-    wire ReadData;
 
     Data_mem dm(
         .Clock(clk),
         .MemWrite(MemWrite),
         .Address(ALU_result),
         .WriteData(Decoder_Data2),
-        .ReadData(ReadData))
+        .ReadData(Mem_data)
+        );
 
 //IFetch
     //Input
