@@ -1,0 +1,114 @@
+/*
+
+Xilinx Vivado v2017.4 (64-bit) [Major: 2017, Minor: 4]
+SW Build: 2086221 on Fri Dec 15 20:55:39 MST 2017
+IP Build: 2085800 on Fri Dec 15 22:25:07 MST 2017
+
+Process ID: 25876
+License: Customer
+
+Current time: 	Mon May 22 23:33:09 CST 2023
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1368x912
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 61 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2017.4/tps/win64/jre
+JVM executable location: 	C:/Xilinx/Vivado/2017.4/tps/win64/jre/bin/java.exe
+
+User name: 	29266
+User home directory: C:/Users/29266
+User working directory: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2017.4
+RDI_DATADIR: C:/Xilinx/Vivado/2017.4/data
+RDI_BINDIR: C:/Xilinx/Vivado/2017.4/bin
+
+Vivado preferences file location: C:/Users/29266/AppData/Roaming/Xilinx/Vivado/2017.4/vivado.xml
+Vivado preferences directory: C:/Users/29266/AppData/Roaming/Xilinx/Vivado/2017.4/
+Vivado layouts directory: C:/Users/29266/AppData/Roaming/Xilinx/Vivado/2017.4/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2017.4/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/vivado.log
+Vivado journal file location: 	C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/vivado.jou
+Engine tmp dir: 	C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/.Xil/Vivado-25876-Yang
+
+GUI allocated memory:	183 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 489 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\Users\29266\Desktop\Homework\Computer Organization\CPU\CPU\CPU.xpr. Version: Vivado v2017.4 
+// bs (cj):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// [GUI Memory]: 41 MB (+40093kb) [00:00:15]
+// [Engine Memory]: 478 MB (+350231kb) [00:00:15]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// Tcl Message: open_project {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.xpr} 
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 60 MB (+18059kb) [00:00:19]
+// [Engine Memory]: 505 MB (+2638kb) [00:00:21]
+// [GUI Memory]: 67 MB (+4083kb) [00:00:23]
+// [Engine Memory]: 543 MB (+13273kb) [00:00:25]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 543 MB. GUI used memory: 37 MB. Current time: 5/22/23 11:33:17 PM CST
+// Tcl Message: open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 720.480 ; gain = 19.539 
+// Project name: CPU; location: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU; part: xc7a35tcsg324-1
+dismissDialog("Open Project"); // bs (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 13 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, cj)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cj): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (h, c)
+// HMemoryUtils.trashcanNow. Engine heap size: 587 MB. GUI used memory: 38 MB. Current time: 5/22/23 11:33:36 PM CST
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (C, c)
+// [Engine Memory]: 587 MB (+17645kb) [00:00:46]
+String[] filenames31467 = {"C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v", "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v", "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v", "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v", "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v", "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v", "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/definitions.v"};
+setFileChooser(filenames31467);
+selectButton("FINISH", "Finish"); // JButton (h, c)
+// 'h' command handler elapsed time: 14 seconds
+dismissDialog("Add Sources"); // c (cj)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v} {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v} {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/definitions.v} {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v} {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v} {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v} {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v}} 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1); // B (D, cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog]", 1); // B (D, cj)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 4); // B (D, cj)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 4); // B (D, cj)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 5); // B (D, cj)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 5); // B (D, cj)
