@@ -462,3 +462,8 @@ selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints,
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, constrains.xdc]", 6, false, false, false, false, false, true); // B (D, cj) - Double Click
 // Launch External Editor: 'C:/Users/29266/AppData/Local/Programs/Microsoft VS Code/Code.exe "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc" -0'
 // TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 882 MB. GUI used memory: 94 MB. Current time: 5/23/23 11:30:41 AM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 882 MB. GUI used memory: 93 MB. Current time: 5/23/23 2:08:51 PM CST
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking too long to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking too long to process. Increasing delay to 4000 ms.
+// TclEventType: FILE_SET_CHANGE
