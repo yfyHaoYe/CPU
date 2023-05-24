@@ -26,7 +26,7 @@ module cpu_top(
     // Inputs
     input clk,
     input rst,
-    input [7:0] switches,
+    input [7:0] switch,
     // Outputs
     output [7:0] led
     );

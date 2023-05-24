@@ -467,3 +467,11 @@ selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints,
 // WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking too long to process. Increasing delay to 3000 ms.
 // WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking too long to process. Increasing delay to 4000 ms.
 // TclEventType: FILE_SET_CHANGE
+// PAPropertyPanels.initPanels (constrains.xdc) elapsed time: 0.2s
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 882 MB. GUI used memory: 93 MB. Current time: 5/23/23 2:38:56 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 882 MB. GUI used memory: 93 MB. Current time: 5/24/23 7:02:02 PM CST
