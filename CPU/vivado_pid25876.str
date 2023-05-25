@@ -782,3 +782,5 @@ dismissDialog("Remove Sources"); // as (cj)
 // HMemoryUtils.trashcanNow. Engine heap size: 882 MB. GUI used memory: 95 MB. Current time: 5/25/23 3:41:54 PM CST
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
