@@ -8,7 +8,7 @@
   "../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../../../../../../../../project/CPU/CPU/CPU.srcs/sources/RAM/sim/RAM.v" \
+  "../../../../../RAM/sim/RAM.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v

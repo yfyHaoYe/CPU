@@ -63,3 +63,24 @@ close [ open {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrai
 add_files -fileset constrs_1 {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc}}
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
+INFO: [Device 21-403] Loading part xc7a35tcsg324-1
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name RAM -dir {C:/Users/29266/Desktop/Homework/Computer Organization/CPU}
+set_property -dict [list CONFIG.Component_Name {RAM} CONFIG.Write_Width_A {32} CONFIG.Write_Depth_A {16384} CONFIG.Read_Width_A {32} CONFIG.Enable_A {Always_Enabled} CONFIG.Write_Width_B {32} CONFIG.Read_Width_B {32} CONFIG.Register_PortA_Output_of_Memory_Primitives {false}] [get_ips RAM]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'RAM' to 'RAM' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'RAM'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'RAM'...
+catch { config_ip_cache -export [get_ips -all RAM] }
+export_ip_user_files -of_objects [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}]
+launch_runs -jobs 4 RAM_synth_1
+[Thu May 25 15:48:30 2023] Launched RAM_synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/RAM_synth_1/runme.log
+export_simulation -of_objects [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}] -directory {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.ip_user_files/sim_scripts} -ip_user_files_dir {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.ip_user_files} -ipstatic_source_dir {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.ip_user_files/ipstatic} -lib_map_path [list {modelsim=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/modelsim} {questa=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/questa} {riviera=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/riviera} {activehdl=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet

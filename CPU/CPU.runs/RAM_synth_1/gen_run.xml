@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="RAM_synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1684995667">
+<GenRun Id="RAM_synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1685000910">
   <File Type="PA-TCL" Name="RAM.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="RAM_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="RAM_reports.tcl"/>
@@ -10,7 +10,7 @@
   <File Type="VDS-TIMINGSUMMARY" Name="RAM_timing_summary_synth.rpt"/>
   <File Type="VDS-TIMING-PB" Name="RAM_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/RAM">
-    <File Path="$PPRDIR/../../../../../../project/CPU/CPU/CPU.srcs/sources/RAM/RAM.xci">
+    <File Path="$PPRDIR/../RAM/RAM.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -23,7 +23,7 @@
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/RAM">
-    <File Path="$PPRDIR/../../../../../../project/CPU/CPU/CPU.srcs/sources/RAM/RAM.xci">
+    <File Path="$PPRDIR/../RAM/RAM.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

@@ -784,3 +784,100 @@ dismissDialog("Remove Sources"); // as (cj)
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: DG_ANALYSIS_MSG_RESET
 // TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 500 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 2); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, ALU.v]", 3, false); // B (D, cj)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, ALU.v]", 3, false, false, false, false, false, true); // B (D, cj) - Double Click
+// Launch External Editor: 'C:/Users/29266/AppData/Local/Programs/Microsoft VS Code/Code.exe "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v" -0'
+// Elapsed time: 18 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // u (O, cj)
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+// bs (cj):  IP Catalog : addNotify
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+// bs (cj):  IP Catalog : addNotify
+dismissDialog("IP Catalog"); // bs (cj)
+dismissDialog("IP Catalog"); // bs (cj)
+// Elapsed time: 20 seconds
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Memories & Storage Elements ;  ;  ;  ; ", 14, "Memories & Storage Elements", 0, true); // O (O, cj) - Node
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", (String) null); // OverlayTextField (P, cj)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Memories & Storage Elements ;  ;  ;  ; ", 14); // O (O, cj)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "RAMs & ROMs & BRAM ;  ;  ;  ; ", 19, "RAMs & ROMs & BRAM", 0, true); // O (O, cj) - Node
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "RAMs & ROMs & BRAM ;  ;  ;  ; ", 19); // O (O, cj)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Block Memory Generator ; AXI4 ; Production ; Included ; xilinx.com:ip:blk_mem_gen:8.4", 20, "Block Memory Generator", 0, true); // O (O, cj) - Node
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Block Memory Generator ; AXI4 ; Production ; Included ; xilinx.com:ip:blk_mem_gen:8.4", 20, "Block Memory Generator", 0, true, false, false, false, false, true); // O (O, cj) - Double Click - Node
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// l (cj):  Customize IP : addNotify
+// r (cj): Customize IP: addNotify
+dismissDialog("Customize IP"); // l (cj)
+selectButton(PAResourceAtoD.CustomizeCoreDialog_IP_LOCATION, "IP Location"); // B (f, r)
+// IP Location: show
+selectButton(PAResourceAtoD.CustomizeCoreDialog_CHOOSE_IP_LOCATION, (String) null); // q (af, ResizableWindow)
+// Elapsed time: 11 seconds
+setFolderChooser("C:/Users/29266/Desktop/Homework/Computer Organization/CPU");
+setText("Component Name", "RAM"); // z (N, r)
+// Elapsed time: 11 seconds
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Port A Options", 1); // bb (C, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Basic", 0); // bb (C, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Other Options", 2); // bb (C, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Port A Options", 1); // bb (C, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, "PAResourceEtoH.HACGCTabbedPane_TABBED_PANE", (HResource) null, "Port A Options", 1, false, true); // bb (C, r) - Double Click
+setText("Defines the PortA Write Width(DINA)", "32"); // z (bc, r)
+setText("Write Depth", "16384", true); // z (bc, r)
+selectComboBox("Enable Port Type (Enable_A)", "Always Enabled", 0); // y (C, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Basic", 0); // bb (C, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Port A Options", 1); // bb (C, r)
+selectCheckBox((HResource) null, "Primitives Output Register", false); // g (l, r): FALSE
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Basic", 0); // bb (C, r)
+// Elapsed time: 17 seconds
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Other Options", 2); // bb (C, r)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (r)
+// TclEventType: CREATE_IP_CORE
+dismissDialog("Customize IP"); // r (cj)
+// TclEventType: REPORT_IP_STATUS_STALE
+// Tcl Message: create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name RAM -dir {C:/Users/29266/Desktop/Homework/Computer Organization/CPU} 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// bs (cj):  Customize IP : addNotify
+// Tcl Message: set_property -dict [list CONFIG.Component_Name {RAM} CONFIG.Write_Width_A {32} CONFIG.Write_Depth_A {16384} CONFIG.Read_Width_A {32} CONFIG.Enable_A {Always_Enabled} CONFIG.Write_Width_B {32} CONFIG.Read_Width_B {32} CONFIG.Register_PortA_Output_of_Memory_Primitives {false}] [get_ips RAM] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target {instantiation_template} [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'RAM'... 
+// au (cj): Generate Output Products: addNotify
+dismissDialog("Customize IP"); // bs (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (au)
+// bs (cj):  Managing Output Products : addNotify
+// Tcl Message: generate_target all [get_files  {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'RAM'... 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'RAM'... INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'RAM'... INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'RAM'... 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all RAM] } 
+// Tcl Message: export_ip_user_files -of_objects [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}] 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs -jobs 4 RAM_synth_1 
+// Tcl Message: [Thu May 25 15:48:30 2023] Launched RAM_synth_1... Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/RAM_synth_1/runme.log 
+// TclEventType: PROJECT_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
