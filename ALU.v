@@ -39,4 +39,17 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     output[31:0] ALU_Result;        // 计算的数据结果
     output[31:0] Addr_Result;		// 计算的地址结果        
     input[31:0]  PC_plus_4;         // 来自取指单元的PC+4
+
+    wire [3:0] ALU_ctl;
+    wire [3:0] Exe_code;
+    wire [31:0] Ainput;
+    wire [31:0] Binput;
+
+    assign Ainput = Read_data_1;
+    assign Binput = (ALUSrc == 0) ? Read_data_2 : Sign_extend;
+    assign Exe_code = (I_format==0) ? Function_opcode :{ 3'b000 , Exe_opcode[2:0] };
+    assign ALU_ctl[0] = (Exe_code[0] | Exe_code[3]) & ALUOp[1];
+    assign ALU_ctl[1] = ((!Exe_code[2]) | (!ALUOp[1]));
+    assign ALU_ctl[2] = (Exe_code[1] & ALUOp[1]) | ALUOp[0];
+    
 endmodule
