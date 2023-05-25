@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2017.4.1 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2095745 on Tue Jan 30 17:13:15 MST 2018
+# Start of session at: Thu May 25 13:58:34 2023
+# Process ID: 9472
+# Current directory: Z:/Documents/南科大/大二下/计算机组成/project/CPU/CPU/CPU.runs/prgrom_synth_1
+# Command line: vivado.exe -log prgrom.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source prgrom.tcl
+# Log file: Z:/Documents/南科大/大二下/计算机组成/project/CPU/CPU/CPU.runs/prgrom_synth_1/prgrom.vds
+# Journal file: Z:/Documents/南科大/大二下/计算机组成/project/CPU/CPU/CPU.runs/prgrom_synth_1\vivado.jou
+#-----------------------------------------------------------
+source prgrom.tcl -notrace
+Command: synth_design -top prgrom -part xc7a35tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9324 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 355.789 ; gain = 80.383
+---------------------------------------------------------------------------------
