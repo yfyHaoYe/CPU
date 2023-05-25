@@ -1,25 +1,5 @@
 `timescale 1ns / 1ps
 `include "definitions.v"
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2023/05/21 20:08:47
-// Design Name: 
-// Module Name: ALU
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
                  Shamt,ALUSrc,I_format,Zero,Jr,Sftmd,ALU_Result,Addr_Result,PC_plus_4
@@ -40,7 +20,7 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     output[31:0] Addr_Result;		// 计算的地址结果        
     input[31:0]  PC_plus_4;         // 来自取指单元的PC+4
 
-    wire [3:0] ALU_ctl;
+    wire [2:0] ALU_ctl;
     wire [3:0] Exe_code;
     wire [31:0] Ainput;
     wire [31:0] Binput;
@@ -51,5 +31,6 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     assign ALU_ctl[0] = (Exe_code[0] | Exe_code[3]) & ALUOp[1];
     assign ALU_ctl[1] = ((!Exe_code[2]) | (!ALUOp[1]));
     assign ALU_ctl[2] = (Exe_code[1] & ALUOp[1]) | ALUOp[0];
-    
+
+
 endmodule
