@@ -68,6 +68,7 @@
 
 //----------------------------------ALU-----------------------------------------//
 `define ALU_CONTROL_WIDTH   6                   // width of alu exe code
+`define ALU_OP_CODE_WIDTH   2
 
 // ALU opcode: used to determine what operations the ALU will execute
 `define EXE_SLL             6'b00_0000
