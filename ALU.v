@@ -53,7 +53,7 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     end
 
     assign Sftm = Function_opcode[2:0];
-    always @(*) begin
+    always @* begin
         if(Sftmd) begin
             case(Sftm)
             3'b000: Shift_Result = Binput << Shamt;
@@ -70,8 +70,10 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     end
 
     always @* begin
-        if( ((ALU_ctl==3'b111) && (Exe_code[3]==1)) ||  ) 
-            ALU_Result = (Ainput-Binput<0)?1:0;
+        if( (Exe_opcode==6'b00_1010) || (Function_opcode==6'b10_1010)) 
+            ALU_Result = ($signed(Ainput)-$signed(Binput)<0) ? 1 : 0;
+        else if( (Exe_opcode==6'b00_1011) || (Function_opcode==6'b10_1011)) 
+            ALU_Result = (Ainput-Binput<0) ? 1 : 0;
         else if((ALU_ctl==3'b101) && (I_format==1)) 
             ALU_Result[31:0]= Binput << 16;
         else if(Sftmd==1)
@@ -79,6 +81,16 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
         else 
             ALU_Result = ALU_output_mux;
     end
+
+    assign Zero = (ALU_Result==0) ? 1 : 0;
+
+    always @* begin
+        if(Exe_code==3'b110) 
+            Branch_Addr = PC_plus_4 + Sign_extend;
+        else 
+            Branch_Addr = PC_plus_4;
+    end
+            
 
 
 endmodule
