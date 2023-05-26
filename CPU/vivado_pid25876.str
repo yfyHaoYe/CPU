@@ -888,3 +888,5 @@ selectButton("PAResourceQtoS.SimpleOutputProductDialog_OUT_OF_CONTEXT_MODULE_RUN
 // WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
 // [GUI Memory]: 158 MB (+1921kb) [64:34:58]
 // HMemoryUtils.trashcanNow. Engine heap size: 882 MB. GUI used memory: 100 MB. Current time: 5/25/23 4:11:57 PM CST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking too long to process. Increasing delay to 4000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 882 MB. GUI used memory: 92 MB. Current time: 5/26/23 11:12:43 AM CST
