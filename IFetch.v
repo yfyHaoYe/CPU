@@ -23,8 +23,8 @@
 
 module IFetch(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBranch,Jmp,Jal,Jr,Zero,clock,reset,link_addr);
     output[`ISA_WIDTH - 1:0] Instruction;			// the instruction fetched from this module
-    output[`ISA_WIDTH - 1:0] branch_base_addr;      // (pc+4) to ALU which is used by branch type instruction
-    output[`ISA_WIDTH - 1:0] link_addr;             // (pc+4) to Decoder which is used by jal instruction
+    output reg[`ISA_WIDTH - 1:0] branch_base_addr;      // (pc+4) to ALU which is used by branch type instruction
+    output reg[`ISA_WIDTH - 1:0] link_addr;             // (pc+4) to Decoder which is used by jal instruction
     //output reg if_no_op;                                // for if_id_reg (stop id operations)
 
     input[`ISA_WIDTH - 1:0]  Addr_result;           // the calculated address from ALU
@@ -39,8 +39,11 @@ module IFetch(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBranc
     reg[`ISA_WIDTH - 1:0] PC, Next_PC;
 
     always @* begin
-        if(((Branch == 1) && (Zero == 1 )) || ((nBranch == 1) && (Zero == 0))) // beq, bne
+        if(((Branch == 1) && (Zero == 1 )) || ((nBranch == 1) && (Zero == 0))) begin// beq, bne
+            if(Instruction[15] == 1) branch_base_addr = {14'b1111_1111_1111_11, Instruction[`IMMEDIATE_WIDTH - 1:0], 2'b00};
+            else branch_base_addr = {14'b0000_0000_0000_00, Instruction[`IMMEDIATE_WIDTH - 1:0], 2'b00};
             Next_PC = PC + 4 + branch_base_addr; // the calculated new value for PC
+        end
         else if(Jr == 1)
             Next_PC = Read_data_1; // the value of $31 register
         else Next_PC = PC + 4; // PC+4
@@ -55,7 +58,7 @@ module IFetch(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBranc
                         Instruction[`ADDRESS_WIDTH - 1:0], 
                         2'b00
                     };
-                
+                link_addr <= PC + 4; 
             end
             else PC <= Next_PC;
         end
