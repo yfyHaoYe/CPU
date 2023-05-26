@@ -20,7 +20,7 @@ module Decoder(read_data_1,read_data_2,Instruction,mem_data,ALU_result,
     reg [`ISA_WIDTH - 1:0] decoder_write_data;              //寄存器写入数据
 
     
-
+    
     always @* begin
         if(Instruction[15] == 1) Sign_extend = {16'b1111_1111_1111_1111, Instruction[`IMMEDIATE_WIDTH - 1:0]};//符号位拓展
         else Sign_extend = {16'b0000_0000_0000_0000, Instruction[`IMMEDIATE_WIDTH - 1:0]};
