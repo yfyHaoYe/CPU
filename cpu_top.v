@@ -1,24 +1,5 @@
 `timescale 1ns / 1ps
 `include "definitions.v"
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2023/05/18 14:05:05
-// Design Name: 
-// Module Name: cpu_top
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 // minisys 32 CPU Top Module
 
@@ -34,7 +15,7 @@ module cpu_top(
 
 // Controller
     //Input
-    wire [31:0] Instruction = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] Instruction = 32'b0;
     //Output
     wire Jr = 1'b0;
     wire Jmp = 1'b0;
@@ -69,13 +50,13 @@ module cpu_top(
     
 // Decoder
     //Input
-    wire [31:0] ALU_result = 32'b0;
-    wire [31:0] opcplus4 = 32'b0;
-    wire [31:0] Mem_data = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] ALU_result = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] opcplus4 = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] Mem_data = 32'b0;
     //Output
-    wire [31:0] Decoder_Data1 = 32'b0;
-    wire [31:0] Decoder_Data2 = 32'b0;
-    wire [31:0] Sign_extend;
+    wire [`ISA_WIDTH - 1 : 0] Decoder_Data1 = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] Decoder_Data2 = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] Sign_extend;
 
     Decoder de(
         .clock(clk),
