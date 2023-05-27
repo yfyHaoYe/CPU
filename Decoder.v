@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
 `include "definitions.v"
 
-module Decoder(read_data_1,read_data_2,Instruction,mem_data,ALU_result,
+module Decoder(read_data_1,read_data_2,Instruction,r_wdata,ALU_result,
                  Jal,RegWrite,MemtoReg,RegDst,Sign_extend,clock,reset,opcplus4);
     output[`ISA_WIDTH - 1:0] read_data_1;               // 输出的第一操作数
     output[`ISA_WIDTH - 1:0] read_data_2;               // 输出的第二操作数
     input[`ISA_WIDTH - 1:0]  Instruction;               // 取指单元来的指令
-    input[`ISA_WIDTH - 1:0]  mem_data;   				//  从DATA RAM or I/O port取出的数据
+    input[`ISA_WIDTH - 1:0]  r_wdata;   				//  从DATA RAM or I/O port取出的数据
     input[`ISA_WIDTH - 1:0]  ALU_result;   				// 从执行单元来的运算的结果
     input        Jal;                       //  来自控制单元，说明是JAL指令 
     input        RegWrite;                  // 来自控制单元，为1表明该指令需要写寄存器，为0时表示不需要写寄存器
@@ -34,7 +34,7 @@ module Decoder(read_data_1,read_data_2,Instruction,mem_data,ALU_result,
            decoder_write_data = opcplus4;
         end
         else if(RegWrite && MemtoReg)
-            decoder_write_data = mem_data; // 从存储器或I/O读取数据写到寄存器
+            decoder_write_data = r_wdata; // 从存储器或I/O读取数据写到寄存器
         else decoder_write_data = ALU_result;// 将ALU模块输出数据写到寄存器
     end
 

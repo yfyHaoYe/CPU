@@ -5,13 +5,19 @@
 
 module cpu_top(
     // Inputs
-    input clk,
+    input clock,
     input rst,
     input [15:0] switch,
     // Outputs
     output [15:0] led
     );
 
+    wire clk = 1'b0;
+    
+    cpuclk cclk(
+        .clk_in1(clock),
+        .clk_out1(clk)
+    );
 
 // Controller
     //Input
@@ -33,6 +39,7 @@ module cpu_top(
     wire MemRead = 1'b0;
     wire IORead = 1'b0;
     wire IOWrite = 1'b0;
+
 
     Controller ctrl(
         .Opcode(Instruction[31:26]),
@@ -60,9 +67,9 @@ module cpu_top(
 // Decoder
     //Input
     wire [`ISA_WIDTH - 1 : 0] ALU_result = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] opcplus4 = 32'b0;
     wire [`ISA_WIDTH - 1 : 0] Mem_data = 32'b0;
     wire [`ISA_WIDTH - 1 : 0] r_wdata = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] link_addr = 32'b0;
     //Output
     wire [`ISA_WIDTH - 1 : 0] Decoder_Data1 = 32'b0;
     wire [`ISA_WIDTH - 1 : 0] Decoder_Data2 = 32'b0;
@@ -74,7 +81,7 @@ module cpu_top(
         .Instruction(Instruction),
         .opcplus4(link_addr),
         .ALU_result(ALU_result),
-        .mem_data(r_wdata),
+        .r_wdata(r_wdata),
         .RegWrite(RegWrite),
         .Jal(Jal),
         .MemtoReg(MemtoReg),

@@ -19,7 +19,7 @@ module Controller(Opcode, Function_opcode, Jr, RegDST, ALUSrc, MemtoReg, RegWrit
     output [`ALU_OP_CODE_WIDTH - 1 : 0] ALUOp;        // 当指令为R-type或I_format为1时，ALUOp的高比特位为1，否则高比特位为0; 当指令为beq或bne时，ALUOp的低比特位为1，否则低比特位为0
     
     input[21:0] Alu_resultHigh; // From the execution unit Alu_Result[31..10】
-    output MemorIOtoReg; // 1 indicates that data needs to be read from memory or I/O to the regist
+    output MemorIOtoReg; // 1 indicates that data needs to be read from memory or I/O to the register
     output MemRead; // 1 indicates that the instruction needs to read from the memory
     output IORead; // 1 indicates I/O read
     output IOWrite; // 1 indicates I/O write
