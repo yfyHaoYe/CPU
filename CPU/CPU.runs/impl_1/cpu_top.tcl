@@ -65,7 +65,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -75,9 +74,9 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/cpu_top.dcp}}
-  read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci}}
-  read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}
-  read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci}}
+  read_ip -quiet {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci}}
+  read_ip -quiet {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}
+  read_ip -quiet {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci}}
   read_xdc {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc}}
   link_design -top cpu_top -part xc7a35tcsg324-1
   close_msg_db -file init_design.pb

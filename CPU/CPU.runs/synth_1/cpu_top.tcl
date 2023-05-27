@@ -16,7 +16,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -30,8 +29,8 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo {c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/Minisys1Assemblerv2.2/output/prgmip32.coe}}
-add_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/Minisys1Assemblerv2.2/output/dmem32.coe}}
+add_files {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Minisys1Assemblerv2.2/output/prgmip32.coe}}
+add_files {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Minisys1Assemblerv2.2/output/dmem32.coe}}
 read_verilog -library xil_defaultlib {
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/definitions.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v}
@@ -45,15 +44,15 @@ read_verilog -library xil_defaultlib {
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/register_file.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v}
 }
-read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci}}
+read_ip -quiet {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci}}
 set_property used_in_implementation false [get_files -all {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk_board.xdc}}]
 set_property used_in_implementation false [get_files -all {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xdc}}]
 set_property used_in_implementation false [get_files -all {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk_ooc.xdc}}]
 
-read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}
+read_ip -quiet {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}
 set_property used_in_implementation false [get_files -all {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM_ooc.xdc}}]
 
-read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci}}
+read_ip -quiet {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci}}
 set_property used_in_implementation false [get_files -all {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom_ooc.xdc}}]
 
 # Mark all dcp files as not used in implementation to prevent them from being

@@ -3,5 +3,5 @@
 
 # XDC: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc
 
-# IP: c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci
+# IP: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==cpuclk || ORIG_REF_NAME==cpuclk} -quiet] -quiet

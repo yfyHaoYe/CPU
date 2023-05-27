@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun May 28 02:45:18 2023
-# Process ID: 29028
+# Start of session at: Sun May 28 04:02:30 2023
+# Process ID: 27572
 # Current directory: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1
 # Command line: vivado.exe -log cpu_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_top.tcl
 # Log file: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/cpu_top.vds
@@ -12,20 +12,16 @@
 source cpu_top.tcl -notrace
 Command: synth_design -top cpu_top -part xc7a35tcsg324-1
 Starting synth_design
-WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
-c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci
-c:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci
-
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 28396 
+INFO: Helper process launched with PID 2384 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 343.852 ; gain = 103.418
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 343.660 ; gain = 101.305
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'cpu_top' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:6]
-INFO: [Synth 8-638] synthesizing module 'cpuclk' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/realtime/cpuclk_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'cpuclk' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/realtime/cpuclk_stub.v:5]
 INFO: [Synth 8-638] synthesizing module 'Controller' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:4]
 INFO: [Synth 8-256] done synthesizing module 'Controller' (2#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:4]
 INFO: [Synth 8-638] synthesizing module 'Decoder' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:4]
@@ -42,13 +38,13 @@ INFO: [Synth 8-638] synthesizing module 'leds' [C:/Users/29266/Desktop/Homework/
 INFO: [Synth 8-256] done synthesizing module 'leds' (7#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/leds.v:4]
 WARNING: [Synth 8-689] width (32) of port connection 'ledwdata' does not match port width (16) of module 'leds' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:140]
 INFO: [Synth 8-638] synthesizing module 'Data_mem' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v:4]
-INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/realtime/RAM_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'RAM' (8#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/realtime/RAM_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/realtime/RAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'RAM' (8#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/realtime/RAM_stub.v:6]
 WARNING: [Synth 8-689] width (14) of port connection 'addra' does not match port width (15) of module 'RAM' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v:16]
 INFO: [Synth 8-256] done synthesizing module 'Data_mem' (9#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v:4]
 INFO: [Synth 8-638] synthesizing module 'IFetch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:5]
-INFO: [Synth 8-638] synthesizing module 'prgrom' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/realtime/prgrom_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'prgrom' (10#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/realtime/prgrom_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'prgrom' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/realtime/prgrom_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'prgrom' (10#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/realtime/prgrom_stub.v:6]
 WARNING: [Synth 8-689] width (14) of port connection 'addra' does not match port width (15) of module 'prgrom' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:50]
 INFO: [Synth 8-256] done synthesizing module 'IFetch' (11#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:5]
 WARNING: [Synth 8-689] width (1) of port connection 'Addr_result' does not match port width (32) of module 'IFetch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:167]
@@ -232,7 +228,7 @@ WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[0]
 WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_rdata[31]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 396.297 ; gain = 155.863
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 395.527 ; gain = 153.172
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -246,19 +242,19 @@ WARNING: [Synth 8-3295] tying undriven pin alu:Function_opcode[0] to constant 0 
 WARNING: [Synth 8-3295] tying undriven pin alu:Exe_opcode[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:184]
 WARNING: [Synth 8-3295] tying undriven pin alu:Shamt[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:184]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 396.297 ; gain = 155.863
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 395.527 ; gain = 153.172
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
-Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
-Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
-Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
-Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
-Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
 Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc]
 Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cpu_top_propImpl.xdc].
@@ -270,27 +266,27 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 741.246 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 740.406 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:22 . Memory (MB): peak = 741.246 ; gain = 500.812
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:23 . Memory (MB): peak = 740.406 ; gain = 498.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:22 . Memory (MB): peak = 741.246 ; gain = 500.812
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:23 . Memory (MB): peak = 740.406 ; gain = 498.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/dcp3/cpuclk_in_context.xdc}, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29028-Yang/dcp3/cpuclk_in_context.xdc}, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/dcp3/cpuclk_in_context.xdc}, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27572-Yang/dcp3/cpuclk_in_context.xdc}, line 4).
 Applied set_property DONT_TOUCH = true for cclk. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for dm/ram. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for ife/instmem. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:22 . Memory (MB): peak = 741.246 ; gain = 500.812
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:23 . Memory (MB): peak = 740.406 ; gain = 498.051
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "registers_reg[31]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "registers_reg[30]" won't be mapped to RAM because it is too sparse
@@ -331,7 +327,7 @@ INFO: [Synth 8-5544] ROM "ALU_result0" won't be mapped to Block RAM because addr
 WARNING: [Synth 8-327] inferring latch for variable 'ioread_data_reg' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ioread.v:14]
 WARNING: [Synth 8-327] inferring latch for variable 'branch_base_addr_reg' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:24]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:22 . Memory (MB): peak = 741.246 ; gain = 500.812
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:23 . Memory (MB): peak = 740.406 ; gain = 498.051
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -610,7 +606,7 @@ WARNING: [Synth 8-3332] Sequential element (ife/link_addr_reg[2]) is unused and 
 WARNING: [Synth 8-3332] Sequential element (ife/link_addr_reg[1]) is unused and will be removed from module cpu_top.
 WARNING: [Synth 8-3332] Sequential element (ife/link_addr_reg[0]) is unused and will be removed from module cpu_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:30 . Memory (MB): peak = 741.246 ; gain = 500.812
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:32 . Memory (MB): peak = 740.406 ; gain = 498.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -646,13 +642,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'cclk/clk_out1' to pin 'cclk/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:42 . Memory (MB): peak = 803.445 ; gain = 563.012
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:45 . Memory (MB): peak = 804.613 ; gain = 562.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:51 . Memory (MB): peak = 936.324 ; gain = 695.891
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:55 . Memory (MB): peak = 940.832 ; gain = 698.477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -668,7 +664,7 @@ WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[30]) is unused an
 WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[29]) is unused and will be removed from module cpu_top.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:51 . Memory (MB): peak = 936.324 ; gain = 695.891
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:55 . Memory (MB): peak = 940.832 ; gain = 698.477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -692,7 +688,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:52 . Memory (MB): peak = 936.324 ; gain = 695.891
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 940.832 ; gain = 698.477
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -705,7 +701,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:52 . Memory (MB): peak = 936.324 ; gain = 695.891
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 940.832 ; gain = 698.477
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -717,25 +713,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:52 . Memory (MB): peak = 936.324 ; gain = 695.891
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 940.832 ; gain = 698.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:52 . Memory (MB): peak = 936.324 ; gain = 695.891
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 940.832 ; gain = 698.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:52 . Memory (MB): peak = 936.324 ; gain = 695.891
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 940.832 ; gain = 698.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:52 . Memory (MB): peak = 936.324 ; gain = 695.891
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 940.832 ; gain = 698.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -774,11 +770,11 @@ Report Instance Areas:
 |3     |  ife    |IFetch   |    53|
 +------+---------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:52 . Memory (MB): peak = 936.324 ; gain = 695.891
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 940.832 ; gain = 698.477
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 54 critical warnings and 1209 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:44 . Memory (MB): peak = 936.324 ; gain = 350.941
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:52 . Memory (MB): peak = 936.324 ; gain = 695.891
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:47 . Memory (MB): peak = 940.832 ; gain = 353.598
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:56 . Memory (MB): peak = 940.832 ; gain = 698.477
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -788,10 +784,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-82 Infos, 225 Warnings, 117 Critical Warnings and 0 Errors encountered.
+82 Infos, 224 Warnings, 117 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:56 . Memory (MB): peak = 936.324 ; gain = 705.297
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:01:00 . Memory (MB): peak = 940.832 ; gain = 709.965
 INFO: [Common 17-1381] The checkpoint 'C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/cpu_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cpu_top_utilization_synth.rpt -pb cpu_top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 936.324 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun May 28 02:46:19 2023...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 940.832 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun May 28 04:03:35 2023...
