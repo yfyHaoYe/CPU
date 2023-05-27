@@ -1878,3 +1878,5 @@ collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sou
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: DG_ANALYSIS_MSG_RESET
 // TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 882 MB. GUI used memory: 99 MB. Current time: 5/27/23 5:55:51 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 882 MB. GUI used memory: 100 MB. Current time: 5/27/23 8:01:18 PM CST
