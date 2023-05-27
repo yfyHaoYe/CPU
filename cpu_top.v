@@ -12,7 +12,7 @@ module cpu_top(
     output [15:0] led
     );
 
-    wire clk = 1'b0;
+    wire clk;
 
     cpuclk cclk(
         .clk_in1(clock),
@@ -21,7 +21,7 @@ module cpu_top(
 
 // Controller
     //Input
-    wire [`ISA_WIDTH - 1 : 0] Instruction = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] Instruction;
     //Output
     wire Jr = 1'b0;
     wire Jmp = 1'b0;
@@ -97,11 +97,11 @@ module cpu_top(
     //Output
 
     Data_mem dm(
-        .Clock(clk),
-        .MemWrite(MemWrite),
-        .Address(Address),
-        .WriteData(Decoder_Data2),
-        .ReadData(Mem_data)
+        .clock(clk),
+        .memWrite(MemWrite),
+        .address(Address),
+        .writeData(Decoder_Data2),
+        .readData(Mem_data)
         );
 
 //IFetch
@@ -115,7 +115,7 @@ module cpu_top(
         .reset(rst),
         .Addr_result(ALU_result),
         .Zero(Zero),
-        .Read_Data_1(Decoder_Data1),
+        .Read_data_1(Decoder_Data1),
         .Branch(Branch),
         .nBranch(nBranch),
         .Jmp(Jmp),
@@ -145,8 +145,7 @@ module cpu_top(
         .Jr(Jr),
         .ALU_Result(ALU_result),
         .Zero(Zero),
-        .Addr_Result(Addr_result),
-        .PC_plus_4(PC_plus_4)
+        .Addr_Result(Addr_result)
         );
 
 
