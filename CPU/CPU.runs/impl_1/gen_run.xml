@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1685190548">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1685190813">
   <File Type="PWROPT-DCP" Name="cpu_top_pwropt.dcp"/>
   <File Type="ROUTE-PWR" Name="cpu_top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="cpu_top.tcl"/>
@@ -115,6 +115,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../MemOrIO.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../register_file.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

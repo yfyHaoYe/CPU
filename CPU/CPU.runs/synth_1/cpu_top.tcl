@@ -37,6 +37,7 @@ read_verilog -library xil_defaultlib {
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v}
+  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/register_file.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v}
 }
 read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci}}

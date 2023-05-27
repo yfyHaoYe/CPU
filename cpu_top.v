@@ -13,7 +13,7 @@ module cpu_top(
     );
 
     wire clk = 1'b0;
-    
+
     cpuclk cclk(
         .clk_in1(clock),
         .clk_out1(clk)
@@ -85,7 +85,7 @@ module cpu_top(
         .RegWrite(RegWrite),
         .Jal(Jal),
         .MemtoReg(MemtoReg),
-        .RegDST(RegDST),
+        .RegDst(RegDST),
         .read_data_1(Decoder_Data1),
         .read_data_2(Decoder_Data2),
         .Sign_extend(Sign_extend)
