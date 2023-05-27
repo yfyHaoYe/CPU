@@ -28,7 +28,7 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     wire[2:0] Sftm;
     reg [31:0] Shift_Result;
     reg [31:0] ALU_output_mux;
-    wire[32:0] Branch_Addr;
+    reg[32:0] Branch_Addr;
 
     assign Ainput = Read_data_1;
     assign Binput = (ALUSrc == 0) ? Read_data_2 : Sign_extend;
