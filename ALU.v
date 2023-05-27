@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
-                 Shamt,ALUSrc,I_format,Zero,Jr,Sftmd,ALU_Result,Addr_Result,PC_plus_4
+                 Shamt,ALUSrc,I_format,Zero,Jr,Sftmd,ALU_result,Addr_result,PC_plus_4
                  );
     input[31:0]  Read_data_1;		// 从译码单元的Read_data_1中来
     input[31:0]  Read_data_2;		// 从译码单元的Read_data_2中来
@@ -15,8 +15,8 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     input        I_format;          // 来自控制单元，表明是除beq, bne, LW, SW之外的I-类型指令
     input        Jr;               // 来自控制单元，表明是JR指令
     output       Zero;              // 为1表明计算值为0 
-    output reg [31:0] ALU_Result;        // 计算的数据结果
-    output[31:0] Addr_Result;		// 计算的地址结果        
+    output reg [31:0] ALU_result;        // 计算的数据结果
+    output[31:0] Addr_result;		// 计算的地址结果        
     input[31:0]  PC_plus_4;         // 来自取指单元的PC+4
 
     wire [31:0] Ainput;
@@ -70,21 +70,21 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
 
     always @* begin
         if( (Exe_opcode==6'b00_1010) || (Function_opcode==6'b10_1010)) 
-            ALU_Result = ($signed(Ainput)-$signed(Binput)<0) ? 1 : 0;
+            ALU_result = ($signed(Ainput)-$signed(Binput)<0) ? 1 : 0;
         else if( (Exe_opcode==6'b00_1011) || (Function_opcode==6'b10_1011)) 
-            ALU_Result = (Ainput-Binput<0) ? 1 : 0;
+            ALU_result = (Ainput-Binput<0) ? 1 : 0;
         else if((ALU_ctl==3'b101) && (I_format==1)) 
-            ALU_Result[31:0]= Binput << 16;
+            ALU_result[31:0]= Binput << 16;
         else if(Sftmd==1)
-            ALU_Result = Shift_Result ;
+            ALU_result = Shift_Result ;
         else 
-            ALU_Result = ALU_output_mux;
+            ALU_result = ALU_output_mux;
     end
 
-    assign Zero = (ALU_Result==0) ? 1 : 0;
+    assign Zero = (ALU_result==0) ? 1 : 0;
 
     assign Branch_Addr = PC_plus_4 + ( Sign_extend << 2);
-    assign Addr_Result = Branch_Addr[31:0];
+    assign Addr_result = Branch_Addr[31:0];
             
 
 

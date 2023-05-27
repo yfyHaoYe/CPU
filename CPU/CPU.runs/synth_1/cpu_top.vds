@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun May 28 00:32:52 2023
-# Process ID: 17444
+# Start of session at: Sun May 28 00:41:28 2023
+# Process ID: 27080
 # Current directory: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1
 # Command line: vivado.exe -log cpu_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_top.tcl
 # Log file: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/cpu_top.vds
@@ -15,13 +15,13 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13560 
+INFO: Helper process launched with PID 31564 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 343.934 ; gain = 102.059
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 343.648 ; gain = 102.957
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'cpu_top' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:6]
-INFO: [Synth 8-638] synthesizing module 'cpuclk' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/realtime/cpuclk_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'cpuclk' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/realtime/cpuclk_stub.v:5]
 INFO: [Synth 8-638] synthesizing module 'Controller' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:4]
 INFO: [Synth 8-256] done synthesizing module 'Controller' (2#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:4]
 INFO: [Synth 8-638] synthesizing module 'Decoder' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:4]
@@ -32,13 +32,13 @@ INFO: [Synth 8-638] synthesizing module 'MemOrIO' [C:/Users/29266/Desktop/Homewo
 INFO: [Synth 8-256] done synthesizing module 'MemOrIO' (5#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v:24]
 WARNING: [Synth 8-689] width (1) of port connection 'addr_in' does not match port width (32) of module 'MemOrIO' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:107]
 INFO: [Synth 8-638] synthesizing module 'Data_mem' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v:4]
-INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/realtime/RAM_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'RAM' (6#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/realtime/RAM_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/realtime/RAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'RAM' (6#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/realtime/RAM_stub.v:6]
 WARNING: [Synth 8-689] width (14) of port connection 'addra' does not match port width (15) of module 'RAM' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v:16]
 INFO: [Synth 8-256] done synthesizing module 'Data_mem' (7#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v:4]
 INFO: [Synth 8-638] synthesizing module 'IFetch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:5]
-INFO: [Synth 8-638] synthesizing module 'prgrom' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/realtime/prgrom_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'prgrom' (8#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/realtime/prgrom_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'prgrom' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/realtime/prgrom_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'prgrom' (8#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/realtime/prgrom_stub.v:6]
 WARNING: [Synth 8-689] width (14) of port connection 'addra' does not match port width (15) of module 'prgrom' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:50]
 INFO: [Synth 8-256] done synthesizing module 'IFetch' (9#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:5]
 WARNING: [Synth 8-689] width (1) of port connection 'branch_base_addr' does not match port width (32) of module 'IFetch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:147]
@@ -170,7 +170,7 @@ WARNING: [Synth 8-3331] design Decoder has unconnected port Instruction[28]
 WARNING: [Synth 8-3331] design Decoder has unconnected port Instruction[27]
 WARNING: [Synth 8-3331] design Decoder has unconnected port Instruction[26]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 395.816 ; gain = 153.941
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 395.762 ; gain = 155.070
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -184,89 +184,23 @@ WARNING: [Synth 8-3295] tying undriven pin alu:Function_opcode[0] to constant 0 
 WARNING: [Synth 8-3295] tying undriven pin alu:Exe_opcode[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:155]
 WARNING: [Synth 8-3295] tying undriven pin alu:Shamt[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:155]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 395.816 ; gain = 153.941
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 395.762 ; gain = 155.070
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
-Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
-Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
-Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
-Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
-Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
 Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {clock}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:1]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {clock}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:2]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {rst}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:5]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {rst}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:6]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[15]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:11]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[14]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:12]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[13]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:13]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[12]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:14]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[11]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:15]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[10]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:16]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[9]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:17]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[8]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:18]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[7]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:20]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[6]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:21]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[5]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:22]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[4]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:23]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[3]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:24]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[2]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:25]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[1]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:26]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[0]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:27]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[15]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:30]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[14]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:31]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[13]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:32]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[12]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:33]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[11]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:34]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[10]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:35]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[9]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:36]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[8]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:37]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[7]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:39]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[6]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:40]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[5]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:41]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[4]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:42]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[3]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:43]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[2]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:44]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[1]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:45]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[0]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:46]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[15]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:49]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[14]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:50]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[13]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:51]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[12]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:52]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[11]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:53]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[10]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:54]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[9]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:55]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[8]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:56]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[7]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:58]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[6]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:59]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[5]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:60]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[4]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:61]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[3]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:62]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[2]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:63]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[1]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:64]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[0]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:65]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[15]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:68]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[14]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:69]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[13]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:70]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[12]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:71]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[11]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:72]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[10]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:73]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[9]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:74]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[8]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:75]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[7]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:77]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[6]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:78]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[5]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:79]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[4]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:80]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[3]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:81]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[2]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:82]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[1]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:83]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[0]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:84]
 Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cpu_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/cpu_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
@@ -274,27 +208,27 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 734.371 ; gain = 0.203
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 737.750 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:32 . Memory (MB): peak = 734.371 ; gain = 492.496
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:39 . Memory (MB): peak = 737.750 ; gain = 497.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:32 . Memory (MB): peak = 734.371 ; gain = 492.496
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:39 . Memory (MB): peak = 737.750 ; gain = 497.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/dcp3/cpuclk_in_context.xdc}, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-17444-Yang/dcp3/cpuclk_in_context.xdc}, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/dcp3/cpuclk_in_context.xdc}, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-27080-Yang/dcp3/cpuclk_in_context.xdc}, line 4).
 Applied set_property DONT_TOUCH = true for cclk. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for dm/ram. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for ife/instmem. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:32 . Memory (MB): peak = 734.371 ; gain = 492.496
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:39 . Memory (MB): peak = 737.750 ; gain = 497.059
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "registers_reg[31]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "registers_reg[30]" won't be mapped to RAM because it is too sparse
@@ -335,7 +269,7 @@ INFO: [Synth 8-5544] ROM "ALU_Result0" won't be mapped to Block RAM because addr
 WARNING: [Synth 8-327] inferring latch for variable 'io_wdata_reg' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v:48]
 WARNING: [Synth 8-327] inferring latch for variable 'branch_base_addr_reg' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:24]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:33 . Memory (MB): peak = 734.371 ; gain = 492.496
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:39 . Memory (MB): peak = 737.750 ; gain = 497.059
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -764,7 +698,7 @@ WARNING: [Synth 8-3332] Sequential element (de/write_addr_reg[3]) is unused and 
 WARNING: [Synth 8-3332] Sequential element (de/write_addr_reg[2]) is unused and will be removed from module cpu_top.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:35 . Memory (MB): peak = 734.371 ; gain = 492.496
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 737.750 ; gain = 497.059
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -778,13 +712,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'cclk/clk_out1' to pin 'cclk/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:50 . Memory (MB): peak = 734.371 ; gain = 492.496
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 737.750 ; gain = 497.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:50 . Memory (MB): peak = 734.371 ; gain = 492.496
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 737.750 ; gain = 497.059
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -796,7 +730,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:50 . Memory (MB): peak = 746.492 ; gain = 504.617
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 743.836 ; gain = 503.145
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -820,7 +754,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 746.492 ; gain = 504.617
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:57 . Memory (MB): peak = 743.836 ; gain = 503.145
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -833,7 +767,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 746.492 ; gain = 504.617
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:57 . Memory (MB): peak = 743.836 ; gain = 503.145
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -845,25 +779,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 746.492 ; gain = 504.617
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:57 . Memory (MB): peak = 743.836 ; gain = 503.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 746.492 ; gain = 504.617
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:57 . Memory (MB): peak = 743.836 ; gain = 503.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 746.492 ; gain = 504.617
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:57 . Memory (MB): peak = 743.836 ; gain = 503.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 746.492 ; gain = 504.617
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:57 . Memory (MB): peak = 743.836 ; gain = 503.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -904,11 +838,11 @@ Report Instance Areas:
 |5     |  ife         |IFetch        |    52|
 +------+--------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 746.492 ; gain = 504.617
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:57 . Memory (MB): peak = 743.836 ; gain = 503.145
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 54 critical warnings and 218 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:40 . Memory (MB): peak = 746.492 ; gain = 166.062
-Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:52 . Memory (MB): peak = 746.492 ; gain = 504.617
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:44 . Memory (MB): peak = 743.836 ; gain = 161.156
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:58 . Memory (MB): peak = 743.836 ; gain = 503.145
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -918,10 +852,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-224 Infos, 209 Warnings, 179 Critical Warnings and 0 Errors encountered.
+225 Infos, 209 Warnings, 111 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:56 . Memory (MB): peak = 747.832 ; gain = 517.438
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:01:02 . Memory (MB): peak = 744.391 ; gain = 513.848
 INFO: [Common 17-1381] The checkpoint 'C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/cpu_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cpu_top_utilization_synth.rpt -pb cpu_top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 747.832 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun May 28 00:33:55 2023...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 744.391 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun May 28 00:42:38 2023...
