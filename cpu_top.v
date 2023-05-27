@@ -7,9 +7,9 @@ module cpu_top(
     // Inputs
     input clock,
     input rst,
-    input [15:0] switch,
+    input [15:0] switches,
     // Outputs
-    output [15:0] led
+    output [15:0] leds
     );
 
     wire clk;
@@ -67,7 +67,7 @@ module cpu_top(
 // Decoder
     //Input
     wire [`ISA_WIDTH - 1 : 0] ALU_result = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] Mem_data = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] m_rdata = 32'b0;
     wire [`ISA_WIDTH - 1 : 0] r_wdata = 32'b0;
     wire [`ISA_WIDTH - 1 : 0] link_addr = 32'b0;
     //Output
@@ -94,14 +94,15 @@ module cpu_top(
 //Data_mem
     //Input
     wire [`ISA_WIDTH - 1:0] Address;
+    wire [`ISA_WIDTH - 1:0] m_wdata;
     //Output
 
     Data_mem dm(
         .clock(clk),
         .memWrite(MemWrite),
         .address(Address),
-        .writeData(Decoder_Data2),
-        .readData(Mem_data)
+        .writeData(m_wdata),
+        .readData(m_rdata)
         );
 
 //IFetch
@@ -113,7 +114,7 @@ module cpu_top(
     IFetch ife(
         .clock(clk),
         .reset(rst),
-        .Addr_result(ALU_result),
+        .Addr_result(),
         .Zero(Zero),
         .Read_data_1(Decoder_Data1),
         .Branch(Branch),
@@ -160,13 +161,12 @@ module cpu_top(
         .ioWrite(IOWrite),
         .addr_in(ALU_Result), 
         .addr_out(Address),
-        .m_rdata(mem_data),
-        .io_rdata(switch),
+        .m_rdata(m_rdata),
+        .m_wdata(),//m_wdata),
+        .io_rdata(switches),
+        .io_wdata(leds),
         .r_wdata(r_wdata),
-        .r_rdata(r_rdata), 
-        .write_data(),
-        .LEDCtrl(), 
-        .SwitchCtrl()
+        .r_rdata(Decoder_Data2)
     );
 
 endmodule

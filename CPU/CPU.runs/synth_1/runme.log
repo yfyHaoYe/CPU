@@ -14,13 +14,13 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 29764 
+INFO: Helper process launched with PID 19212 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 343.328 ; gain = 101.145
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 343.488 ; gain = 101.688
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'cpu_top' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:6]
-INFO: [Synth 8-638] synthesizing module 'cpuclk' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/realtime/cpuclk_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'cpuclk' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/realtime/cpuclk_stub.v:5]
 INFO: [Synth 8-638] synthesizing module 'Controller' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:4]
 INFO: [Synth 8-256] done synthesizing module 'Controller' (2#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:4]
 INFO: [Synth 8-638] synthesizing module 'Decoder' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:4]
@@ -28,238 +28,113 @@ INFO: [Synth 8-638] synthesizing module 'register_file' [C:/Users/29266/Desktop/
 INFO: [Synth 8-256] done synthesizing module 'register_file' (3#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/register_file.v:14]
 INFO: [Synth 8-256] done synthesizing module 'Decoder' (4#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:4]
 INFO: [Synth 8-638] synthesizing module 'Data_mem' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v:4]
-INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/realtime/RAM_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'RAM' (5#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/realtime/RAM_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/realtime/RAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'RAM' (5#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/realtime/RAM_stub.v:6]
 WARNING: [Synth 8-689] width (14) of port connection 'addra' does not match port width (15) of module 'RAM' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v:16]
 INFO: [Synth 8-256] done synthesizing module 'Data_mem' (6#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v:4]
 INFO: [Synth 8-638] synthesizing module 'IFetch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:5]
-INFO: [Synth 8-638] synthesizing module 'prgrom' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/realtime/prgrom_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'prgrom' (7#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/realtime/prgrom_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'prgrom' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/realtime/prgrom_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'prgrom' (7#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/realtime/prgrom_stub.v:6]
 WARNING: [Synth 8-689] width (14) of port connection 'addra' does not match port width (15) of module 'prgrom' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:50]
 INFO: [Synth 8-256] done synthesizing module 'IFetch' (8#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:5]
-WARNING: [Synth 8-689] width (1) of port connection 'branch_base_addr' does not match port width (32) of module 'IFetch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:125]
+WARNING: [Synth 8-689] width (1) of port connection 'branch_base_addr' does not match port width (32) of module 'IFetch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:126]
 INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v:3]
 INFO: [Synth 8-226] default block is never used [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v:41]
 INFO: [Synth 8-256] done synthesizing module 'ALU' (9#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v:3]
-WARNING: [Synth 8-689] width (1) of port connection 'Exe_opcode' does not match port width (6) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:137]
-WARNING: [Synth 8-689] width (1) of port connection 'Function_opcode' does not match port width (6) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:138]
-WARNING: [Synth 8-689] width (1) of port connection 'Shamt' does not match port width (5) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:139]
-WARNING: [Synth 8-689] width (1) of port connection 'PC_plus_4' does not match port width (32) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:140]
-WARNING: [Synth 8-689] width (1) of port connection 'Addr_Result' does not match port width (32) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:148]
+WARNING: [Synth 8-689] width (1) of port connection 'Exe_opcode' does not match port width (6) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:138]
+WARNING: [Synth 8-689] width (1) of port connection 'Function_opcode' does not match port width (6) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:139]
+WARNING: [Synth 8-689] width (1) of port connection 'Shamt' does not match port width (5) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:140]
+WARNING: [Synth 8-689] width (1) of port connection 'PC_plus_4' does not match port width (32) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:141]
+WARNING: [Synth 8-689] width (1) of port connection 'Addr_Result' does not match port width (32) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:149]
 INFO: [Synth 8-638] synthesizing module 'MemOrIO' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v:24]
 INFO: [Synth 8-256] done synthesizing module 'MemOrIO' (10#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v:24]
-WARNING: [Synth 8-689] width (1) of port connection 'addr_in' does not match port width (32) of module 'MemOrIO' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:161]
-WARNING: [Synth 8-689] width (1) of port connection 'm_rdata' does not match port width (32) of module 'MemOrIO' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:163]
-WARNING: [Synth 8-689] width (1) of port connection 'r_rdata' does not match port width (32) of module 'MemOrIO' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:166]
-WARNING: [Synth 8-3848] Net led in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:12]
-WARNING: [Synth 8-3848] Net Exe_opcode in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:137]
-WARNING: [Synth 8-3848] Net Function_opcode in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:138]
-WARNING: [Synth 8-3848] Net Shamt in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:139]
-WARNING: [Synth 8-3848] Net ALU_Result in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:161]
-WARNING: [Synth 8-3848] Net mem_data in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:163]
-WARNING: [Synth 8-3848] Net r_rdata in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:166]
+WARNING: [Synth 8-689] width (1) of port connection 'addr_in' does not match port width (32) of module 'MemOrIO' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net mRead with 1st driver pin 'cpu_top:/ctrl/MemRead' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net mRead with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net mRead is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net mWrite with 1st driver pin 'cpu_top:/ctrl/MemWrite' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net mWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net mWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ioRead with 1st driver pin 'cpu_top:/ctrl/IORead' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ioRead with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ioRead is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ioWrite with 1st driver pin 'cpu_top:/ctrl/IOWrite' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ioWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ioWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3848] Net ALU_Result in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net r_rdata[0] with 1st driver pin 'cpu_top:/de/read_data_2[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net r_rdata[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net r_rdata[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
 CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[0] with 1st driver pin 'cpu_top:/alu/ALU_Result[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
 CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
 CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[1] with 1st driver pin 'cpu_top:/alu/ALU_Result[1]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[1] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[1] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[2] with 1st driver pin 'cpu_top:/alu/ALU_Result[2]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[2] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[2] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[3] with 1st driver pin 'cpu_top:/alu/ALU_Result[3]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[3] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[3] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[4] with 1st driver pin 'cpu_top:/alu/ALU_Result[4]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[4] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[4] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[5] with 1st driver pin 'cpu_top:/alu/ALU_Result[5]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[5] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[5] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[6] with 1st driver pin 'cpu_top:/alu/ALU_Result[6]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[6] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[6] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[7] with 1st driver pin 'cpu_top:/alu/ALU_Result[7]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[7] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[7] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[8] with 1st driver pin 'cpu_top:/alu/ALU_Result[8]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[8] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[8] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[9] with 1st driver pin 'cpu_top:/alu/ALU_Result[9]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[9] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[9] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[10] with 1st driver pin 'cpu_top:/alu/ALU_Result[10]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[10] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[10] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[11] with 1st driver pin 'cpu_top:/alu/ALU_Result[11]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[11] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[11] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[12] with 1st driver pin 'cpu_top:/alu/ALU_Result[12]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[12] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[12] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[13] with 1st driver pin 'cpu_top:/alu/ALU_Result[13]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[13] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[13] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[14] with 1st driver pin 'cpu_top:/alu/ALU_Result[14]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[14] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[14] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[15] with 1st driver pin 'cpu_top:/alu/ALU_Result[15]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[15] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[15] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[16] with 1st driver pin 'cpu_top:/alu/ALU_Result[16]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[16] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[16] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[17] with 1st driver pin 'cpu_top:/alu/ALU_Result[17]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[17] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[17] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[18] with 1st driver pin 'cpu_top:/alu/ALU_Result[18]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[18] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[18] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[19] with 1st driver pin 'cpu_top:/alu/ALU_Result[19]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[19] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[19] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[20] with 1st driver pin 'cpu_top:/alu/ALU_Result[20]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[20] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[20] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[21] with 1st driver pin 'cpu_top:/alu/ALU_Result[21]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Alu_resultHigh[21] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Alu_resultHigh[21] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:44]
 CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[0] with 1st driver pin 'cpu_top:/moi/r_wdata[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
 CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
 CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[1] with 1st driver pin 'cpu_top:/moi/r_wdata[1]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[1] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[1] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[2] with 1st driver pin 'cpu_top:/moi/r_wdata[2]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[2] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[2] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[3] with 1st driver pin 'cpu_top:/moi/r_wdata[3]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[3] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[3] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[4] with 1st driver pin 'cpu_top:/moi/r_wdata[4]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[4] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[4] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[5] with 1st driver pin 'cpu_top:/moi/r_wdata[5]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[5] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[5] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[6] with 1st driver pin 'cpu_top:/moi/r_wdata[6]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[6] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[6] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[7] with 1st driver pin 'cpu_top:/moi/r_wdata[7]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[7] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[7] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[8] with 1st driver pin 'cpu_top:/moi/r_wdata[8]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[8] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[8] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[9] with 1st driver pin 'cpu_top:/moi/r_wdata[9]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[9] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[9] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[10] with 1st driver pin 'cpu_top:/moi/r_wdata[10]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[10] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[10] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[11] with 1st driver pin 'cpu_top:/moi/r_wdata[11]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[11] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[11] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[12] with 1st driver pin 'cpu_top:/moi/r_wdata[12]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[12] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[12] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[13] with 1st driver pin 'cpu_top:/moi/r_wdata[13]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[13] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[13] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[14] with 1st driver pin 'cpu_top:/moi/r_wdata[14]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[14] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[14] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[15] with 1st driver pin 'cpu_top:/moi/r_wdata[15]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[15] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[15] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[16] with 1st driver pin 'cpu_top:/moi/r_wdata[16]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[16] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[16] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[17] with 1st driver pin 'cpu_top:/moi/r_wdata[17]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[17] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[17] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[18] with 1st driver pin 'cpu_top:/moi/r_wdata[18]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[18] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[18] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[19] with 1st driver pin 'cpu_top:/moi/r_wdata[19]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[19] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[19] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[20] with 1st driver pin 'cpu_top:/moi/r_wdata[20]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[20] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[20] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[21] with 1st driver pin 'cpu_top:/moi/r_wdata[21]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[21] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[21] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[22] with 1st driver pin 'cpu_top:/moi/r_wdata[22]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[22] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[22] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[23] with 1st driver pin 'cpu_top:/moi/r_wdata[23]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[23] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[23] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[24] with 1st driver pin 'cpu_top:/moi/r_wdata[24]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[24] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[24] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[25] with 1st driver pin 'cpu_top:/moi/r_wdata[25]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[25] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[25] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[26] with 1st driver pin 'cpu_top:/moi/r_wdata[26]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[26] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[26] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[27] with 1st driver pin 'cpu_top:/moi/r_wdata[27]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net r_wdata[27] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-INFO: [Common 17-14] Message 'Synth 8-3352' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[27] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[28] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[29] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[30] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net r_wdata[31] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALU_result[0] with 1st driver pin 'cpu_top:/alu/ALU_Result[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALU_result[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
 CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[1] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[2] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[3] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[4] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[5] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[6] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[7] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[8] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[9] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[10] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[11] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[12] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[13] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[14] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[15] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[16] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[17] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[18] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[19] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[20] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[21] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[22] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[23] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[24] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[25] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[26] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[27] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[28] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[29] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[30] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net ALU_result[31] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jal with 1st driver pin 'cpu_top:/ctrl/Jal' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jal with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
 CRITICAL WARNING: [Synth 8-5559] multi-driven net Jal is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net RegWrite with 1st driver pin 'cpu_top:/ctrl/RegWrite' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net RegWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
 CRITICAL WARNING: [Synth 8-5559] multi-driven net RegWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net MemtoReg with 1st driver pin 'cpu_top:/ctrl/MemtoReg' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net MemtoReg with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
 CRITICAL WARNING: [Synth 8-5559] multi-driven net MemtoReg is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net RegDst with 1st driver pin 'cpu_top:/ctrl/RegDST' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net RegDst with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
 CRITICAL WARNING: [Synth 8-5559] multi-driven net RegDst is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net opcplus4[0] with 1st driver pin 'cpu_top:/ife/link_addr[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net opcplus4[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
 CRITICAL WARNING: [Synth 8-5559] multi-driven net opcplus4[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net opcplus4[1] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net opcplus4[2] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net opcplus4[3] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net opcplus4[4] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net opcplus4[5] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net opcplus4[6] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net opcplus4[7] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net opcplus4[8] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net opcplus4[9] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:78]
-INFO: [Common 17-14] Message 'Synth 8-5559' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Read_data_1[0] with 1st driver pin 'cpu_top:/de/read_data_1[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Read_data_1[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Read_data_1[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Branch with 1st driver pin 'cpu_top:/ctrl/Branch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Branch with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Branch is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net nBranch with 1st driver pin 'cpu_top:/ctrl/nBranch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net nBranch with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net nBranch is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jmp with 1st driver pin 'cpu_top:/ctrl/Jmp' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jmp with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jmp is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jal with 1st driver pin 'cpu_top:/ctrl/Jal' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jal with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jal is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jr with 1st driver pin 'cpu_top:/ctrl/Jr' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jr with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jr is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:114]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Read_data_1[0] with 1st driver pin 'cpu_top:/de/read_data_1[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Read_data_1[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Read_data_1[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Read_data_2[0] with 1st driver pin 'cpu_top:/de/read_data_2[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Read_data_2[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Read_data_2[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+WARNING: [Synth 8-3848] Net Function_opcode in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:139]
+WARNING: [Synth 8-3848] Net Exe_opcode in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:138]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUOp[0] with 1st driver pin 'cpu_top:/ctrl/ALUOp[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUOp[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ALUOp[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+WARNING: [Synth 8-3848] Net Shamt in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:140]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUSrc with 1st driver pin 'cpu_top:/ctrl/ALUSrc' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUSrc with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ALUSrc is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net I_format with 1st driver pin 'cpu_top:/ctrl/I_format' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net I_format with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net I_format is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jr with 1st driver pin 'cpu_top:/ctrl/Jr' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jr with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jr is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Sftmd with 1st driver pin 'cpu_top:/ctrl/Sftmd' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Sftmd with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Sftmd is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+WARNING: [Synth 8-3848] Net m_wdata in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:97]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net memWrite with 1st driver pin 'cpu_top:/ctrl/MemWrite' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net memWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net memWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
 INFO: [Synth 8-256] done synthesizing module 'cpu_top' (11#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:6]
 WARNING: [Synth 8-3331] design ALU has unconnected port Jr
 WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[31]
@@ -318,24 +193,8 @@ WARNING: [Synth 8-3331] design Decoder has unconnected port Instruction[29]
 WARNING: [Synth 8-3331] design Decoder has unconnected port Instruction[28]
 WARNING: [Synth 8-3331] design Decoder has unconnected port Instruction[27]
 WARNING: [Synth 8-3331] design Decoder has unconnected port Instruction[26]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[15]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[14]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[13]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[12]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[11]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[10]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[9]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[8]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[7]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[6]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[5]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[4]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[3]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[2]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[1]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 395.191 ; gain = 153.008
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 394.699 ; gain = 152.898
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -344,95 +203,157 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin alu:Function_opcode[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:133]
-WARNING: [Synth 8-3295] tying undriven pin alu:Exe_opcode[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:133]
-WARNING: [Synth 8-3295] tying undriven pin alu:Shamt[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:133]
-WARNING: [Synth 8-3295] tying undriven pin moi:addr_in[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:156]
-WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:156]
-WARNING: [Synth 8-3295] tying undriven pin moi:r_rdata[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:156]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[31] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[30] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[29] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[28] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[27] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[26] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[25] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[24] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[23] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[22] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[21] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[20] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[19] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[18] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[17] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[16] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[15] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[14] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[13] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[12] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[11] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[10] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[9] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[8] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[7] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[6] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[5] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[4] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[3] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[2] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[1] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin dm:writeData[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:100]
+WARNING: [Synth 8-3295] tying undriven pin alu:Function_opcode[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+WARNING: [Synth 8-3295] tying undriven pin alu:Exe_opcode[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+WARNING: [Synth 8-3295] tying undriven pin alu:Shamt[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:134]
+WARNING: [Synth 8-3295] tying undriven pin moi:addr_in[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[31] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[30] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[29] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[28] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[27] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[26] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[25] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[24] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[23] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[22] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[21] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[20] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[19] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[18] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[17] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[16] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[15] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[14] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[13] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[12] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[11] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[10] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[9] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[8] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[7] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[6] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[5] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[4] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[3] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[2] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[1] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
+WARNING: [Synth 8-3295] tying undriven pin moi:m_rdata[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:157]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 395.191 ; gain = 153.008
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 394.699 ; gain = 152.898
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
-Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
-Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
-Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
-Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
-Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
 Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc]
 CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {clock}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:1]
 CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {clock}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:2]
 CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {rst}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:5]
 CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {rst}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:6]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[15]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:9]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[15]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:10]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[14]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:11]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[14]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:12]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[13]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:13]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[13]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:14]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[12]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:15]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[12]]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:16]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[11]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:17]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[11]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:18]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[10]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:19]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[10]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:20]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[9]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:21]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[9]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:22]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[8]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:23]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[8]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:24]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[7]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:26]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[7]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:27]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[6]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:28]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[6]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:29]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[5]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:30]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[5]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:31]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[4]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:32]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[4]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:33]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[3]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:34]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[3]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:35]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[2]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:36]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[2]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:37]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[1]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:38]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[1]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:39]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[0]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:40]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {led[0]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:41]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[15]]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:44]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[15]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:45]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[14]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:46]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[14]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:47]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[13]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:48]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[13]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:49]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[12]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:50]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[12]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:51]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[11]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:52]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[11]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:53]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[10]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:54]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[10]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:55]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[9]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:56]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[9]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:57]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[8]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:58]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[8]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:59]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[7]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:61]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[7]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:62]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[6]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:63]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[6]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:64]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[5]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:65]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[5]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:66]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[4]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:67]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[4]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:68]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[3]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:69]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[3]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:70]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[2]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:71]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[2]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:72]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[1]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:73]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[1]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:74]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[0]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:75]
-CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switch[0]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:76]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[15]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:9]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[14]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:10]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[13]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:11]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[12]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:12]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[11]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:13]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[10]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:14]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[9]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:15]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[8]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:16]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[7]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:18]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[6]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:19]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[5]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:20]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[4]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:21]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[3]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:22]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[2]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:23]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[1]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:24]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[0]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:25]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[15]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:28]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[14]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:29]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[13]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:30]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[12]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:31]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[11]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:32]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[10]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:33]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[9]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:34]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[8]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:35]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[7]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:37]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[6]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:38]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[5]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:39]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[4]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:40]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[3]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:41]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[2]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:42]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[1]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:43]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {leds[0]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:44]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[15]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:47]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[14]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:48]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[13]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:49]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[12]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:50]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[11]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:51]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[10]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:52]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[9]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:53]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[8]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:54]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[7]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:56]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[6]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:57]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[5]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:58]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[4]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:59]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[3]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:60]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[2]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:61]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[1]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:62]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[0]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:63]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[15]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:66]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[14]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:67]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[13]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:68]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[12]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:69]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[11]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:70]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[10]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:71]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[9]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:72]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[8]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:73]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[7]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:75]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[6]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:76]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[5]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:77]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[4]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:78]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[3]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:79]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[2]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:80]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[1]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:81]
+CRITICAL WARNING: [Common 17-161] Invalid option value 'get_ports {switches[0]}' specified for 'objects'. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc:82]
 Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc]
 Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/dont_touch.xdc]
@@ -441,27 +362,27 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 734.406 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 734.434 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:35 . Memory (MB): peak = 734.406 ; gain = 492.223
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:21 . Memory (MB): peak = 734.434 ; gain = 492.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:35 . Memory (MB): peak = 734.406 ; gain = 492.223
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:21 . Memory (MB): peak = 734.434 ; gain = 492.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/dcp3/cpuclk_in_context.xdc}, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-2444-Yang/dcp3/cpuclk_in_context.xdc}, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/dcp3/cpuclk_in_context.xdc}, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-29236-Yang/dcp3/cpuclk_in_context.xdc}, line 4).
 Applied set_property DONT_TOUCH = true for cclk. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for dm/ram. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for ife/instmem. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:35 . Memory (MB): peak = 734.406 ; gain = 492.223
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:21 . Memory (MB): peak = 734.434 ; gain = 492.633
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "registers_reg[31]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "registers_reg[30]" won't be mapped to RAM because it is too sparse
@@ -500,8 +421,9 @@ INFO: [Synth 8-5545] ROM "Zero" won't be mapped to RAM because address size (32)
 INFO: [Synth 8-5545] ROM "Zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "ALU_Result0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 WARNING: [Synth 8-327] inferring latch for variable 'branch_base_addr_reg' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:24]
+WARNING: [Synth 8-327] inferring latch for variable 'io_wdata_reg' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v:48]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:35 . Memory (MB): peak = 734.406 ; gain = 492.223
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:21 . Memory (MB): peak = 734.434 ; gain = 492.633
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -522,9 +444,8 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 4     
 	                5 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 11    
+	   2 Input     32 Bit        Muxes := 12    
 	   8 Input     32 Bit        Muxes := 2     
-	   2 Input     16 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
@@ -575,8 +496,7 @@ Detailed RTL Component Info :
 Module MemOrIO 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -594,22 +514,127 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "Zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-3331] design ALU has unconnected port Jr
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[15]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[14]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[13]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[12]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[11]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[10]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[9]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[8]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[7]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[6]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[5]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[4]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[3]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[2]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[1]
-WARNING: [Synth 8-3331] design cpu_top has unconnected port led[0]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net nBranch with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[6]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net nBranch with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net nBranch is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Branch with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[5]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Branch with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Branch is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jal with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[4]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jal with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jal is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jmp with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[3]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jmp with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jmp is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[2] with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[2]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[2] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Opcode0_out[2] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[1] with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[1]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[1] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Opcode0_out[1] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[0] with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Opcode0_out[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jr with 1st driver pin 'ctrl/Jr_inferred/Jr' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:35]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jr with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:35]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jr is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:35]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[2] with 1st driver pin 'ctrl/MemWrite0_inferred/MemWrite0' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:52]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[2] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:52]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Opcode0_out[2] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:52]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net I_format with 1st driver pin 'ctrl/I_format_inferred/I_format' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:42]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net I_format with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:42]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net I_format is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:42]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUSrc with 1st driver pin 'ctrl/ALUSrc_inferred/ALUSrc' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:44]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUSrc with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:44]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ALUSrc is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:44]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net RegWrite with 1st driver pin 'ctrl/RegWrite_inferred/RegWrite' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:51]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net RegWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:51]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net RegWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:51]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Sftmd with 1st driver pin 'ctrl/Sftmd_inferred/Sftmd' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:46]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Sftmd with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:46]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Sftmd is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:46]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUOp[1] with 1st driver pin 'ctrl/ALUOp_inferred/ALUOp[1]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:45]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUOp[1] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:45]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ALUOp[1] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:45]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUOp[0] with 1st driver pin 'ctrl/ALUOp_inferred/ALUOp[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:45]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUOp[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:45]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ALUOp[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:45]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net MemRead with 1st driver pin 'ctrl/MemRead_inferred/MemRead' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:53]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net MemRead with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:53]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net MemRead is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:53]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net IORead with 1st driver pin 'ctrl/IORead_inferred/IORead' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:54]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net IORead with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:54]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net IORead is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:54]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net IOWrite with 1st driver pin 'ctrl/IOWrite_inferred/IOWrite' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:55]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net IOWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:55]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net IOWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:55]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net read_data_1[31] with 1st driver pin 'de/registers/read_data_1[31]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net read_data_1[31] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[31] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net read_data_1[30] with 1st driver pin 'de/registers/read_data_1[30]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net read_data_1[30] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[30] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net read_data_1[29] with 1st driver pin 'de/registers/read_data_1[29]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net read_data_1[29] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[29] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net read_data_1[28] with 1st driver pin 'de/registers/read_data_1[28]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net read_data_1[28] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[28] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net read_data_1[27] with 1st driver pin 'de/registers/read_data_1[27]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net read_data_1[27] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+INFO: [Common 17-14] Message 'Synth 8-3352' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[27] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[26] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[25] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[24] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[23] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[22] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[21] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[20] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[19] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[18] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[17] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[16] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[15] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[14] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[13] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[12] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[11] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[10] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[9] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[8] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[7] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[6] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[5] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[4] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[3] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[2] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[1] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_1[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[31] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[30] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[29] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[28] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[27] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[26] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[25] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[24] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[23] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[22] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[21] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[20] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[19] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[18] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[17] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[16] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[15] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[14] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[13] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[12] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[11] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[10] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net read_data_2[9] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+INFO: [Common 17-14] Message 'Synth 8-5559' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3332] Sequential element (registers_reg[31][31]) is unused and will be removed from module register_file.
 WARNING: [Synth 8-3332] Sequential element (registers_reg[31][30]) is unused and will be removed from module register_file.
 WARNING: [Synth 8-3332] Sequential element (registers_reg[31][29]) is unused and will be removed from module register_file.
@@ -712,7 +737,7 @@ WARNING: [Synth 8-3332] Sequential element (registers_reg[28][29]) is unused and
 WARNING: [Synth 8-3332] Sequential element (registers_reg[28][28]) is unused and will be removed from module register_file.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:46 . Memory (MB): peak = 734.406 ; gain = 492.223
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:30 . Memory (MB): peak = 734.434 ; gain = 492.633
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -720,3 +745,154 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'cclk/clk_out1' to pin 'cclk/bbstub_clk_out1/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:38 . Memory (MB): peak = 750.703 ; gain = 508.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:38 . Memory (MB): peak = 760.609 ; gain = 518.809
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:38 . Memory (MB): peak = 770.512 ; gain = 528.711
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:39 . Memory (MB): peak = 770.512 ; gain = 528.711
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:39 . Memory (MB): peak = 770.512 ; gain = 528.711
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:39 . Memory (MB): peak = 770.512 ; gain = 528.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:39 . Memory (MB): peak = 770.512 ; gain = 528.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:39 . Memory (MB): peak = 770.512 ; gain = 528.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:39 . Memory (MB): peak = 770.512 ; gain = 528.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |cpuclk        |         1|
+|2     |RAM           |         1|
+|3     |prgrom        |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |RAM    |     1|
+|2     |cpuclk |     1|
+|3     |prgrom |     1|
+|4     |CARRY4 |     4|
+|5     |LUT1   |     2|
+|6     |LUT2   |     1|
+|7     |FDRE   |    15|
+|8     |IBUF   |     1|
+|9     |OBUF   |    16|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+---------+------+
+|      |Instance |Module   |Cells |
++------+---------+---------+------+
+|1     |top      |         |   104|
+|2     |  dm     |Data_mem |    33|
+|3     |  ife    |IFetch   |    53|
++------+---------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:39 . Memory (MB): peak = 770.512 ; gain = 528.711
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 342 critical warnings and 1177 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:32 . Memory (MB): peak = 770.512 ; gain = 188.977
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:39 . Memory (MB): peak = 770.512 ; gain = 528.711
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+76 Infos, 242 Warnings, 268 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:43 . Memory (MB): peak = 772.078 ; gain = 541.758
+INFO: [Common 17-1381] The checkpoint 'C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/cpu_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file cpu_top_utilization_synth.rpt -pb cpu_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 772.078 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat May 27 23:44:50 2023...
