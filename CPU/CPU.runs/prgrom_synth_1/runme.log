@@ -15,3 +15,6 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
 INFO: Helper process launched with PID 20888 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:20 . Memory (MB): peak = 341.449 ; gain = 101.391
+---------------------------------------------------------------------------------
