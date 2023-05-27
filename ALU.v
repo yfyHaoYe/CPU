@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`include "definitions.v"
 
 module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
                  Shamt,ALUSrc,I_format,Zero,Jr,Sftmd,ALU_Result,Addr_Result,PC_plus_4
@@ -69,9 +70,9 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     end
 
     always @* begin
-        if( (Exe_opcode==6'b00_1010) || (Function_opcode==6'b10_1010)) 
+        if( (Exe_opcode==`EXE_SLTI) || (Function_opcode==`EXE_SLT)) 
             ALU_Result = ($signed(Ainput)-$signed(Binput)<0) ? 1 : 0;
-        else if( (Exe_opcode==6'b00_1011) || (Function_opcode==6'b10_1011)) 
+        else if( (Exe_opcode==`EXE_SLTIU) || (Function_opcode==`EXE_SLTU)) 
             ALU_Result = (Ainput-Binput<0) ? 1 : 0;
         else if((ALU_ctl==3'b101) && (I_format==1)) 
             ALU_Result[31:0]= Binput << 16;
