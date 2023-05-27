@@ -28,7 +28,7 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     wire[2:0] Sftm;
     reg [31:0] Shift_Result;
     reg [31:0] ALU_output_mux;
-    wire[32:0] Branch_Addr;
+    reg[32:0] Branch_Addr;
 
     assign Ainput = Read_data_1;
     assign Binput = (ALUSrc == 0) ? Read_data_2 : Sign_extend;
@@ -37,38 +37,60 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     assign ALU_ctl[1] = ((!Exe_code[2]) | (!ALUOp[1]));
     assign ALU_ctl[2] = (Exe_code[1] & ALUOp[1]) | ALUOp[0];
     
-    assign Zero = (ALU_Result == 0) ? 1 : 0;
     always @(ALU_ctl or Ainput or Binput)
     begin 
         case(ALU_ctl)
         3'b000: ALU_Result = Ainput & Binput;
         3'b001: ALU_Result = Ainput | Binput;
-        3'b010: ALU_Result = ALUOp[1] ? $signed(Ainput) + $signed(Binput) : Binput;
+        3'b010: ALU_Result = $signed(Ainput) + $signed(Binput);
         3'b011: ALU_Result = Ainput + Binput;
         3'b100: ALU_Result = Ainput ^ Binput;
-        3'b101: ALU_Result = I_format ? Binput << 16 : ~(Ainput | Binput);
-        3'b110: ALU_Result = ALUOp[0] ? PC_plus_4 + Binput : $signed(Ainput) - $signed(Binput);
-        3'b111: ALU_Result = Exe_code[0] ? Ainput - Binput : $signed(Ainput) - $signed(Binput);
+        3'b101: ALU_Result = ~(Ainput | Binput);
+        3'b110: ALU_Result = $signed(Ainput) - $signed(Binput);
+        3'b111: ALU_Result = Ainput - Binput;
         default : ALU_Result = 0;
         endcase
     end
 
     assign Sftm = Function_opcode[2:0];
-    always @(*) begin
-        if(Sftmd == 1) begin
+    always @* begin
+        if(Sftmd) begin
             case(Sftm)
             3'b000: Shift_Result = Binput << Shamt;
             3'b010: Shift_Result = Binput >> Shamt;
+            3'b100: Shift_Result = Binput << Ainput;
+            3'b110: Shift_Result = Binput >> Ainput;
             3'b011: Shift_Result = Binput >>> Shamt;
-            3'b100: Shift_Result = Binput << Shamt;
-            3'b110: Shift_Result = Binput >> Shamt;
-            3'b111: Shift_Result = Binput >>> Shamt;
-            default : Shift_Result = 0;
+            3'b111: Shift_Result = Binput >>> Ainput;
+            default : Shift_Result = Binput;
             endcase
         end
-        else begin
+        else 
             Shift_Result = Binput;
-        end
     end
+
+    always @* begin
+        if( (Exe_opcode==6'b00_1010) || (Function_opcode==6'b10_1010)) 
+            ALU_Result = ($signed(Ainput)-$signed(Binput)<0) ? 1 : 0;
+        else if( (Exe_opcode==6'b00_1011) || (Function_opcode==6'b10_1011)) 
+            ALU_Result = (Ainput-Binput<0) ? 1 : 0;
+        else if((ALU_ctl==3'b101) && (I_format==1)) 
+            ALU_Result[31:0]= Binput << 16;
+        else if(Sftmd==1)
+            ALU_Result = Shift_Result ;
+        else 
+            ALU_Result = ALU_output_mux;
+    end
+
+    assign Zero = (ALU_Result==0) ? 1 : 0;
+
+    always @* begin
+        if(Exe_code==3'b110) 
+            Branch_Addr = PC_plus_4 + Sign_extend;
+        else 
+            Branch_Addr = PC_plus_4;
+    end
+            
+
 
 endmodule
