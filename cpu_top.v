@@ -66,13 +66,14 @@ module cpu_top(
     
 // Decoder
     //Input
-    wire [`ISA_WIDTH - 1 : 0] ALU_result = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] m_rdata = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] r_wdata = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] link_addr = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] ALU_result;
+    wire [`ISA_WIDTH - 1 : 0] m_rdata;
+    wire [`ISA_WIDTH - 1 : 0] m_wdata;
+    wire [`ISA_WIDTH - 1 : 0] r_wdata;
+    wire [`ISA_WIDTH - 1 : 0] link_addr;
     //Output
-    wire [`ISA_WIDTH - 1 : 0] Decoder_Data1 = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] Decoder_Data2 = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] Decoder_Data1;
+    wire [`ISA_WIDTH - 1 : 0] Decoder_Data2;
     wire [`ISA_WIDTH - 1 : 0] Sign_extend;
 
     Decoder de(
@@ -91,10 +92,30 @@ module cpu_top(
         .Sign_extend(Sign_extend)
         );
 
+
+
+//MemOrIO
+    //Input
+    //Output
+    wire [`ISA_WIDTH - 1:0] Address;
+
+    MemOrIO moi(
+        .mRead(MemRead),
+        .mWrite(MemWrite), 
+        .ioRead(IORead), 
+        .ioWrite(IOWrite),
+        .addr_in(ALU_Result), 
+        .addr_out(Address),
+        .m_rdata(m_rdata),
+        .m_wdata(m_wdata),
+        .io_rdata(switches),
+        .io_wdata(leds),
+        .r_wdata(r_wdata),
+        .r_rdata(Decoder_Data2)
+    );
+
 //Data_mem
     //Input
-    wire [`ISA_WIDTH - 1:0] Address;
-    wire [`ISA_WIDTH - 1:0] m_wdata;
     //Output
 
     Data_mem dm(
@@ -150,23 +171,5 @@ module cpu_top(
         );
 
 
-//MemOrIO
-    //Input
-    //Output
-
-    MemOrIO moi(
-        .mRead(MemRead),
-        .mWrite(MemWrite), 
-        .ioRead(IORead), 
-        .ioWrite(IOWrite),
-        .addr_in(ALU_Result), 
-        .addr_out(Address),
-        .m_rdata(m_rdata),
-        .m_wdata(),//m_wdata),
-        .io_rdata(switches),
-        .io_wdata(leds),
-        .r_wdata(r_wdata),
-        .r_rdata(Decoder_Data2)
-    );
 
 endmodule
