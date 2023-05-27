@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`include "definitions.v"
 
 module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
                  Shamt,ALUSrc,I_format,Zero,Jr,Sftmd,ALU_result,Addr_result,PC_plus_4
@@ -69,14 +70,24 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     end
 
     always @* begin
-        if( (Exe_opcode==6'b00_1010) || (Function_opcode==6'b10_1010)) 
+        if( (Exe_opcode==`EXE_SLTI) || (Function_opcode==`EXE_SLT)) 
             ALU_result = ($signed(Ainput)-$signed(Binput)<0) ? 1 : 0;
-        else if( (Exe_opcode==6'b00_1011) || (Function_opcode==6'b10_1011)) 
+        else if( (Exe_opcode==`EXE_SLTIU) || (Function_opcode==`EXE_SLTU)) 
             ALU_result = (Ainput-Binput<0) ? 1 : 0;
         else if((ALU_ctl==3'b101) && (I_format==1)) 
             ALU_result[31:0]= Binput << 16;
         else if(Sftmd==1)
             ALU_result = Shift_Result ;
+        else if(Function_opcode==`EXE_MUL)
+            ALU_result = $signed(Ainput) * $signed(Binput);
+        else if(Function_opcode==`EXE_MULU)
+            ALU_result = Ainput * Binput;
+        else if(Function_opcode==`EXE_DIV)
+            ALU_result = $signed(Ainput) / $signed(Binput);
+        else if(Function_opcode==`EXE_DIVU)
+            ALU_result = Ainput / Binput;
+        else if(Jr==1)
+            ALU_result = Ainput;
         else 
             ALU_result = ALU_output_mux;
     end
