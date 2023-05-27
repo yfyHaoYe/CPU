@@ -46,26 +46,6 @@
 `define OP_SRAV             6'b00_0111
 //------------------------------------------------------------------------------//
 
-//---------------------------------Hazard---------------------------------------//
-// signals for the stage registers (hazard_control)
-`define HAZD_CTL_WIDTH      2                   // width of hazard control signal
-`define HAZD_CTL_NORMAL     2'b00               // normal execution state
-`define HAZD_CTL_RETRY      2'b01               // deny values from pervious stage only
-`define HAZD_CTL_NO_OP      2'b11               // deny values from previous stage and no_op the next stage
-// `define HAZD_CTL_RESUME     2'b10               // no hold and do not accept no_op signal from previous stage
-
-// values of issue_type 
-`define ISSUE_TYPE_WIDTH    3
-`define ISSUE_NONE          3'b000
-`define ISSUE_DATA          3'b001
-`define ISSUE_CONTROL       3'b010              // not handled by hazard_unit (determined after negedge with pc_abnormal in if_id_reg)
-`define ISSUE_UART          3'b011              // during uart transmission only
-`define ISSUE_PAUSE         3'b100
-`define ISSUE_VGA           3'b101              // not handled by hazard_unit (as this typically holds only for a few cycles)
-`define ISSUE_KEYPAD        3'b110
-`define ISSUE_FALLTHROUGH   3'b111              // the next instruction address exceeds `PC_MAX_VALUE 
-//------------------------------------------------------------------------------//
-
 //----------------------------------ALU-----------------------------------------//
 `define ALU_CONTROL_WIDTH   6                   // width of alu exe code
 `define ALU_OP_CODE_WIDTH   2
@@ -96,6 +76,11 @@
 `define EXE_XORI            6'b00_1110
 `define EXE_LUI             6'b00_1111
 `define EXE_NO_OP           6'b11_1111
+//new added
+`define EXE_MUL             6'b10_1100
+`define EXE_MULU            6'b10_1101
+`define EXE_DIV             6'b10_1110
+`define EXE_DIVU            6'b10_1111
 //------------------------------------------------------------------------------//
 
 //--------------------------------Forwarding------------------------------------//

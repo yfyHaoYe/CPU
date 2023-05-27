@@ -78,6 +78,16 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
             ALU_Result[31:0]= Binput << 16;
         else if(Sftmd==1)
             ALU_Result = Shift_Result ;
+        else if(Function_opcode==`EXE_MUL)
+            ALU_Result = $signed(Ainput) * $signed(Binput);
+        else if(Function_opcode==`EXE_MULU)
+            ALU_Result = Ainput * Binput;
+        else if(Function_opcode==`EXE_DIV)
+            ALU_Result = $signed(Ainput) / $signed(Binput);
+        else if(Function_opcode==`EXE_DIVU)
+            ALU_Result = Ainput / Binput;
+        else if(Jr==1)
+            ALU_Result = Ainput;
         else 
             ALU_Result = ALU_output_mux;
     end
