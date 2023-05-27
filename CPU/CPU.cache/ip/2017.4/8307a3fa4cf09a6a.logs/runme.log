@@ -1,14 +1,13 @@
-#-----------------------------------------------------------
-# Vivado v2017.4 (64-bit)
-# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
-# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat May 27 22:15:04 2023
-# Process ID: 26456
-# Current directory: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/prgrom_synth_1
-# Command line: vivado.exe -log prgrom.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source prgrom.tcl
-# Log file: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/prgrom_synth_1/prgrom.vds
-# Journal file: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/prgrom_synth_1\vivado.jou
-#-----------------------------------------------------------
+
+*** Running vivado
+    with args -log prgrom.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source prgrom.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
 source prgrom.tcl -notrace
 Command: synth_design -top prgrom -part xc7a35tcsg324-1 -mode out_of_context
 Starting synth_design
@@ -520,9 +519,3 @@ INFO: [Common 17-83] Releasing license: Synthesis
 synth_design completed successfully
 synth_design: Time (s): cpu = 00:02:11 ; elapsed = 00:06:01 . Memory (MB): peak = 784.387 ; gain = 553.934
 INFO: [Common 17-1381] The checkpoint 'C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/prgrom_synth_1/prgrom.dcp' has been generated.
-INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci
-INFO: [Coretcl 2-1174] Renamed 64 cell refs.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/prgrom_synth_1/prgrom.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file prgrom_utilization_synth.rpt -pb prgrom_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 784.387 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat May 27 22:21:13 2023...
