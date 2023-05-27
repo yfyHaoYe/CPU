@@ -30,7 +30,7 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     wire[32:0] Branch_Addr;
 
     assign Ainput = Read_data_1;
-    assign Binput = (ALUSrc == 0) ? Read_data_2 : Sign_extend;
+    assign Binput = (ALUSrc == 0) ? Read_data_2 : Sign_extend << 2;
     assign Exe_code = (I_format==0) ? Function_opcode :{ 3'b000 , Exe_opcode[2:0] };
     assign ALU_ctl[0] = (Exe_code[0] | Exe_code[3]) & ALUOp[1];
     assign ALU_ctl[1] = ((!Exe_code[2]) | (!ALUOp[1]));
