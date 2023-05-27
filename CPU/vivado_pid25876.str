@@ -2206,3 +2206,23 @@ dismissDialog("Re-customize IP"); // N (cj)
 selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Output Clocks", 1); // cY (C, r)
 // Elapsed time: 12 seconds
 dismissDialog("Re-customize IP"); // r (cj)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cj)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bs (cj):  Resetting Runs : addNotify
+// f (cj): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Launch Runs"); // f (cj)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// bs (cj):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date 
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sat May 27 20:29:08 2023] Launched synth_1... Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log [Sat May 27 20:29:08 2023] Launched impl_1... Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bs (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// [GUI Memory]: 168 MB (+2629kb) [116:56:20]
