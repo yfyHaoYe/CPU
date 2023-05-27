@@ -16,6 +16,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -32,13 +33,15 @@ set_property ip_cache_permissions {read write} [current_project]
 add_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/Minisys1Assemblerv2.2/output/prgmip32.coe}}
 add_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/Minisys1Assemblerv2.2/output/dmem32.coe}}
 read_verilog -library xil_defaultlib {
-  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/definitions.v}
+  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v}
+  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ioread.v}
+  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/leds.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/register_file.v}
   {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v}
 }

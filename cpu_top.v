@@ -119,7 +119,7 @@ module cpu_top(
     );
 
 
-    ioRead ir(
+    ioread ir(
         .reset(rst),				// reset, active high
 	    .ior(IORead),				// from Controller, 1 means read from input device
         .switchctrl(SwitchCtrl),			// means the switch is selected as input device 
