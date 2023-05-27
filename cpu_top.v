@@ -7,9 +7,9 @@ module cpu_top(
     // Inputs
     input clk,
     input rst,
-    input [7:0] switch,
+    input [15:0] switch,
     // Outputs
-    output [7:0] led
+    output [15:0] led
     );
 
 
@@ -62,6 +62,7 @@ module cpu_top(
     wire [`ISA_WIDTH - 1 : 0] ALU_result = 32'b0;
     wire [`ISA_WIDTH - 1 : 0] opcplus4 = 32'b0;
     wire [`ISA_WIDTH - 1 : 0] Mem_data = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] r_wdata = 32'b0;
     //Output
     wire [`ISA_WIDTH - 1 : 0] Decoder_Data1 = 32'b0;
     wire [`ISA_WIDTH - 1 : 0] Decoder_Data2 = 32'b0;
@@ -73,7 +74,7 @@ module cpu_top(
         .Instruction(Instruction),
         .opcplus4(link_addr),
         .ALU_result(ALU_result),
-        .mem_data(Mem_data),
+        .mem_data(r_wdata),
         .RegWrite(RegWrite),
         .Jal(Jal),
         .MemtoReg(MemtoReg),
@@ -86,7 +87,6 @@ module cpu_top(
 //Data_mem
     //Input
     wire [`ISA_WIDTH - 1:0] Address;
-    wire Clock;
     //Output
 
     Data_mem dm(
@@ -121,7 +121,6 @@ module cpu_top(
 
 //ALU
     //Input
-
     //Output
 
     ALU alu(
@@ -146,7 +145,6 @@ module cpu_top(
 
 //MemOrIO
     //Input
-    
     //Output
 
     MemOrIO moi(
@@ -156,11 +154,11 @@ module cpu_top(
         .ioWrite(IOWrite),
         .addr_in(ALU_Result), 
         .addr_out(Address),
-        .m_rdata(), 
-        .io_rdata(), 
-        .r_wdata(), 
-        .r_rdata(), 
-        .write_data(), 
+        .m_rdata(mem_data),
+        .io_rdata(switch),
+        .r_wdata(r_wdata),
+        .r_rdata(r_rdata), 
+        .write_data(),
         .LEDCtrl(), 
         .SwitchCtrl()
     );

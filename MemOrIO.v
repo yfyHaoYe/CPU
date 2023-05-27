@@ -29,7 +29,7 @@ module MemOrIO( mRead, mWrite, ioRead, ioWrite,addr_in, addr_out, m_rdata, io_rd
     input[`ISA_WIDTH - 1:0] addr_in; // from alu_result in ALU
     output[`ISA_WIDTH - 1:0] addr_out; // address to Data-Memory
     input[`ISA_WIDTH - 1:0] m_rdata; // data read from Data-Memory
-    input[`ISA_WIDTH - 1:0] io_rdata; // data read from IO,16 bits
+    input[15:0] io_rdata; // data read from IO,16 bits
     output[`ISA_WIDTH - 1:0] r_wdata; // data to Decoder(register file)
     input[`ISA_WIDTH - 1:0] r_rdata; // data read from Decoder(register file)
     output reg[`ISA_WIDTH - 1:0] write_data; // data to memory or I/O（m_wdata, io_wdata）
@@ -44,6 +44,7 @@ module MemOrIO( mRead, mWrite, ioRead, ioWrite,addr_in, addr_out, m_rdata, io_rd
     // Chip select signal of Led and Switch are all active high;
     assign LEDCtrl= ioWrite;
     assign SwitchCtrl= ioRead;
+
     always @* begin
         if((mWrite==1)||(ioWrite==1))
         //wirte_data could go to either memory or IO. where is it from?
