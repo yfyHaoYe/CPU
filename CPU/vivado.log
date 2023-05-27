@@ -201,3 +201,353 @@ INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/H
 Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
 [Sat May 27 20:55:07 2023] Launched impl_1...
 Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+export_ip_user_files -of_objects  [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci}}] -no_script -reset -force -quiet
+remove_files  -fileset prgrom {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci}}
+INFO: [Project 1-386] Moving file 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci' from fileset 'prgrom' to fileset 'sources_1'.
+file delete -force {c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1}
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name prgrom -dir {c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip}
+set_property -dict [list CONFIG.Component_Name {prgrom} CONFIG.Memory_Type {Single_Port_ROM} CONFIG.Write_Width_A {32} CONFIG.Write_Depth_A {32768} CONFIG.Read_Width_A {32} CONFIG.Enable_A {Always_Enabled} CONFIG.Write_Width_B {32} CONFIG.Read_Width_B {32} CONFIG.Register_PortA_Output_of_Memory_Primitives {false} CONFIG.Load_Init_File {true} CONFIG.Coe_File {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Minisys1Assemblerv2.2/output/prgmip32.coe} CONFIG.Fill_Remaining_Memory_Locations {false} CONFIG.Port_A_Write_Rate {0}] [get_ips prgrom]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'prgrom' to 'prgrom' is not allowed and is ignored.
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/Minisys1Assemblerv2.2/output/prgmip32.coe' provided. It will be converted relative to IP Instance files '../../../../../Minisys1Assemblerv2.2/output/prgmip32.coe'
+generate_target {instantiation_template} [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci}}]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'prgrom'...
+generate_target all [get_files  {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci}}]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'prgrom'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'prgrom'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'prgrom'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'prgrom'...
+generate_target: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1374.930 ; gain = 0.000
+catch { config_ip_cache -export [get_ips -all prgrom] }
+export_ip_user_files -of_objects [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci}}] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci}}]
+launch_runs -jobs 4 prgrom_synth_1
+[Sat May 27 22:07:01 2023] Launched prgrom_synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/prgrom_synth_1/runme.log
+export_simulation -of_objects [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci}}] -directory {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.ip_user_files/sim_scripts} -ip_user_files_dir {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.ip_user_files} -ipstatic_source_dir {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.ip_user_files/ipstatic} -lib_map_path [list {modelsim=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/modelsim} {questa=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/questa} {riviera=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/riviera} {activehdl=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.Write_Depth_A {32768} CONFIG.Load_Init_File {true} CONFIG.Coe_File {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Minisys1Assemblerv2.2/output/dmem32.coe}] [get_ips RAM]
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/Minisys1Assemblerv2.2/output/dmem32.coe' provided. It will be converted relative to IP Instance files '../Minisys1Assemblerv2.2/output/dmem32.coe'
+generate_target all [get_files  {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'RAM'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'RAM'...
+generate_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1392.043 ; gain = 0.000
+catch { config_ip_cache -export [get_ips -all RAM] }
+export_ip_user_files -of_objects [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}] -no_script -sync -force -quiet
+reset_run RAM_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/RAM_synth_1
+
+launch_runs -jobs 4 RAM_synth_1
+[Sat May 27 22:09:22 2023] Launched RAM_synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/RAM_synth_1/runme.log
+export_simulation -of_objects [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}] -directory {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.ip_user_files/sim_scripts} -ip_user_files_dir {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.ip_user_files} -ipstatic_source_dir {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.ip_user_files/ipstatic} -lib_map_path [list {modelsim=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/modelsim} {questa=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/questa} {riviera=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/riviera} {activehdl=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+export_ip_user_files -of_objects  [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci}}] -no_script -reset -force -quiet
+remove_files  -fileset prgrom {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci}}
+INFO: [Project 1-386] Moving file 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci' from fileset 'prgrom' to fileset 'sources_1'.
+file delete -force {c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1}
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name prgrom -dir {C:/Users/29266/Desktop/Homework/Computer Organization/CPU}
+set_property -dict [list CONFIG.Component_Name {prgrom} CONFIG.Memory_Type {Single_Port_ROM} CONFIG.Write_Width_A {32} CONFIG.Write_Depth_A {32768} CONFIG.Read_Width_A {32} CONFIG.Enable_A {Always_Enabled} CONFIG.Write_Width_B {32} CONFIG.Read_Width_B {32} CONFIG.Register_PortA_Output_of_Memory_Primitives {false} CONFIG.Load_Init_File {true} CONFIG.Coe_File {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Minisys1Assemblerv2.2/output/prgmip32.coe} CONFIG.Port_A_Write_Rate {0}] [get_ips prgrom]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'prgrom' to 'prgrom' is not allowed and is ignored.
+INFO: [IP_Flow 19-3484] Absolute path of file 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/Minisys1Assemblerv2.2/output/prgmip32.coe' provided. It will be converted relative to IP Instance files '../Minisys1Assemblerv2.2/output/prgmip32.coe'
+generate_target {instantiation_template} [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci}}]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'prgrom'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci}}]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'prgrom'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'prgrom'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'prgrom'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'prgrom'...
+generate_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1398.324 ; gain = 0.000
+catch { config_ip_cache -export [get_ips -all prgrom] }
+export_ip_user_files -of_objects [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci}}] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci}}]
+launch_runs -jobs 4 prgrom_synth_1
+[Sat May 27 22:15:00 2023] Launched prgrom_synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/prgrom_synth_1/runme.log
+export_simulation -of_objects [get_files {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci}}] -directory {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.ip_user_files/sim_scripts} -ip_user_files_dir {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.ip_user_files} -ipstatic_source_dir {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.ip_user_files/ipstatic} -lib_map_path [list {modelsim=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/modelsim} {questa=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/questa} {riviera=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/riviera} {activehdl=C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 22:16:54 2023] Launched prgrom_synth_1, synth_1...
+Run output will be captured here:
+prgrom_synth_1: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/prgrom_synth_1/runme.log
+synth_1: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 22:16:54 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 22:29:23 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 22:29:23 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 22:35:08 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 22:35:08 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 22:42:24 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 22:42:24 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 22:58:32 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 22:58:33 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:04:50 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 23:04:50 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:07:50 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 23:07:50 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:18:11 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 23:18:11 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:20:11 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 23:20:11 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:23:29 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 23:23:29 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:26:01 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 23:26:01 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:28:45 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 23:28:45 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:41:39 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 23:41:39 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:44:01 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 23:44:01 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:47:22 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:54:25 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 23:54:25 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:56:27 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 23:56:27 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sat May 27 23:58:46 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sat May 27 23:58:46 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sun May 28 00:00:55 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sun May 28 00:00:55 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+update_compile_order -fileset sources_1
+reset_run synth_1
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sun May 28 00:05:59 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sun May 28 00:05:59 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sun May 28 00:14:18 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sun May 28 00:14:18 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sun May 28 00:17:29 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sun May 28 00:17:29 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sun May 28 00:21:33 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sun May 28 00:21:34 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sun May 28 00:25:32 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sun May 28 00:25:32 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+WARNING: [Vivado 12-872] Run step 'Design Initialization' is out-of-date.
+[Sun May 28 00:29:21 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sun May 28 00:32:48 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sun May 28 00:32:49 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci' is already up-to-date
+[Sun May 28 00:41:25 2023] Launched synth_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/runme.log
+[Sun May 28 00:41:25 2023] Launched impl_1...
+Run output will be captured here: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/.Xil/Vivado-25876-Yang/dcp96/cpu_top_board.xdc]
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/.Xil/Vivado-25876-Yang/dcp96/cpu_top_board.xdc]
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/.Xil/Vivado-25876-Yang/dcp96/cpu_top_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xdc:57]
+get_clocks: Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 2060.703 ; gain = 516.203
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/.Xil/Vivado-25876-Yang/dcp96/cpu_top_early.xdc]
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/.Xil/Vivado-25876-Yang/dcp96/cpu_top.xdc]
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/.Xil/Vivado-25876-Yang/dcp96/cpu_top.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 2060.723 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 2060.723 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 2165.047 ; gain = 699.852
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:08:27
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 2229.586 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/1234-tulA
+set_property PROGRAM.FILE {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/cpu_top.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/impl_1/cpu_top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+close_design
+add_files -norecurse {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/leds.v} {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ioread.v}}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
