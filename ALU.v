@@ -1,5 +1,4 @@
 `timescale 1ns / 1ps
-`include "definitions.v"
 
 module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
                  Shamt,ALUSrc,I_format,Zero,Jr,Sftmd,ALU_Result,Addr_Result,PC_plus_4
@@ -17,7 +16,7 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     input        Jr;               // 来自控制单元，表明是JR指令
     output       Zero;              // 为1表明计算值为0 
     output reg [31:0] ALU_Result;        // 计算的数据结果
-    output[31:0] Addr_Result;		// 计算的地址结果
+    output[31:0] Addr_Result;		// 计算的地址结果        
     input[31:0]  PC_plus_4;         // 来自取指单元的PC+4
 
     wire [31:0] Ainput;
@@ -28,7 +27,7 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     wire[2:0] Sftm;
     reg [31:0] Shift_Result;
     reg [31:0] ALU_output_mux;
-    reg[32:0] Branch_Addr;
+    wire[32:0] Branch_Addr;
 
     assign Ainput = Read_data_1;
     assign Binput = (ALUSrc == 0) ? Read_data_2 : Sign_extend;
@@ -40,15 +39,15 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     always @(ALU_ctl or Ainput or Binput)
     begin 
         case(ALU_ctl)
-        3'b000: ALU_Result = Ainput & Binput;
-        3'b001: ALU_Result = Ainput | Binput;
-        3'b010: ALU_Result = $signed(Ainput) + $signed(Binput);
-        3'b011: ALU_Result = Ainput + Binput;
-        3'b100: ALU_Result = Ainput ^ Binput;
-        3'b101: ALU_Result = ~(Ainput | Binput);
-        3'b110: ALU_Result = $signed(Ainput) - $signed(Binput);
-        3'b111: ALU_Result = Ainput - Binput;
-        default : ALU_Result = 0;
+        3'b000: ALU_output_mux = Ainput & Binput;
+        3'b001: ALU_output_mux = Ainput | Binput;
+        3'b010: ALU_output_mux = $signed(Ainput) + $signed(Binput);
+        3'b011: ALU_output_mux = Ainput + Binput;
+        3'b100: ALU_output_mux = Ainput ^ Binput;
+        3'b101: ALU_output_mux = ~(Ainput | Binput);
+        3'b110: ALU_output_mux = $signed(Ainput) - $signed(Binput);
+        3'b111: ALU_output_mux = Ainput - Binput;
+        default : ALU_output_mux = 0;
         endcase
     end
 
@@ -84,12 +83,8 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
 
     assign Zero = (ALU_Result==0) ? 1 : 0;
 
-    always @* begin
-        if(Exe_code==3'b110) 
-            Branch_Addr = PC_plus_4 + Sign_extend;
-        else 
-            Branch_Addr = PC_plus_4;
-    end
+    assign Branch_Addr = PC_plus_4 + Sign_extend;
+    assign Addr_Result = Branch_Addr[31:0];
             
 
 
