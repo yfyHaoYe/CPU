@@ -30,6 +30,10 @@ module cpu_top(
     wire Sftmd = 1'b0;
     wire I_format = 1'b0;
     wire [1:0] ALUOp = 1'b0;
+    wire MemRead = 1'b0;
+    wire IORead = 1'b0;
+    wire IOWrite = 1'b0;
+
     Controller ctrl(
         .Opcode(Instruction[31:26]),
         .Function_opcode(Instruction[5:0]),
@@ -45,7 +49,12 @@ module cpu_top(
         .ALUSrc(ALUSrc),
         .Sftmd(Sftmd),
         .I_format(I_format),
-        .ALUOp(ALUOp)
+        .ALUOp(ALUOp),
+        .Alu_resultHigh(ALU_result[21:0]), 
+        .MemorIOtoReg(), 
+        .MemRead(MemRead), 
+        .IORead(IORead), 
+        .IOWrite(IOWrite)
         );
     
 // Decoder
@@ -76,13 +85,14 @@ module cpu_top(
 
 //Data_mem
     //Input
+    wire [`ISA_WIDTH - 1:0] Address;
     wire Clock;
     //Output
 
     Data_mem dm(
         .Clock(clk),
         .MemWrite(MemWrite),
-        .Address(ALU_result),
+        .Address(Address),
         .WriteData(Decoder_Data2),
         .ReadData(Mem_data)
         );
@@ -140,12 +150,12 @@ module cpu_top(
     //Output
 
     MemOrIO moi(
-        .mRead(), 
-        .mWrite(), 
-        .ioRead(), 
-        .ioWrite(),
-        .addr_in(), 
-        .addr_out(), 
+        .mRead(MemRead),
+        .mWrite(MemWrite), 
+        .ioRead(IORead), 
+        .ioWrite(IOWrite),
+        .addr_in(ALU_Result), 
+        .addr_out(Address),
         .m_rdata(), 
         .io_rdata(), 
         .r_wdata(), 

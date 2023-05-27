@@ -66,3 +66,6 @@ file delete -force {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CP
 close [ open {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v} w ]
 add_files {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v}}
 update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
