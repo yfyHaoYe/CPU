@@ -77,8 +77,6 @@ module cpu_top(
 //Data_mem
     //Input
     wire Clock;
-    wire Address;
-    wire WriteData;
     //Output
 
     Data_mem dm(
@@ -134,4 +132,27 @@ module cpu_top(
         .Addr_Result(Addr_result),
         .PC_plus_4(PC_plus_4)
         );
+
+
+//MemOrIO
+    //Input
+    
+    //Output
+
+    MemOrIO moi(
+        .mRead(), 
+        .mWrite(), 
+        .ioRead(), 
+        .ioWrite(),
+        .addr_in(), 
+        .addr_out(), 
+        .m_rdata(), 
+        .io_rdata(), 
+        .r_wdata(), 
+        .r_rdata(), 
+        .write_data(), 
+        .LEDCtrl(), 
+        .SwitchCtrl()
+    );
+
 endmodule
