@@ -23,7 +23,7 @@ module Controller(Opcode, Function_opcode, Jr, RegDST, ALUSrc, MemtoReg, RegWrit
     always @(*) begin
         R_format = (Opcode == `OP_R_FORMAT);
         Lw = (Opcode == `OP_LW);
-
+        
         Jr = (R_format && (Function_opcode == `FUNC_JR));
         Jmp = (Opcode == `OP_JMP);
         Jal = (Opcode == `OP_JAL);

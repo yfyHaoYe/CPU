@@ -43,7 +43,7 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
         case(ALU_ctl)
         3'b000: ALU_Result = Ainput & Binput;
         3'b001: ALU_Result = Ainput | Binput;
-        3'b010: ALU_Result = ALUOp[1] ? $signed(Ainput) + $signed(Binput) : ;
+        3'b010: ALU_Result = ALUOp[1] ? $signed(Ainput) + $signed(Binput) : Binput;
         3'b011: ALU_Result = Ainput + Binput;
         3'b100: ALU_Result = Ainput ^ Binput;
         3'b101: ALU_Result = I_format ? Binput << 16 : ~(Ainput | Binput);
