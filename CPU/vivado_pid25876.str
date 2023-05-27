@@ -1995,3 +1995,4 @@ collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sou
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: DG_ANALYSIS_MSG_RESET
 // TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_GENERATED
