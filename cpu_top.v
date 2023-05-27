@@ -69,7 +69,6 @@ module cpu_top(
     //Input
     wire [`ISA_WIDTH - 1 : 0] ALU_result;
     wire [`ISA_WIDTH - 1 : 0] m_rdata;
-    wire [`ISA_WIDTH - 1 : 0] m_wdata;
     wire [`ISA_WIDTH - 1 : 0] r_wdata;
     wire [`ISA_WIDTH - 1 : 0] link_addr;
     //Output
@@ -103,7 +102,7 @@ module cpu_top(
     wire LEDCtrl;
     wire SwitchCtrl;
 
-    MemOrIO moi( 
+    MemOrIO moi(
         .mRead(MemRead), 
         .mWrite(MemWrite), 
         .ioRead(IORead), 
@@ -112,7 +111,7 @@ module cpu_top(
         .addr_out(Address), 
         .m_rdata(m_rdata), 
         .io_rdata(switches), 
-        .r_wdata(r_wdata), 
+        .r_wdata(r_wdata),
         .r_rdata(Decoder_Data2), 
         .write_data(write_data), 
         .LEDCtrl(LEDCtrl), 
@@ -135,10 +134,10 @@ module cpu_top(
     leds le(
         .ledrst(rst),		// reset, active high 
         .led_clk(clk),	// clk for led 
-        .ledwrite(ioWrite),	// led write enable, active high 
+        .ledwrite(LEDCtrl),	// led write enable, active high 
         .ledcs(ledcs),		// 1 means the leds are selected as output 
         .ledaddr({ledaddr,1'b0}),	// 2'b00 means updata the low 16bits of ledout, 2'b10 means updata the high 8 bits of ledout
-        .ledwdata(io_wdata),	// the data (from register/memorio)  waiting for to be writen to the leds of the board
+        .ledwdata(write_data),	// the data (from register/memorio)  waiting for to be writen to the leds of the board
         .ledout(ledout)
     );
 
@@ -151,9 +150,10 @@ module cpu_top(
         .clock(clk),
         .memWrite(MemWrite),
         .address(Address),
-        .writeData(m_wdata),
+        .writeData(write_data),
         .readData(m_rdata)
         );
+
 
 //IFetch
     //Input

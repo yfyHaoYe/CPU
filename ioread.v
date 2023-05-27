@@ -6,7 +6,7 @@ module ioread (
 	input			ior,				// from Controller, 1 means read from input device
     input			switchctrl,			// means the switch is selected as input device 
     input	[15:0]	ioread_data_switch,	// the data from switch
-    output	reg [15:0]	ioread_data 		// the data to memorio 
+    output	reg [15:0]	ioread_data 	// the data to memorio 
 );
     
     always @* begin
