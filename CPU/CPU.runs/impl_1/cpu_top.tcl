@@ -76,7 +76,7 @@ set rc [catch {
   add_files -quiet {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/cpu_top.dcp}}
   read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.xci}}
   read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}
-  read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci}}
+  read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci}}
   read_xdc {{C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc}}
   link_design -top cpu_top -part xc7a35tcsg324-1
   close_msg_db -file init_design.pb
