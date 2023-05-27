@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="prgrom_synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1685191313">
+<GenRun Id="prgrom_synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1685196899">
   <File Type="PA-TCL" Name="prgrom.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="prgrom_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="prgrom_reports.tcl"/>
@@ -10,7 +10,7 @@
   <File Type="VDS-TIMINGSUMMARY" Name="prgrom_timing_summary_synth.rpt"/>
   <File Type="VDS-TIMING-PB" Name="prgrom_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/prgrom">
-    <File Path="$PSRCDIR/sources_1/ip/prgrom_1/prgrom.xci">
+    <File Path="$PPRDIR/../prgrom/prgrom.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -23,7 +23,7 @@
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/prgrom">
-    <File Path="$PSRCDIR/sources_1/ip/prgrom_1/prgrom.xci">
+    <File Path="$PPRDIR/../prgrom/prgrom.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

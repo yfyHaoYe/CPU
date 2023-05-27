@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../../prgrom/sim/prgrom.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort
