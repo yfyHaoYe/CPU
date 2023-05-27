@@ -1,8 +1,0 @@
-srcscan starts
-INFO: analyzing module cpuclk (VERI-9002)
-INFO: analyzing module cpuclk_clk_wiz (VERI-9002)
-Listing tops:
-VeriTop library:xil_defaultlib mod:cpuclk
-END of tops
-c:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpuclk/cpuclk.v(70): INFO: compiling module cpuclk_default (VERI-1018)
-srcscan exits with return value 0
