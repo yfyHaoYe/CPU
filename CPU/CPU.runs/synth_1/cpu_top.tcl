@@ -48,6 +48,9 @@ set_property used_in_implementation false [get_files -all {{c:/Users/29266/Deskt
 read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci}}
 set_property used_in_implementation false [get_files -all {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM_ooc.xdc}}]
 
+read_ip -quiet {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom.xci}}
+set_property used_in_implementation false [get_files -all {{c:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sources_1/ip/prgrom_1/prgrom_ooc.xdc}}]
+
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
