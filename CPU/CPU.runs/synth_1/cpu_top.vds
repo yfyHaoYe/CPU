@@ -14,3 +14,26 @@ Command: synth_design -top cpu_top -part xc7a35tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 20520 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 343.004 ; gain = 100.992
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'cpu_top' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:6]
+INFO: [Synth 8-638] synthesizing module 'cpuclk' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5792-Yang/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5792-Yang/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'Controller' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:4]
+INFO: [Synth 8-256] done synthesizing module 'Controller' (2#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:4]
+INFO: [Synth 8-638] synthesizing module 'Decoder' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:4]
+ERROR: [Synth 8-439] module 'register_file' not found [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:41]
+ERROR: [Synth 8-285] failed synthesizing module 'Decoder' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:4]
+ERROR: [Synth 8-285] failed synthesizing module 'cpu_top' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:6]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 395.676 ; gain = 153.664
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+8 Infos, 0 Warnings, 0 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sat May 27 20:29:37 2023...
