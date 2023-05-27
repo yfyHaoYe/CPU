@@ -2733,3 +2733,4 @@ selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Op
 // TclEventType: DG_ANALYSIS_MSG_RESET
 // TclEventType: DG_GRAPH_GENERATED
 // HMemoryUtils.trashcanNow. Engine heap size: 882 MB. GUI used memory: 138 MB. Current time: 5/27/23 9:56:09 PM CST
+// TclEventType: FILE_SET_CHANGE
