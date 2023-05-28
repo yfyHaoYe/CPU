@@ -38,8 +38,8 @@ module Controller(Opcode, Function_opcode, Jr, RegDST, ALUSrc, RegWrite, MemWrit
     assign nBranch = (Opcode == `OP_NBRANCH);
     assign RegDST = R_format;
     assign I_format = (Opcode[5:3] == `OP_I_FORMAT);
-    assign MemWrite = (Opcode == `OP_SW);
-    assign ALUSrc = (I_format || Lw || MemWrite);
+    assign MemWrite = Sw;
+    assign ALUSrc = (I_format || Lw || Sw);
     assign ALUOp = {(R_format || I_format) , (Branch || nBranch)};
     assign Sftmd = (((Function_opcode == `OP_SLL)||(Function_opcode == `OP_SLLV)
                 ||(Function_opcode == `OP_SRA)||(Function_opcode == `OP_SRAV)

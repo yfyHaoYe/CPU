@@ -1,6 +1,5 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../../cpuclk" \
-"../../../../../prgrom/sim/prgrom.v" \
 "../../../../../RAM/sim/RAM.v" \
 "../../../../../cpuclk/cpuclk_clk_wiz.v" \
 "../../../../../cpuclk/cpuclk.v" \
