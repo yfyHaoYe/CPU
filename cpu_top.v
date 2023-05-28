@@ -68,7 +68,7 @@ module cpu_top(
     wire [`ISA_WIDTH - 1 : 0] ALU_result;
     wire [`ISA_WIDTH - 1 : 0] MemReadData;
     wire [`ISA_WIDTH - 1 : 0] RegWriteData;
-    wire [`ISA_WIDTH - 1 : 0] link_addr;
+    wire [`ISA_WIDTH - 1 : 0] LinkAddr;
     //Output
     wire [`ISA_WIDTH - 1 : 0] RegReadData1;
     wire [`ISA_WIDTH - 1 : 0] RegReadData2;
@@ -78,7 +78,7 @@ module cpu_top(
         .clock(clk),
         .reset(rst),
         .Instruction(Instruction),
-        .opcplus4(link_addr),
+        .opcplus4(LinkAddr),
         .ALU_result(ALU_result),
         .r_wdata(RegWriteData),
         .RegWrite(RegWrite),
@@ -95,7 +95,7 @@ module cpu_top(
 //MemOrIO
     //Input
     //Output
-    wire [`ISA_WIDTH - 1:0] MemWriteAddress;
+    wire [`ISA_WIDTH - 1:0] MemWriteAddr;
     wire [`ISA_WIDTH - 1:0] MemWriteData;
     wire LEDCtrl;
     wire SwitchCtrl;
@@ -106,7 +106,7 @@ module cpu_top(
         .ioRead(IORead), 
         .ioWrite(IOWrite),
         .addr_in(ALU_result), 
-        .addr_out(MemWriteAddress), 
+        .addr_out(MemWriteAddr), 
         .m_rdata(MemReadData), 
         .io_rdata(switches), 
         .r_wdata(r_wdata),
@@ -147,7 +147,7 @@ module cpu_top(
     Data_mem dm(
         .clock(clk),
         .memWrite(MemWrite),
-        .address(MemWriteAddress),
+        .address(MemWriteAddr),
         .writeData(MemWriteData),
         .readData(MemReadData)
         );
@@ -157,7 +157,7 @@ module cpu_top(
     //Input
     wire Zero;
     //Output
-    wire branch_base_addr;
+    wire BranchBaseAddr;
 
     IFetch ife(
         .clock(clk),
@@ -171,8 +171,8 @@ module cpu_top(
         .Jal(Jal),
         .Jr(Jr),
         .Instruction(Instruction),
-        .branch_base_addr(branch_base_addr),
-        .link_addr(link_addr)
+        .branch_base_addr(BranchBaseAddr),
+        .link_addr(LinkAddr)
         );
 
 //ALU
@@ -186,7 +186,7 @@ module cpu_top(
         .Exe_opcode(Exe_opcode),
         .Function_opcode(Function_opcode),
         .Shamt(Shamt),
-        .PC_plus_4(branch_base_addr),
+        .PC_plus_4(BranchBaseAddr),
         .ALUOp(ALUOp),
         .ALUSrc(ALUSrc),
         .I_format(I_format),
