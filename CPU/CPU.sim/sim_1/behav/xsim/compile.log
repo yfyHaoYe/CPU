@@ -1,0 +1,22 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/CS202/project/CPU/RAM/sim/RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/CS202/project/CPU/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/CS202/project/CPU/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/CS202/project/CPU/Data_Mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/CS202/project/CPU/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/CS202/project/CPU/IFetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IFetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/CS202/project/CPU/cpu_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_top
+INFO: [VRFC 10-2458] undeclared symbol link_addr, assumed default net type wire [E:/CS202/project/CPU/cpu_top.v:65]
+INFO: [VRFC 10-2458] undeclared symbol Exe_opcode, assumed default net type wire [E:/CS202/project/CPU/cpu_top.v:123]
+INFO: [VRFC 10-2458] undeclared symbol Function_opcode, assumed default net type wire [E:/CS202/project/CPU/cpu_top.v:124]
+INFO: [VRFC 10-2458] undeclared symbol Shamt, assumed default net type wire [E:/CS202/project/CPU/cpu_top.v:125]
+INFO: [VRFC 10-2458] undeclared symbol Addr_result, assumed default net type wire [E:/CS202/project/CPU/cpu_top.v:134]
+INFO: [VRFC 10-2458] undeclared symbol PC_plus_4, assumed default net type wire [E:/CS202/project/CPU/cpu_top.v:135]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/CS202/project/CPU/CPU/CPU.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

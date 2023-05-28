@@ -1,0 +1,13 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+E:/CS202/project/CPU/ALU.v,1685153295,verilog,,E:/CS202/project/CPU/Controller.v,E:/CS202/project/CPU/definitions.v,ALU,,,../../../../../cpuclk,,,,,
+E:/CS202/project/CPU/CPU/CPU.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
+E:/CS202/project/CPU/Controller.v,1685066837,verilog,,E:/CS202/project/CPU/Data_Mem.v,E:/CS202/project/CPU/definitions.v,Controller,,,../../../../../cpuclk,,,,,
+E:/CS202/project/CPU/Data_Mem.v,1685066837,verilog,,E:/CS202/project/CPU/Decoder.v,E:/CS202/project/CPU/definitions.v,Data_mem,,,../../../../../cpuclk,,,,,
+E:/CS202/project/CPU/Decoder.v,1685081585,verilog,,E:/CS202/project/CPU/IFetch.v,E:/CS202/project/CPU/definitions.v,Decoder,,,../../../../../cpuclk,,,,,
+E:/CS202/project/CPU/IFetch.v,1685066837,verilog,,E:/CS202/project/CPU/cpu_top.v,E:/CS202/project/CPU/definitions.v,IFetch,,,../../../../../cpuclk,,,,,
+E:/CS202/project/CPU/RAM/sim/RAM.v,1685066837,verilog,,E:/CS202/project/CPU/ALU.v,,RAM,,,../../../../../cpuclk,,,,,
+E:/CS202/project/CPU/cpu_top.v,1685066837,verilog,,,E:/CS202/project/CPU/definitions.v,cpu_top,,,../../../../../cpuclk,,,,,
+E:/CS202/project/CPU/definitions.v,1685066837,verilog,,,,,,,,,,,,

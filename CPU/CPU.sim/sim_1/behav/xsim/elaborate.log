@@ -1,0 +1,11 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: E:/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 4f857e32a51c428fbb4c7b1dcbaa318e --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_1 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_top_behav xil_defaultlib.cpu_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-426] cannot find port RegDST on this module [E:/CS202/project/CPU/cpu_top.v:71]
+ERROR: [VRFC 10-2063] Module <register_file> not found while processing module instance <registers> [E:/CS202/project/CPU/Decoder.v:41]
+ERROR: [VRFC 10-2063] Module <Data_mem> not found while processing module instance <dm> [E:/CS202/project/CPU/cpu_top.v:84]
+ERROR: [VRFC 10-2063] Module <IFetch> not found while processing module instance <ife> [E:/CS202/project/CPU/cpu_top.v:98]
+ERROR: [VRFC 10-2063] Module <ALU> not found while processing module instance <alu> [E:/CS202/project/CPU/cpu_top.v:119]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
