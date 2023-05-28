@@ -24,6 +24,7 @@ module leds (
         end else begin
             ledout <= ledout;
         end
+        
     end
 	
 endmodule

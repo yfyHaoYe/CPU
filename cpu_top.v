@@ -7,7 +7,6 @@ module cpu_top(
     // Inputs
     input clock,
     input rst,
-    input ledcs,
     input [15:0] switches,
     // Outputs
     output [15:0] ledss
@@ -30,13 +29,13 @@ module cpu_top(
     wire Branch = 1'b0;
     wire nBranch = 1'b0;
     wire RegDST = 1'b0;
-    wire MemtoReg = 1'b0;
     wire RegWrite = 1'b0;
     wire MemWrite = 1'b0;
     wire ALUSrc = 1'b0;
     wire Sftmd = 1'b0;
     wire I_format = 1'b0;
     wire [1:0] ALUOp = 1'b0;
+    wire MemorIOtoReg = 1'b0;
     wire MemRead = 1'b0;
     wire IORead = 1'b0;
     wire IOWrite = 1'b0;
@@ -51,7 +50,6 @@ module cpu_top(
         .Branch(Branch),
         .nBranch(nBranch),
         .RegDST(RegDST),
-        .MemtoReg(MemtoReg),
         .RegWrite(RegWrite),
         .MemWrite(MemWrite),
         .ALUSrc(ALUSrc),
@@ -59,7 +57,7 @@ module cpu_top(
         .I_format(I_format),
         .ALUOp(ALUOp),
         .Alu_resultHigh(ALU_result[21:0]), 
-        .MemorIOtoReg(), 
+        .MemorIOtoReg(MemorIOtoReg), 
         .MemRead(MemRead), 
         .IORead(IORead), 
         .IOWrite(IOWrite)
@@ -68,12 +66,12 @@ module cpu_top(
 // Decoder
     //Input
     wire [`ISA_WIDTH - 1 : 0] ALU_result;
-    wire [`ISA_WIDTH - 1 : 0] m_rdata;
-    wire [`ISA_WIDTH - 1 : 0] r_wdata;
+    wire [`ISA_WIDTH - 1 : 0] MemReadData;
+    wire [`ISA_WIDTH - 1 : 0] RegWriteData;
     wire [`ISA_WIDTH - 1 : 0] link_addr;
     //Output
-    wire [`ISA_WIDTH - 1 : 0] Decoder_Data1;
-    wire [`ISA_WIDTH - 1 : 0] Decoder_Data2;
+    wire [`ISA_WIDTH - 1 : 0] RegReadData1;
+    wire [`ISA_WIDTH - 1 : 0] RegReadData2;
     wire [`ISA_WIDTH - 1 : 0] Sign_extend;
 
     Decoder de(
@@ -82,13 +80,13 @@ module cpu_top(
         .Instruction(Instruction),
         .opcplus4(link_addr),
         .ALU_result(ALU_result),
-        .r_wdata(r_wdata),
+        .r_wdata(RegWriteData),
         .RegWrite(RegWrite),
         .Jal(Jal),
-        .MemtoReg(MemtoReg),
+        .MemtoReg(MemorIOtoReg),
         .RegDst(RegDST),
-        .read_data_1(Decoder_Data1),
-        .read_data_2(Decoder_Data2),
+        .read_data_1(RegReadData1),
+        .read_data_2(RegReadData2),
         .Sign_extend(Sign_extend)
         );
 
@@ -97,8 +95,8 @@ module cpu_top(
 //MemOrIO
     //Input
     //Output
-    wire [`ISA_WIDTH - 1:0] Address;
-    wire [31:0] write_data;
+    wire [`ISA_WIDTH - 1:0] MemWriteAddress;
+    wire [`ISA_WIDTH - 1:0] MemWriteData;
     wire LEDCtrl;
     wire SwitchCtrl;
 
@@ -108,12 +106,12 @@ module cpu_top(
         .ioRead(IORead), 
         .ioWrite(IOWrite),
         .addr_in(ALU_result), 
-        .addr_out(Address), 
-        .m_rdata(m_rdata), 
+        .addr_out(MemWriteAddress), 
+        .m_rdata(MemReadData), 
         .io_rdata(switches), 
         .r_wdata(r_wdata),
-        .r_rdata(Decoder_Data2), 
-        .write_data(write_data), 
+        .r_rdata(RegReadData2), 
+        .write_data(MemWriteData), 
         .LEDCtrl(LEDCtrl), 
         .SwitchCtrl(SwitchCtrl)
     );
@@ -128,8 +126,8 @@ module cpu_top(
     );
 
 
-    wire ledaddr;
-    wire [23:0] ledout;
+    wire ledaddr = 1'b0;
+    wire ledcs = 1'b0;
 
     leds le(
         .ledrst(rst),		// reset, active high 
@@ -137,8 +135,8 @@ module cpu_top(
         .ledwrite(LEDCtrl),	// led write enable, active high 
         .ledcs(ledcs),		// 1 means the leds are selected as output 
         .ledaddr({ledaddr,1'b0}),	// 2'b00 means updata the low 16bits of ledout, 2'b10 means updata the high 8 bits of ledout
-        .ledwdata(write_data),	// the data (from register/memorio)  waiting for to be writen to the leds of the board
-        .ledout(ledout)
+        .ledwdata(MemWriteData),	// the data (from register/memorio)  waiting for to be writen to the leds of the board
+        .ledout(ledss)
     );
 
 
@@ -149,9 +147,9 @@ module cpu_top(
     Data_mem dm(
         .clock(clk),
         .memWrite(MemWrite),
-        .address(Address),
-        .writeData(write_data),
-        .readData(m_rdata)
+        .address(MemWriteAddress),
+        .writeData(MemWriteData),
+        .readData(MemReadData)
         );
 
 
@@ -166,7 +164,7 @@ module cpu_top(
         .reset(rst),
         .Addr_result(Addr_result),
         .Zero(Zero),
-        .Read_data_1(Decoder_Data1),
+        .Read_data_1(RegReadData1),
         .Branch(Branch),
         .nBranch(nBranch),
         .Jmp(Jmp),
@@ -182,8 +180,8 @@ module cpu_top(
     //Output
 
     ALU alu(
-        .Read_data_1(Decoder_Data1),
-        .Read_data_2(Decoder_Data2),
+        .Read_data_1(RegReadData1),
+        .Read_data_2(RegReadData2),
         .Sign_extend(Sign_extend),
         .Exe_opcode(Exe_opcode),
         .Function_opcode(Function_opcode),
