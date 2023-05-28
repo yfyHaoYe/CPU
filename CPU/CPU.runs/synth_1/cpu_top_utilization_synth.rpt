@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Sat May 27 23:44:50 2023
+| Date         : Sun May 28 04:03:35 2023
 | Host         : Yang running 64-bit major release  (build 9200)
 | Command      : report_utilization -file cpu_top_utilization_synth.rpt -pb cpu_top_utilization_synth.pb
 | Design       : cpu_top
@@ -146,9 +146,9 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     |   16 |                  IO |
+| OBUFT    |   16 |                  IO |
 | FDRE     |   15 |        Flop & Latch |
-| CARRY4   |    4 |          CarryLogic |
+| CARRY4   |    8 |          CarryLogic |
 | LUT1     |    2 |                 LUT |
 | LUT2     |    1 |                 LUT |
 | IBUF     |    1 |                  IO |

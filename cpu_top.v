@@ -7,9 +7,10 @@ module cpu_top(
     // Inputs
     input clock,
     input rst,
+    input ledcs,
     input [15:0] switches,
     // Outputs
-    output [15:0] leds
+    output [15:0] ledss
     );
 
     wire clk;
@@ -66,13 +67,13 @@ module cpu_top(
     
 // Decoder
     //Input
-    wire [`ISA_WIDTH - 1 : 0] ALU_result = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] m_rdata = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] r_wdata = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] link_addr = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] ALU_result;
+    wire [`ISA_WIDTH - 1 : 0] m_rdata;
+    wire [`ISA_WIDTH - 1 : 0] r_wdata;
+    wire [`ISA_WIDTH - 1 : 0] link_addr;
     //Output
-    wire [`ISA_WIDTH - 1 : 0] Decoder_Data1 = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] Decoder_Data2 = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] Decoder_Data1;
+    wire [`ISA_WIDTH - 1 : 0] Decoder_Data2;
     wire [`ISA_WIDTH - 1 : 0] Sign_extend;
 
     Decoder de(
@@ -91,19 +92,68 @@ module cpu_top(
         .Sign_extend(Sign_extend)
         );
 
+
+
+//MemOrIO
+    //Input
+    //Output
+    wire [`ISA_WIDTH - 1:0] Address;
+    wire [31:0] write_data;
+    wire LEDCtrl;
+    wire SwitchCtrl;
+
+    MemOrIO moi(
+        .mRead(MemRead), 
+        .mWrite(MemWrite), 
+        .ioRead(IORead), 
+        .ioWrite(IOWrite),
+        .addr_in(ALU_result), 
+        .addr_out(Address), 
+        .m_rdata(m_rdata), 
+        .io_rdata(switches), 
+        .r_wdata(r_wdata),
+        .r_rdata(Decoder_Data2), 
+        .write_data(write_data), 
+        .LEDCtrl(LEDCtrl), 
+        .SwitchCtrl(SwitchCtrl)
+    );
+
+
+    ioread ir(
+        .reset(rst),				// reset, active high
+	    .ior(IORead),				// from Controller, 1 means read from input device
+        .switchctrl(SwitchCtrl),			// means the switch is selected as input device 
+        .ioread_data_switch(switches),	// the data from switch
+        .ioread_data(io_rdata)      	// the data to memorio 
+    );
+
+
+    wire ledaddr;
+    wire [23:0] ledout;
+
+    leds le(
+        .ledrst(rst),		// reset, active high 
+        .led_clk(clk),	// clk for led 
+        .ledwrite(LEDCtrl),	// led write enable, active high 
+        .ledcs(ledcs),		// 1 means the leds are selected as output 
+        .ledaddr({ledaddr,1'b0}),	// 2'b00 means updata the low 16bits of ledout, 2'b10 means updata the high 8 bits of ledout
+        .ledwdata(write_data),	// the data (from register/memorio)  waiting for to be writen to the leds of the board
+        .ledout(ledout)
+    );
+
+
 //Data_mem
     //Input
-    wire [`ISA_WIDTH - 1:0] Address;
-    wire [`ISA_WIDTH - 1:0] m_wdata;
     //Output
 
     Data_mem dm(
         .clock(clk),
         .memWrite(MemWrite),
         .address(Address),
-        .writeData(m_wdata),
+        .writeData(write_data),
         .readData(m_rdata)
         );
+
 
 //IFetch
     //Input
@@ -114,7 +164,7 @@ module cpu_top(
     IFetch ife(
         .clock(clk),
         .reset(rst),
-        .Addr_result(),
+        .Addr_result(Addr_result),
         .Zero(Zero),
         .Read_data_1(Decoder_Data1),
         .Branch(Branch),
@@ -144,29 +194,11 @@ module cpu_top(
         .I_format(I_format),
         .Sftmd(Sftmd),
         .Jr(Jr),
-        .ALU_Result(ALU_result),
+        .ALU_result(ALU_result),
         .Zero(Zero),
-        .Addr_Result(Addr_result)
+        .Addr_result(Addr_result)
         );
 
 
-//MemOrIO
-    //Input
-    //Output
-
-    MemOrIO moi(
-        .mRead(MemRead),
-        .mWrite(MemWrite), 
-        .ioRead(IORead), 
-        .ioWrite(IOWrite),
-        .addr_in(ALU_Result), 
-        .addr_out(Address),
-        .m_rdata(m_rdata),
-        .m_wdata(),//m_wdata),
-        .io_rdata(switches),
-        .io_wdata(leds),
-        .r_wdata(r_wdata),
-        .r_rdata(Decoder_Data2)
-    );
 
 endmodule
