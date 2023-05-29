@@ -19,8 +19,10 @@ module IFetch(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBranc
     input        clock,reset;           // Clock and reset (Synchronous reset signal, high level is effective, when reset=1, PC value is 0)
     reg[`ISA_WIDTH - 1:0] PC, Next_PC;
 
-    always @* begin
-        if(((Branch == 1) && (Zero == 1 )) || ((nBranch == 1) && (Zero == 0))) begin// beq, bne
+always @* begin
+        if(reset == 1)
+            PC = 32'h0000_0000;
+        else if(((Branch == 1) && (Zero == 1 )) || ((nBranch == 1) && (Zero == 0))) begin// beq, bne
             branch_base_addr = PC + 4;
             Next_PC = Addr_result; // the calculated new value for PC
         end
@@ -28,20 +30,17 @@ module IFetch(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBranc
             Next_PC = Read_data_1; // the value of $31 register
         else Next_PC = PC + 4; // PC+4
     end
+
     always @(posedge clock) begin
-        if(reset == 1)
-            PC <= 32'h0000_0000;
-        else begin
-            if((Jmp == 1) || (Jal == 1)) begin
-                PC <= {
-                        PC[`ISA_WIDTH - 1:`ADDRESS_WIDTH + 2],
-                        Instruction[`ADDRESS_WIDTH - 1:0], 
-                        2'b00
-                    };
-                link_addr <= PC + 4; 
-            end
-            else PC <= Next_PC;
+        if((Jmp == 1) || (Jal == 1)) begin
+            PC <= {
+                    PC[31:28],
+                    Instruction[25:0], 
+                    2'b00
+                };
+            link_addr <= PC + 4; 
         end
+        else PC <= Next_PC;    
     end
 
     prgrom instmem(
