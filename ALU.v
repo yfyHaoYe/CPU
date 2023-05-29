@@ -60,8 +60,8 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
             3'b010: Shift_Result = Binput >> Shamt;
             3'b100: Shift_Result = Binput << Ainput;
             3'b110: Shift_Result = Binput >> Ainput;
-            3'b011: Shift_Result = Binput >>> Shamt;
-            3'b111: Shift_Result = Binput >>> Ainput;
+            3'b011: Shift_Result = $signed(Binput) >>> Shamt;
+            3'b111: Shift_Result = $signed(Binput) >>> Ainput;
             default : Shift_Result = Binput;
             endcase
         end
@@ -71,7 +71,7 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
 
     always @* begin
         if( (Exe_opcode==`EXE_SLTI) || (Function_opcode==`EXE_SLT)) 
-            ALU_result = ($signed(Ainput)-$signed(Binput)<0) ? 1 : 0;
+            ALU_result = ($signed(Ainput)-$signed(Binput)<$signed(0)) ? 1 : 0;
         else if( (Exe_opcode==`EXE_SLTIU) || (Function_opcode==`EXE_SLTU)) 
             ALU_result = (Ainput-Binput<0) ? 1 : 0;
         else if((ALU_ctl==3'b101) && (I_format==1)) 
@@ -94,9 +94,10 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
 
     assign Zero = (ALU_result==0) ? 1 : 0;
 
-    assign Branch_Addr = PC_plus_4 + ( Sign_extend << 2);
+    assign Branch_Addr = $signed(PC_plus_4) + ( $signed(Sign_extend) << $signed(2));
     assign Addr_result = Branch_Addr[31:0];
             
 
 
 endmodule
+
