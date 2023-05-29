@@ -1,0 +1,979 @@
+
+*** Running vivado
+    with args -log cpu_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_top.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source cpu_top.tcl -notrace
+Command: synth_design -top cpu_top -part xc7a35tcsg324-1
+Starting synth_design
+WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
+C:/Users/29266/Desktop/Homework/Computer Organization/CPU/RAM/RAM.xci
+C:/Users/29266/Desktop/Homework/Computer Organization/CPU/prgrom/prgrom.xci
+
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 3940 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 343.496 ; gain = 101.383
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'cpu_top' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:6]
+INFO: [Synth 8-638] synthesizing module 'cpuclk' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'Controller' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:4]
+INFO: [Synth 8-256] done synthesizing module 'Controller' (2#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:4]
+INFO: [Synth 8-638] synthesizing module 'Decoder' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:4]
+INFO: [Synth 8-638] synthesizing module 'register_file' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/register_file.v:14]
+INFO: [Synth 8-256] done synthesizing module 'register_file' (3#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/register_file.v:14]
+INFO: [Synth 8-256] done synthesizing module 'Decoder' (4#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Decoder.v:4]
+INFO: [Synth 8-638] synthesizing module 'MemOrIO' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v:53]
+WARNING: [Synth 8-3848] Net r_wdata in module/entity MemOrIO does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v:62]
+INFO: [Synth 8-256] done synthesizing module 'MemOrIO' (5#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v:53]
+WARNING: [Synth 8-689] width (1) of port connection 'r_wdata' does not match port width (32) of module 'MemOrIO' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:112]
+INFO: [Synth 8-638] synthesizing module 'ioread' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ioread.v:4]
+INFO: [Synth 8-256] done synthesizing module 'ioread' (6#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ioread.v:4]
+WARNING: [Synth 8-689] width (1) of port connection 'ioread_data' does not match port width (16) of module 'ioread' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:125]
+INFO: [Synth 8-638] synthesizing module 'leds' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/leds.v:4]
+INFO: [Synth 8-256] done synthesizing module 'leds' (7#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/leds.v:4]
+WARNING: [Synth 8-689] width (32) of port connection 'ledwdata' does not match port width (16) of module 'leds' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:138]
+WARNING: [Synth 8-689] width (16) of port connection 'ledout' does not match port width (24) of module 'leds' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:139]
+INFO: [Synth 8-638] synthesizing module 'Data_mem' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v:4]
+INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/realtime/RAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'RAM' (8#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/realtime/RAM_stub.v:6]
+WARNING: [Synth 8-689] width (14) of port connection 'addra' does not match port width (15) of module 'RAM' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v:16]
+INFO: [Synth 8-256] done synthesizing module 'Data_mem' (9#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v:4]
+INFO: [Synth 8-638] synthesizing module 'IFetch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:5]
+INFO: [Synth 8-638] synthesizing module 'prgrom' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/realtime/prgrom_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'prgrom' (10#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/realtime/prgrom_stub.v:6]
+WARNING: [Synth 8-689] width (14) of port connection 'addra' does not match port width (15) of module 'prgrom' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:50]
+INFO: [Synth 8-256] done synthesizing module 'IFetch' (11#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:5]
+WARNING: [Synth 8-689] width (1) of port connection 'Addr_result' does not match port width (32) of module 'IFetch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:165]
+WARNING: [Synth 8-689] width (1) of port connection 'branch_base_addr' does not match port width (32) of module 'IFetch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:174]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v:4]
+INFO: [Synth 8-226] default block is never used [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v:42]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (12#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v:4]
+WARNING: [Synth 8-689] width (1) of port connection 'Exe_opcode' does not match port width (6) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:186]
+WARNING: [Synth 8-689] width (1) of port connection 'Function_opcode' does not match port width (6) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:187]
+WARNING: [Synth 8-689] width (1) of port connection 'Shamt' does not match port width (5) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:188]
+WARNING: [Synth 8-689] width (1) of port connection 'PC_plus_4' does not match port width (32) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:189]
+WARNING: [Synth 8-689] width (1) of port connection 'Addr_result' does not match port width (32) of module 'ALU' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:197]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net mRead with 1st driver pin 'cpu_top:/ctrl/MemRead' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:103]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net mRead with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:103]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net mRead is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:103]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net mWrite with 1st driver pin 'cpu_top:/ctrl/MemWrite' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:103]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net mWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:103]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net mWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:103]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ioRead with 1st driver pin 'cpu_top:/ctrl/IORead' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:103]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ioRead with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:103]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ioRead is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:103]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ioWrite with 1st driver pin 'cpu_top:/ctrl/IOWrite' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:103]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ioWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:103]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ioWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:103]
+WARNING: [Synth 8-3848] Net Function_opcode in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:187]
+WARNING: [Synth 8-3848] Net Exe_opcode in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:186]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUOp[0] with 1st driver pin 'cpu_top:/ctrl/ALUOp[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUOp[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ALUOp[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+WARNING: [Synth 8-3848] Net Shamt in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:188]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUSrc with 1st driver pin 'cpu_top:/ctrl/ALUSrc' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUSrc with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ALUSrc is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net I_format with 1st driver pin 'cpu_top:/ctrl/I_format' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net I_format with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net I_format is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jr with 1st driver pin 'cpu_top:/ctrl/Jr' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jr with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jr is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Sftmd with 1st driver pin 'cpu_top:/ctrl/Sftmd' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Sftmd with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Sftmd is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net memWrite with 1st driver pin 'cpu_top:/ctrl/MemWrite' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:147]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net memWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:147]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net memWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:147]
+WARNING: [Synth 8-3848] Net RegWriteData in module/entity cpu_top does not have driver. [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:70]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jal with 1st driver pin 'cpu_top:/ctrl/Jal' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jal with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jal is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net RegWrite with 1st driver pin 'cpu_top:/ctrl/RegWrite' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net RegWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net RegWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net MemtoReg with 1st driver pin 'cpu_top:/ctrl/MemorIOtoReg' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net MemtoReg with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net MemtoReg is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net RegDst with 1st driver pin 'cpu_top:/ctrl/RegDST' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net RegDst with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net RegDst is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Branch with 1st driver pin 'cpu_top:/ctrl/Branch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Branch with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Branch is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net nBranch with 1st driver pin 'cpu_top:/ctrl/nBranch' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net nBranch with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net nBranch is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jmp with 1st driver pin 'cpu_top:/ctrl/Jmp' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jmp with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jmp is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jal with 1st driver pin 'cpu_top:/ctrl/Jal' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jal with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jal is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jr with 1st driver pin 'cpu_top:/ctrl/Jr' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jr with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jr is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:162]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ior with 1st driver pin 'cpu_top:/ctrl/IORead' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:120]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ior with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:120]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ior is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:120]
+INFO: [Synth 8-256] done synthesizing module 'cpu_top' (13#1) [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:6]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[31]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[30]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[29]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[28]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[27]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[26]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[25]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[24]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[23]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[22]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[21]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[20]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[19]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[18]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[17]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[16]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[15]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[14]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[13]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[12]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[11]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[10]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[9]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[8]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[7]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[6]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[5]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[4]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[3]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[2]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[1]
+WARNING: [Synth 8-3331] design IFetch has unconnected port Addr_result[0]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[31]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[30]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[29]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[28]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[27]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[26]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[25]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[24]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[23]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[22]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[21]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[20]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[19]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[18]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[17]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[16]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[1]
+WARNING: [Synth 8-3331] design Data_mem has unconnected port address[0]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[31]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[30]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[29]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[28]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[27]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[26]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[25]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[24]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[23]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[22]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[21]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[20]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[19]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[18]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[17]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[16]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[15]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[14]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[13]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[12]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[11]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[10]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[9]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[8]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[7]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[6]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[5]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[4]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[3]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[2]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[1]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_wdata[0]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port mRead
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[15]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[14]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[13]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[12]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[11]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[10]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[9]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[8]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[7]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[6]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[5]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[4]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[3]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[2]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[1]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port io_rdata[0]
+WARNING: [Synth 8-3331] design MemOrIO has unconnected port r_rdata[31]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 395.797 ; gain = 153.684
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[31] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[30] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[29] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[28] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[27] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[26] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[25] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[24] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[23] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[22] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[21] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[20] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[19] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[18] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[17] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[16] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[15] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[14] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[13] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[12] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[11] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[10] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[9] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[8] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[7] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[6] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[5] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[4] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[3] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[2] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[1] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin de:r_wdata[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:77]
+WARNING: [Synth 8-3295] tying undriven pin alu:Function_opcode[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+WARNING: [Synth 8-3295] tying undriven pin alu:Exe_opcode[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+WARNING: [Synth 8-3295] tying undriven pin alu:Shamt[0] to constant 0 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:182]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 395.797 ; gain = 153.684
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/dcp3/cpuclk_in_context.xdc] for cell 'cclk'
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/dcp4/RAM_in_context.xdc] for cell 'dm/ram'
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/dcp5/prgrom_in_context.xdc] for cell 'ife/instmem'
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc]
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/constrains.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cpu_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/cpu_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 739.711 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:34 . Memory (MB): peak = 739.711 ; gain = 497.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:34 . Memory (MB): peak = 739.711 ; gain = 497.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/dcp3/cpuclk_in_context.xdc}, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clock. (constraint file  {C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/.Xil/Vivado-5996-Yang/dcp3/cpuclk_in_context.xdc}, line 4).
+Applied set_property DONT_TOUCH = true for cclk. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for dm/ram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for ife/instmem. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:34 . Memory (MB): peak = 739.711 ; gain = 497.598
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "registers_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "registers_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v:42]
+INFO: [Synth 8-5545] ROM "Zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "ALU_result0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'ioread_data_reg' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ioread.v:14]
+WARNING: [Synth 8-327] inferring latch for variable 'branch_base_addr_reg' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/IFetch.v:24]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:34 . Memory (MB): peak = 739.711 ; gain = 497.598
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 6     
+	   3 Input     32 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               24 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
++---Multipliers : 
+	                32x32  Multipliers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 15    
+	   8 Input     32 Bit        Muxes := 2     
+	   4 Input     32 Bit        Muxes := 1     
+	   4 Input     24 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 31    
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module register_file 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 31    
+	   3 Input      1 Bit        Muxes := 1     
+Module Decoder 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      5 Bit        Muxes := 1     
+Module leds 
+Detailed RTL Component Info : 
++---Registers : 
+	               24 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     24 Bit        Muxes := 1     
+Module IFetch 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input      2 Bit        Muxes := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 4     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Multipliers : 
+	                32x32  Multipliers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 6     
+	   8 Input     32 Bit        Muxes := 2     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "Zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v:84]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v:82]
+DSP Report: Generating DSP ALU_result0, operation Mode is: A*B.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: Generating DSP ALU_result0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: Generating DSP ALU_result0, operation Mode is: A*B.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: Generating DSP ALU_result0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: Generating DSP ALU_result0, operation Mode is: A*B.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: Generating DSP ALU_result0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: Generating DSP ALU_result0, operation Mode is: A*B.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: Generating DSP ALU_result0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+DSP Report: operator ALU_result0 is absorbed into DSP ALU_result0.
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[30]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[22]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[26]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[18]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[28]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[20]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[24]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[16]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[29]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[21]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[25]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[17]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[27]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[19]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[23]' (FD) to 'de/Sign_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'de/Sign_extend_reg[31]' (FD) to 'de/Sign_extend_reg[15]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[31][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[30][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[29][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[28][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[27][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[26][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[25][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[24][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[23][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[22][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[21][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[20][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[19][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[18][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[17][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[16][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[15][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[14][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[13][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[12][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[11][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[10][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[9][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[8][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[7][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[6][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[5][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[4][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[3][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[2][31]' (FDCE_1) to 'de/registers/registers_reg[1][31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][31] )
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[0][31]' (FDCE_1) to 'de/registers/registers_reg[0][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[31][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[30][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[29][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[28][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[27][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[26][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[25][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[24][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[23][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[22][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[21][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[20][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[19][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[18][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[17][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[16][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[15][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[14][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[13][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[12][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[11][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[10][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[9][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[8][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[7][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[6][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[5][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[4][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[3][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[2][30]' (FDCE_1) to 'de/registers/registers_reg[1][30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][30] )
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[0][30]' (FDCE_1) to 'de/registers/registers_reg[0][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[31][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[30][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[29][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[28][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[27][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[26][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[25][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[24][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[23][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[22][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[21][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[20][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[19][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[18][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[17][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[16][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[15][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[14][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[13][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[12][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[11][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Synth 8-3886] merging instance 'de/registers/registers_reg[10][29]' (FDCE_1) to 'de/registers/registers_reg[1][29]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[1][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\de/registers/registers_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\le/ledout_reg[15] )
+CRITICAL WARNING: [Synth 8-3352] multi-driven net nBranch with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[6]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net nBranch with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net nBranch is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Branch with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[5]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Branch with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Branch is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jal with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[4]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jal with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jal is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jmp with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[3]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jmp with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jmp is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[2] with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[2]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[2] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Opcode0_out[2] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[1] with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[1]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[1] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Opcode0_out[1] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[0] with 1st driver pin 'ctrl/Opcode_inferred/Opcode0_out[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Opcode0_out[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Opcode0_out[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:30]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jr with 1st driver pin 'ctrl/Jr_inferred/Jr' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:34]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Jr with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:34]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Jr is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:34]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net I_format with 1st driver pin 'ctrl/I_format_inferred/I_format' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:40]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net I_format with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:40]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net I_format is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:40]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUSrc with 1st driver pin 'ctrl/ALUSrc_inferred/ALUSrc' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:42]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUSrc with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:42]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ALUSrc is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:42]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net RegWrite with 1st driver pin 'ctrl/RegWrite_inferred/RegWrite' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:42]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net RegWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:42]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net RegWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:42]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net MemWrite with 1st driver pin 'ctrl/MemWrite0_inferred/MemWrite0' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:50]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net MemWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:50]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net MemWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:50]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Sftmd with 1st driver pin 'ctrl/Sftmd_inferred/Sftmd' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:44]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Sftmd with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:44]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Sftmd is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:44]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUOp[1] with 1st driver pin 'ctrl/ALUOp_inferred/ALUOp[1]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:43]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUOp[1] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:43]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ALUOp[1] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:43]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUOp[0] with 1st driver pin 'ctrl/ALUOp_inferred/ALUOp[0]' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:43]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net ALUOp[0] with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:43]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net ALUOp[0] is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:43]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net MemRead with 1st driver pin 'ctrl/MemRead_inferred/MemRead' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:51]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net MemRead with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:51]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net MemRead is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:51]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net IORead with 1st driver pin 'ctrl/IORead_inferred/IORead' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:52]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net IORead with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:52]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net IORead is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:52]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net IOWrite with 1st driver pin 'ctrl/IOWrite_inferred/IOWrite' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:53]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net IOWrite with 2nd driver pin 'GND' [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:53]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net IOWrite is connected to constant driver, other driver is ignored [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v:53]
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[0][15]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][31]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][30]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][29]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][28]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][27]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][26]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][25]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][24]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][23]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][22]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][21]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][20]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][19]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][18]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][17]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][16]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][0]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][8]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][4]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][12]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][2]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][10]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][6]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][14]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][1]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][9]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][5]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][13]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][3]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][11]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][7]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/registers/registers_reg[1][15]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[15]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[14]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[13]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[12]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[11]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[10]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[9]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[8]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[7]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[6]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[5]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[4]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[3]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[2]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[1]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ir/ioread_data_reg[0]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[31]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[30]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[29]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[28]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[27]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[26]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[25]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[24]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[23]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[22]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[21]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[20]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[19]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[18]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[17]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[16]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[15]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[14]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[13]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[12]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[11]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[10]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[9]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[8]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[7]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[6]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[5]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[4]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[3]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[2]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[1]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (ife/branch_base_addr_reg[0]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[15]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[14]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[13]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[12]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[11]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[10]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[9]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[8]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[7]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[6]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[5]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[4]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[3]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[2]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[1]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/Sign_extend_reg[0]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/write_addr_reg[4]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/write_addr_reg[3]) is unused and will be removed from module cpu_top.
+WARNING: [Synth 8-3332] Sequential element (de/write_addr_reg[2]) is unused and will be removed from module cpu_top.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:38 . Memory (MB): peak = 739.711 ; gain = 497.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ALU         | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'cclk/clk_out1' to pin 'cclk/bbstub_clk_out1/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:07:30 . Memory (MB): peak = 739.711 ; gain = 497.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:07:30 . Memory (MB): peak = 739.711 ; gain = 497.598
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:07:31 . Memory (MB): peak = 752.352 ; gain = 510.238
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:07:32 . Memory (MB): peak = 752.352 ; gain = 510.238
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:07:32 . Memory (MB): peak = 752.352 ; gain = 510.238
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:07:32 . Memory (MB): peak = 752.352 ; gain = 510.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:07:32 . Memory (MB): peak = 752.352 ; gain = 510.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:07:32 . Memory (MB): peak = 752.352 ; gain = 510.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:07:32 . Memory (MB): peak = 752.352 ; gain = 510.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |cpuclk        |         1|
+|2     |RAM           |         1|
+|3     |prgrom        |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |RAM    |     1|
+|2     |cpuclk |     1|
+|3     |prgrom |     1|
+|4     |CARRY4 |     8|
+|5     |LUT1   |     2|
+|6     |LUT2   |    15|
+|7     |LUT3   |    32|
+|8     |LUT4   |    14|
+|9     |FDRE   |    15|
+|10    |IBUF   |     1|
+|11    |OBUF   |    16|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------+--------------+------+
+|      |Instance      |Module        |Cells |
++------+--------------+--------------+------+
+|1     |top           |              |   168|
+|2     |  alu         |ALU           |    19|
+|3     |  de          |Decoder       |    31|
+|4     |    registers |register_file |    31|
+|5     |  dm          |Data_mem      |    33|
+|6     |  ife         |IFetch        |    67|
++------+--------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:07:32 . Memory (MB): peak = 752.352 ; gain = 510.238
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 54 critical warnings and 209 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:07:21 . Memory (MB): peak = 752.352 ; gain = 166.324
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:07:32 . Memory (MB): peak = 752.352 ; gain = 510.238
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+232 Infos, 256 Warnings, 114 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:07:36 . Memory (MB): peak = 752.352 ; gain = 521.715
+INFO: [Common 17-1381] The checkpoint 'C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.runs/synth_1/cpu_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file cpu_top_utilization_synth.rpt -pb cpu_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 752.352 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun May 28 18:30:48 2023...

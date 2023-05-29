@@ -5,17 +5,23 @@
 
 module cpu_top(
     // Inputs
-    input clk,
+    input clock,
     input rst,
-    input [7:0] switch,
+    input [15:0] switches,
     // Outputs
-    output [7:0] led
+    output [15:0] ledss
     );
 
+    wire clk;
+
+    cpuclk cclk(
+        .clk_in1(clock),
+        .clk_out1(clk)
+    );
 
 // Controller
     //Input
-    wire [`ISA_WIDTH - 1 : 0] Instruction = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] Instruction;
     //Output
     wire Jr = 1'b0;
     wire Jmp = 1'b0;
@@ -23,13 +29,18 @@ module cpu_top(
     wire Branch = 1'b0;
     wire nBranch = 1'b0;
     wire RegDST = 1'b0;
-    wire MemtoReg = 1'b0;
     wire RegWrite = 1'b0;
     wire MemWrite = 1'b0;
     wire ALUSrc = 1'b0;
     wire Sftmd = 1'b0;
     wire I_format = 1'b0;
     wire [1:0] ALUOp = 1'b0;
+    wire MemorIOtoReg = 1'b0;
+    wire MemRead = 1'b0;
+    wire IORead = 1'b0;
+    wire IOWrite = 1'b0;
+
+
     Controller ctrl(
         .Opcode(Instruction[31:26]),
         .Function_opcode(Instruction[5:0]),
@@ -39,99 +50,153 @@ module cpu_top(
         .Branch(Branch),
         .nBranch(nBranch),
         .RegDST(RegDST),
-        .MemtoReg(MemtoReg),
         .RegWrite(RegWrite),
         .MemWrite(MemWrite),
         .ALUSrc(ALUSrc),
         .Sftmd(Sftmd),
         .I_format(I_format),
-        .ALUOp(ALUOp)
+        .ALUOp(ALUOp),
+        .Alu_resultHigh(ALU_result[21:0]), 
+        .MemorIOtoReg(MemorIOtoReg), 
+        .MemRead(MemRead), 
+        .IORead(IORead), 
+        .IOWrite(IOWrite)
         );
     
 // Decoder
     //Input
-    wire [`ISA_WIDTH - 1 : 0] ALU_result = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] opcplus4 = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] Mem_data = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] ALU_result;
+    wire [`ISA_WIDTH - 1 : 0] MemReadData;
+    wire [`ISA_WIDTH - 1 : 0] RegWriteData;
+    wire [`ISA_WIDTH - 1 : 0] LinkAddr;
     //Output
-    wire [`ISA_WIDTH - 1 : 0] Decoder_Data1 = 32'b0;
-    wire [`ISA_WIDTH - 1 : 0] Decoder_Data2 = 32'b0;
+    wire [`ISA_WIDTH - 1 : 0] RegReadData1;
+    wire [`ISA_WIDTH - 1 : 0] RegReadData2;
     wire [`ISA_WIDTH - 1 : 0] Sign_extend;
 
     Decoder de(
         .clock(clk),
         .reset(rst),
         .Instruction(Instruction),
-        .opcplus4(link_addr),
+        .opcplus4(LinkAddr),
         .ALU_result(ALU_result),
-        .mem_data(Mem_data),
+        .r_wdata(RegWriteData),
         .RegWrite(RegWrite),
         .Jal(Jal),
-        .MemtoReg(MemtoReg),
-        .RegDST(RegDST),
-        .read_data_1(Decoder_Data1),
-        .read_data_2(Decoder_Data2),
+        .MemtoReg(MemorIOtoReg),
+        .RegDst(RegDST),
+        .read_data_1(RegReadData1),
+        .read_data_2(RegReadData2),
         .Sign_extend(Sign_extend)
         );
 
+
+
+//MemOrIO
+    //Input
+    //Output
+    wire [`ISA_WIDTH - 1:0] MemWriteAddr;
+    wire [`ISA_WIDTH - 1:0] MemWriteData;
+    wire LEDCtrl;
+    wire SwitchCtrl;
+
+    MemOrIO moi(
+        .mRead(MemRead), 
+        .mWrite(MemWrite), 
+        .ioRead(IORead), 
+        .ioWrite(IOWrite),
+        .addr_in(ALU_result), 
+        .addr_out(MemWriteAddr), 
+        .m_rdata(MemReadData), 
+        .io_rdata(switches), 
+        .r_wdata(r_wdata),
+        .r_rdata(RegReadData2), 
+        .write_data(MemWriteData), 
+        .LEDCtrl(LEDCtrl), 
+        .SwitchCtrl(SwitchCtrl)
+    );
+
+
+    ioread ir(
+        .reset(rst),				// reset, active high
+	    .ior(IORead),				// from Controller, 1 means read from input device
+        .switchctrl(SwitchCtrl),			// means the switch is selected as input device 
+        .ioread_data_switch(switches),	// the data from switch
+        .ioread_data(io_rdata)      	// the data to memorio 
+    );
+
+
+    wire ledaddr = 1'b0;
+    wire ledcs = 1'b0;
+
+    leds le(
+        .ledrst(rst),		// reset, active high 
+        .led_clk(clk),	// clk for led 
+        .ledwrite(LEDCtrl),	// led write enable, active high 
+        .ledcs(ledcs),		// 1 means the leds are selected as output 
+        .ledaddr({ledaddr,1'b0}),	// 2'b00 means updata the low 16bits of ledout, 2'b10 means updata the high 8 bits of ledout
+        .ledwdata(MemWriteData),	// the data (from register/memorio)  waiting for to be writen to the leds of the board
+        .ledout(ledss)
+    );
+
+
 //Data_mem
     //Input
-    wire Clock;
-    wire Address;
-    wire WriteData;
     //Output
 
     Data_mem dm(
-        .Clock(clk),
-        .MemWrite(MemWrite),
-        .Address(ALU_result),
-        .WriteData(Decoder_Data2),
-        .ReadData(Mem_data)
+        .clock(clk),
+        .memWrite(MemWrite),
+        .address(MemWriteAddr),
+        .writeData(MemWriteData),
+        .readData(MemReadData)
         );
+
 
 //IFetch
     //Input
     wire Zero;
     //Output
-    wire branch_base_addr;
+    wire BranchBaseAddr;
 
     IFetch ife(
         .clock(clk),
         .reset(rst),
-        .Addr_result(ALU_result),
+        .Addr_result(Addr_result),
         .Zero(Zero),
-        .Read_Data_1(Decoder_Data1),
+        .Read_data_1(RegReadData1),
         .Branch(Branch),
         .nBranch(nBranch),
         .Jmp(Jmp),
         .Jal(Jal),
         .Jr(Jr),
         .Instruction(Instruction),
-        .branch_base_addr(branch_base_addr),
-        .link_addr(link_addr)
+        .branch_base_addr(BranchBaseAddr),
+        .link_addr(LinkAddr)
         );
 
 //ALU
     //Input
-
     //Output
 
     ALU alu(
-        .Read_data_1(Decoder_Data1),
-        .Read_data_2(Decoder_Data2),
+        .Read_data_1(RegReadData1),
+        .Read_data_2(RegReadData2),
         .Sign_extend(Sign_extend),
         .Exe_opcode(Exe_opcode),
         .Function_opcode(Function_opcode),
         .Shamt(Shamt),
-        .PC_plus_4(branch_base_addr),
+        .PC_plus_4(BranchBaseAddr),
         .ALUOp(ALUOp),
         .ALUSrc(ALUSrc),
         .I_format(I_format),
         .Sftmd(Sftmd),
         .Jr(Jr),
-        .ALU_Result(ALU_result),
+        .ALU_result(ALU_result),
         .Zero(Zero),
-        .Addr_Result(Addr_result),
-        .PC_plus_4(PC_plus_4)
+        .Addr_result(Addr_result)
         );
+
+
+
 endmodule
