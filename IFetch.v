@@ -21,9 +21,8 @@ module IFetch(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBranc
 
     always @* begin
         if(((Branch == 1) && (Zero == 1 )) || ((nBranch == 1) && (Zero == 0))) begin// beq, bne
-            if(Instruction[15] == 1) branch_base_addr = {14'b1111_1111_1111_11, Instruction[`IMMEDIATE_WIDTH - 1:0], 2'b00};
-            else branch_base_addr = {14'b0000_0000_0000_00, Instruction[`IMMEDIATE_WIDTH - 1:0], 2'b00};
-            Next_PC = PC + 4 + branch_base_addr; // the calculated new value for PC
+            branch_base_addr = PC + 4;
+            Next_PC = Addr_result; // the calculated new value for PC
         end
         else if(Jr == 1)
             Next_PC = Read_data_1; // the value of $31 register

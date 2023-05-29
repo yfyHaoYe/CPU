@@ -25,17 +25,19 @@ module Decoder(read_data_1,read_data_2,Instruction,r_wdata,ALU_result,
 
     end
     always @(posedge clock) begin
-        if(RegDst) write_addr = Instruction[15:11];
-        else write_addr = Instruction[20:16];
-        if(Instruction[15] == 1) Sign_extend = {16'b1111_1111_1111_1111, Instruction[`IMMEDIATE_WIDTH - 1:0]};//符号位拓展
-        else Sign_extend = {16'b0000_0000_0000_0000, Instruction[`IMMEDIATE_WIDTH - 1:0]};
+        if(RegDst) write_addr <= Instruction[15:11];
+        else write_addr <= Instruction[20:16];
+        if(Instruction[`IMMEDIATE_WIDTH - 1] == 1) Sign_extend <= {16'b1111_1111_1111_1111, Instruction[`IMMEDIATE_WIDTH - 1:0]};//符号位拓展
+        else Sign_extend <= {16'b0000_0000_0000_0000, Instruction[`IMMEDIATE_WIDTH - 1:0]};
         if(Jal) begin // Jal命令
-           write_addr = 5'b11111;
-           decoder_write_data = opcplus4;
+           write_addr <= 5'b11111;
+           decoder_write_data <= opcplus4;
         end
-        else if(RegWrite && MemtoReg)
-            decoder_write_data = r_wdata; // 从存储器或I/O读取数据写到寄存器
-        else decoder_write_data = ALU_result;// 将ALU模块输出数据写到寄存器
+        else if(RegWrite) begin
+            if(MemtoReg)decoder_write_data <= r_wdata; // 从存储器或I/O读取数据写到寄存器
+            else decoder_write_data <= ALU_result;// 将ALU模块输出数据写到寄存器
+        end
+        else write_addr <= 5'b00000; 
     end
 
     register_file registers(
