@@ -33,6 +33,7 @@ module register_file (
     // end
 
     integer i;
+    wire test;
     always @(negedge clk, posedge rst_n) begin
         if (rst_n)
             for (i = 0; i < `ISA_WIDTH; i = i + 1)

@@ -55,7 +55,7 @@ module cpu_top_test(clock,rst,switches,ledss);
         .Sftmd(Sftmd),
         .I_format(I_format),
         .ALUOp(ALUOp),
-        .Alu_resultHigh(ALU_result[21:0]), 
+        .Alu_resultHigh(ALU_result[31:10]), 
         .MemorIOtoReg(MemorIOtoReg), 
         .MemRead(MemRead), 
         .IORead(IORead), 
