@@ -4,7 +4,7 @@ memory_initialization_vector =
 3c12ffff,
 3652ff60,
 ae530000,
-08000003,
+00000000,
 00000000,
 00000000,
 00000000,

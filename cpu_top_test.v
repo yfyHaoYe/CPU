@@ -132,8 +132,8 @@ module cpu_top_test(clock,rst,switches,ledss);
         .ledrst(rst),		// reset, active high 
         .led_clk(clk),	// clk for led 
         .ledwrite(LEDCtrl),	// led write enable, active high 
-        .ledcs(ledcs),		// 1 means the leds are selected as output 
-        .ledaddr({ledaddr,1'b0}),	// 2'b00 means updata the low 16bits of ledout, 2'b10 means updata the high 8 bits of ledout
+        .ledcs(1'b1),		// 1 means the leds are selected as output 
+        .ledaddr(2'b00),	// 2'b00 means updata the low 16bits of ledout, 2'b10 means updata the high 8 bits of ledout
         .ledwdata(MemWriteData),	// the data (from register/memorio)  waiting for to be writen to the leds of the board
         .ledout(ledss)
     );

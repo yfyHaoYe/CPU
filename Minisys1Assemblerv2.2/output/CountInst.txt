@@ -54,6 +54,6 @@ blez	0
 bltz	0
 bltzal	0
 lui	1
-j	1
+j	0
 jal	0
 nop	0
