@@ -2,7 +2,7 @@
 2017.4
 Dec 15 2017
 21:07:18
-C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v,1685450192,verilog,,C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v,C:/Users/29266/Desktop/Homework/Computer Organization/CPU/definitions.v,ALU,,,../../../../../cpuclk,,,,,
+C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ALU.v,1685452314,verilog,,C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v,C:/Users/29266/Desktop/Homework/Computer Organization/CPU/definitions.v,ALU,,,../../../../../cpuclk,,,,,
 C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
 C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sim_1/new/cpu_tb.v,1685443245,verilog,,,,cpu_tb,,,../../../../../cpuclk,,,,,
 C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Controller.v,1685447407,verilog,,C:/Users/29266/Desktop/Homework/Computer Organization/CPU/Data_Mem.v,C:/Users/29266/Desktop/Homework/Computer Organization/CPU/definitions.v,Controller,,,../../../../../cpuclk,,,,,
