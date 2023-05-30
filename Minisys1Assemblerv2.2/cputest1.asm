@@ -4,5 +4,6 @@
 start:	
 		ori $s3, $zero, 19
 		lui $s2, 0xffff
-loop:	sw $s3,0xff60($s2)
+		ori $s2, $s2, 0xff60
+loop:	sw $s3,0x0000($s2)
 		j loop

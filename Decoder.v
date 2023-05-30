@@ -19,16 +19,15 @@ module Decoder(read_data_1,read_data_2,Instruction,r_wdata,ALU_result,
     reg [`ISA_WIDTH - 1:0] decoder_write_data;              //寄存器写入数据
 
     
-    always @(*) begin
+    always @(Instruction, RegDst, Jal, RegWrite, MemtoReg, opcplus4, r_wdata, ALU_result) begin
         read_addr_1 = Instruction[25:21];
         read_addr_2 = Instruction[20:16];
-
-    end
-    always @(posedge clock) begin
+        if(Instruction[15])
+        Sign_extend = { 16'hffff , Instruction[`IMMEDIATE_WIDTH - 1 : 0]};
+        else
+        Sign_extend = { 16'h0000 , Instruction[`IMMEDIATE_WIDTH - 1 : 0]};
         if(RegDst) write_addr = Instruction[15:11];
         else write_addr = Instruction[20:16];
-        if(Instruction[15] == 1) Sign_extend = {16'b1111_1111_1111_1111, Instruction[`IMMEDIATE_WIDTH - 1:0]};//符号位拓展
-        else Sign_extend = {16'b0000_0000_0000_0000, Instruction[`IMMEDIATE_WIDTH - 1:0]};
         if(Jal) begin // Jal命令
            write_addr = 5'b11111;
            decoder_write_data = opcplus4;

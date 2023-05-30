@@ -33,8 +33,8 @@ module register_file (
     // end
 
     integer i;
-    always @(negedge clk, negedge rst_n) begin
-        if (~rst_n)
+    always @(negedge clk, posedge rst_n) begin
+        if (rst_n)
             for (i = 0; i < `ISA_WIDTH; i = i + 1)
                 registers[i] <= 0;
         else if (write_en & (write_reg_addr != 0)) 

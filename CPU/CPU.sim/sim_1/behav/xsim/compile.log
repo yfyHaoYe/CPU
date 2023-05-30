@@ -18,16 +18,17 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/29266/Desktop/Homework/Com
 INFO: [VRFC 10-311] analyzing module IFetch
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/MemOrIO.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MemOrIO
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top_test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_top_test
+INFO: [VRFC 10-2458] undeclared symbol io_rdata, assumed default net type wire [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top_test.v:124]
+INFO: [VRFC 10-2458] undeclared symbol Addr_result, assumed default net type wire [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top_test.v:164]
+INFO: [VRFC 10-2458] undeclared symbol Function_opcode, assumed default net type wire [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top_test.v:186]
+INFO: [VRFC 10-2458] undeclared symbol Shamt, assumed default net type wire [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top_test.v:187]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/ioread.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ioread
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/leds.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module leds
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/register_file.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module register_file
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module cpu_top
-INFO: [VRFC 10-2458] undeclared symbol io_rdata, assumed default net type wire [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:127]
-INFO: [VRFC 10-2458] undeclared symbol Addr_result, assumed default net type wire [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:167]
-INFO: [VRFC 10-2458] undeclared symbol Exe_opcode, assumed default net type wire [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:188]
-INFO: [VRFC 10-2458] undeclared symbol Function_opcode, assumed default net type wire [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:189]
-INFO: [VRFC 10-2458] undeclared symbol Shamt, assumed default net type wire [C:/Users/29266/Desktop/Homework/Computer Organization/CPU/cpu_top.v:190]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.srcs/sim_1/new/cpu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_tb

@@ -10,4 +10,17 @@
 
 source RAM.tcl -notrace
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP RAM, cache-ID = fb6fa5573fc2f2fc.
-INFO: [Common 17-206] Exiting Vivado at Sun May 28 17:18:29 2023...
+INFO: [Common 17-206] Exiting Vivado at Tue May 30 14:44:31 2023...
+
+*** Running vivado
+    with args -log RAM.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RAM.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source RAM.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP RAM, cache-ID = fb6fa5573fc2f2fc.
+INFO: [Common 17-206] Exiting Vivado at Tue May 30 18:34:40 2023...

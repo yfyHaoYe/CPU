@@ -23,9 +23,9 @@ module Controller(Opcode, Function_opcode, Jr, RegDST, ALUSrc, RegWrite, MemWrit
     output IORead; // 1 indicates I/O read
     output IOWrite; // 1 indicates I/O write
 
-    wire R_format = 1'b0;
-    wire Lw = 1'b0;
-    wire Sw = 1'b0;
+    wire R_format;
+    wire Lw;
+    wire Sw;
     
     assign R_format = (Opcode == `OP_R_FORMAT);
     assign Lw = (Opcode == `OP_LW);
@@ -38,7 +38,6 @@ module Controller(Opcode, Function_opcode, Jr, RegDST, ALUSrc, RegWrite, MemWrit
     assign nBranch = (Opcode == `OP_NBRANCH);
     assign RegDST = R_format;
     assign I_format = (Opcode[5:3] == `OP_I_FORMAT);
-    assign MemWrite = Sw;
     assign ALUSrc = (I_format || Lw || Sw);
     assign ALUOp = {(R_format || I_format) , (Branch || nBranch)};
     assign Sftmd = (((Function_opcode == `OP_SLL)||(Function_opcode == `OP_SLLV)

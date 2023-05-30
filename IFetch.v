@@ -17,7 +17,7 @@ module IFetch(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBranc
     input        Jr;                    // while Jr is 1, it means current instruction is jr
     input        Zero;                  // while Zero is 1, it means the ALUresult is zero
     input        clock,reset;           // Clock and reset (Synchronous reset signal, high level is effective, when reset=1, PC value is 0)
-    reg[`ISA_WIDTH - 1:0] PC, Next_PC;
+    reg[`ISA_WIDTH - 1:0] PC = 32'h0000_0000, Next_PC = 32'h0000_0000;
 
     always @* begin
         if(((Branch == 1) && (Zero == 1 )) || ((nBranch == 1) && (Zero == 0))) begin// beq, bne
@@ -47,7 +47,7 @@ module IFetch(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBranc
 
     prgrom instmem(
     .clka(clock),
-    .addra(PC[15:2]),
+    .addra({2'b00,PC[31:2]}),
     .douta(Instruction)
     );
 endmodule
