@@ -25,7 +25,7 @@ module cpu_tb(
     );
     reg clk;
     reg rst;
-    wire [15:0] switches;
+    reg [15:0] switches;
     wire [15:0] leds;
 
     initial fork
@@ -33,6 +33,7 @@ module cpu_tb(
 	    rst = 1'b0;
         #6000 rst = 1'b1;
         #8000 rst = 1'b0;
+        #5000 switches = 16'hffff;
     join
 
     always #10 clk = ~clk;

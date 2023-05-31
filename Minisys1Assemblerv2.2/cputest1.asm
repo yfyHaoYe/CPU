@@ -2,8 +2,7 @@
    buf:   .word  0x00000055, 0x000000AA	
 .text 0x0000						       
 start:	
-		ori $s3, $zero, 19
 		lui $s2, 0xffff
-		ori $s2, $s2, 0xff60
+		ori $s2, $s2, 0xff70
+		lw $s3,0x0000($s2)
 		sw $s3,0x0000($s2)
-		
