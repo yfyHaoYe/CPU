@@ -2,8 +2,15 @@
    buf:   .word  0x00000055, 0x000000AA	
 .text 0x0000						       
 start:	
-		lui $s2, 0xffff
-		ori $s2, $s2, 0xff70
-		lw $s3,0x0000($s2)
+		ori $t0, $t0, 5	
+		jal Label1
+		jal exit
+
+Label1:
+		lui $t1,0xffff
+		ori $t1, $t1, 0xff70
+		sw $t0,0x0000($t1)
+		jr $ra
+
+exit:
 		nop
-		sw $s3,0x0000($s2)

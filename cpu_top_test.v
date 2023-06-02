@@ -3,11 +3,12 @@
 
 // minisys 32 CPU Top Module
 
-module cpu_top_test(clock,rst,switches,ledss);
+module cpu_top_test(clock,rst,switches,confirm_button,ledss);
     // Inputs
     input clock;
     input rst;
     input [15:0] switches;
+    input confirm_button;
     // Outputs
     output [15:0] ledss;
 
@@ -133,7 +134,7 @@ module cpu_top_test(clock,rst,switches,ledss);
         .led_clk(clk),	// clk for led 
         .ledwrite(LEDCtrl),	// led write enable, active high 
         .ledcs(1'b1),		// 1 means the leds are selected as output 
-        .ledaddr(2'b00),	// 2'b00 means updata the low 16bits of ledout, 2'b10 means updata the high 8 bits of ledout
+        .ledaddr(2'b00),	// 2'b00 means updata the low 16bits of ledout
         .ledwdata(MemWriteData),	// the data (from register/memorio)  waiting for to be writen to the leds of the board
         .ledout(ledss)
     );
@@ -156,11 +157,13 @@ module cpu_top_test(clock,rst,switches,ledss);
     //Input
     wire Zero;
     //Output
-    wire BranchBaseAddr;
+    wire [31:0] BranchBaseAddr;
+    wire [31:0] Addr_result;
 
     IFetch ife(
         .clock(clk),
         .reset(rst),
+        .IORead(IORead),
         .Addr_result(Addr_result),
         .Zero(Zero),
         .Read_data_1(RegReadData1),
@@ -169,6 +172,7 @@ module cpu_top_test(clock,rst,switches,ledss);
         .Jmp(Jmp),
         .Jal(Jal),
         .Jr(Jr),
+        .confirm_button(confirm_button),
         .Instruction(Instruction),
         .branch_base_addr(BranchBaseAddr),
         .link_addr(LinkAddr)

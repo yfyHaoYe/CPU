@@ -17,7 +17,7 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
     input        Jr;                // 来自控制单元，表明是JR指令
     output       Zero;              // 为1表明计算值为0 
     output reg [31:0] ALU_result;   // 计算的数据结果
-    output[31:0] Addr_result;		// 计算的地址结果
+    output [31:0] Addr_result;		// 计算的地址结果
     input[31:0]  PC_plus_4;         // 来自取指单元的PC+4
 
     wire [31:0] Ainput;

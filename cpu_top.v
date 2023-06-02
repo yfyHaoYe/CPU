@@ -3,11 +3,12 @@
 
 // minisys 32 CPU Top Module
 
-module cpu_top(clk,rst,switches,leds);
+module cpu_top(clk,rst,switches,comfirm_button,leds);
     // Inputs
     input clk;
     input rst;
     input [15:0] switches;
+    input comfirm_button;
     // Outputs
     output [15:0] leds;
 
