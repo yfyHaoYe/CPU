@@ -2,8 +2,8 @@
 # Webtalk v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Tue May 30 17:25:04 2023
-# Process ID: 14660
+# Start of session at: Fri Jun  2 12:19:11 2023
+# Process ID: 21900
 # Current directory: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.sim/sim_1/behav/xsim/xsim.dir/cpu_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/29266/Desktop/Homework/Computer Organization/CPU/CPU/CPU.sim/sim_1/behav/xsim/webtalk.log
@@ -11,4 +11,4 @@
 #-----------------------------------------------------------
 source C:/Users/29266/Desktop/Homework/Computer -notrace
 couldn't read file "C:/Users/29266/Desktop/Homework/Computer": permission denied
-INFO: [Common 17-206] Exiting Webtalk at Tue May 30 17:25:04 2023...
+INFO: [Common 17-206] Exiting Webtalk at Fri Jun  2 12:19:11 2023...
