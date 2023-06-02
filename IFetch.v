@@ -30,6 +30,7 @@ module IFetch(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBranc
             Next_PC = Read_data_1; // the value of $31 register
         else Next_PC = PC + 4; // PC+4
     end
+    
     always @(posedge clock) begin
         if(reset == 1) begin
             PC <= 32'h0000_0000;

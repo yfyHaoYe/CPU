@@ -31,7 +31,8 @@ loop:	lw $a1,0($a0)
 		j exit
 
 input:
-		lw $a1,2($a0) 
+		lw $a1,2($a0)
+		srl $a1,8
 		jr $ra
 
 test0:
