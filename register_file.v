@@ -32,6 +32,7 @@ module register_file (
     //     end
     // end
 
+    
     integer i;
     wire test;
     always @(negedge clk, posedge rst_n) begin

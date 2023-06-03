@@ -4,8 +4,8 @@
 
 module IFetch(Instruction,branch_base_addr,IORead,Addr_result,Read_data_1,Branch,nBranch,Jmp,Jal,Jr,Zero,confirm_button,clock,reset,link_addr);
     output [`ISA_WIDTH - 1:0] Instruction;			// the real instruction fetched from this module, 32'h0000_0000 when reset = 1
-    output reg[`ISA_WIDTH - 1:0] branch_base_addr;      // (pc+4) to ALU which is used by branch type instruction
-    output reg[`ISA_WIDTH - 1:0] link_addr;             // (pc+4) to Decoder which is used by jal instruction
+    output [`ISA_WIDTH - 1:0] branch_base_addr;      // (pc+4) to ALU which is used by branch type instruction
+    output [`ISA_WIDTH - 1:0] link_addr;             // (pc+4) to Decoder which is used by jal instruction
     //output reg if_no_op;                                // for if_id_reg (stop id operations)
 
     input IORead;
@@ -25,7 +25,7 @@ module IFetch(Instruction,branch_base_addr,IORead,Addr_result,Read_data_1,Branch
     assign Instruction = (reset) ? 32'h0000_0000:Inst;
     always @* begin
         if(((Branch == 1) && (Zero == 1 )) || ((nBranch == 1) && (Zero == 0))) begin// beq, bne
-            branch_base_addr = PC + 4;
+            
             Next_PC = Addr_result; // the calculated new value for PC
         end
         else if(Jr == 1)
@@ -36,6 +36,9 @@ module IFetch(Instruction,branch_base_addr,IORead,Addr_result,Read_data_1,Branch
 
     //assign confirm = confirm_button;
 
+    assign link_addr = (Jmp || Jal) ? PC + 4 : 32'h0000_0000;
+    assign branch_base_addr = (((Branch == 1) && (Zero == 1 )) || ((nBranch == 1) && (Zero == 0))) ? PC + 4 : 32'h0000_0000;
+    
     always @(negedge clock) begin
             if(reset == 1) begin
                 PC <= 32'h0000_0000;
@@ -47,7 +50,6 @@ module IFetch(Instruction,branch_base_addr,IORead,Addr_result,Read_data_1,Branch
                             Instruction[`ADDRESS_WIDTH - 1:0], 
                             2'b00
                         };
-                    link_addr <= PC + 4; 
                 end
                 else if (IORead && ~confirm_button) PC <= PC;
                 else PC <= Next_PC;
