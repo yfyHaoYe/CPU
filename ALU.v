@@ -92,9 +92,9 @@ module ALU(Read_data_1,Read_data_2,Sign_extend,Function_opcode,Exe_opcode,ALUOp,
             ALU_result = ALU_output_mux;
     end
 
-    assign Zero = (ALU_result==0) ? 1 : 0;
+    assign Zero = (ALU_result == 0) ? 1'b1 : 1'b0;
 
-    assign Branch_Addr = PC_plus_4 + ( Sign_extend << 2);
+    assign Branch_Addr = PC_plus_4 + (Sign_extend << 2);
     assign Addr_result = Branch_Addr[31:0];
             
 

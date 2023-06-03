@@ -5,38 +5,38 @@
 		# a2: 0xffffff70 output address
 		# a3: output data
 start:	
-		ori $a1,$zero,-1
+		ori $sp, $sp, 0x1000
 		lui $a0, 0xffff
 		ori $a0,$zero, 0xff60
-		addi $a2, $a0, 10
+		addi $a2,$a0,10
+		ori $a1,$zero,-1
 
-loop:	nop
+loop:	
 		lw $a1,0($a0)
-		nop
-		or $a3,$a1,$zero
-		jal output_2sec_and_back
+
+		#or $a3, $a1, $zero
+		#jal output_2sec_and_back
 		
-		ori $a2,$zero,0
-		beq $a1,$a2,test0
-		ori $a2,$zero,1
-		beq $a1,$a2,test1
-		ori $a2,$zero,2
-		beq $a1,$a2,test2
-		ori $a2,$zero,3
-		beq $a1,$a2,test3
-		ori $a2,$zero,4
-		beq $a1,$a2,test4
-		ori $a2,$zero,5
-		beq $a1,$a2,test5
-		ori $a2,$zero,6
-		beq $a1,$a2,test6
-		ori $a2,$zero,7
-		beq $a1,$a2,test7
+		ori $at,$zero,0
+		beq $a1,$at,test0
+		ori $at,$zero,1
+		beq $a1,$at,test1
+		ori $at,$zero,2
+		beq $a1,$at,test2
+		ori $at,$zero,3
+		beq $a1,$at,test3
+		ori $at,$zero,4
+		beq $a1,$at,test4
+		ori $at,$zero,5
+		beq $a1,$at,test5
+		ori $at,$zero,6
+		beq $a1,$at,test6
+		ori $at,$zero,7
+		beq $a1,$at,test7
 		j exit
 
-input:	nop
+input:	
 		lw $a1,2($a0)
-		nop
 		srl $a1,$a1,8
 		jr $ra
 
@@ -132,7 +132,7 @@ output_2sec_and_back:
 		
 		sw $a3, 10($a2)
 		ori $at, $zero, 1
-		lui $s0, 0x0100
+		lui $s0, 0x0010
 		ori $s0,$s0, 0x0000
 
 	out_loop:

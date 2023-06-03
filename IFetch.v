@@ -22,10 +22,10 @@ module IFetch(Instruction,branch_base_addr,IORead,Addr_result,Read_data_1,Branch
     reg[`ISA_WIDTH - 1:0] PC = 32'h0000_0000, Next_PC =  32'h0000_0000;
     wire[`ISA_WIDTH - 1:0] Inst; //Instruction, but not sensitive to reset;
 
+    reg confirm_state = 1'b0;
     assign Instruction = (reset) ? 32'h0000_0000:Inst;
     always @* begin
-        if(((Branch == 1) && (Zero == 1 )) || ((nBranch == 1) && (Zero == 0))) begin// beq, bne
-            
+        if(((Branch == 1) && (Zero == 1)) || ((nBranch == 1) && (Zero == 0))) begin// beq, bne
             Next_PC = Addr_result; // the calculated new value for PC
         end
         else if(Jr == 1)
@@ -33,17 +33,15 @@ module IFetch(Instruction,branch_base_addr,IORead,Addr_result,Read_data_1,Branch
         else  Next_PC = PC + 4; // PC+4
     end
     
-
-    //assign confirm = confirm_button;
-
-    assign link_addr = (Jmp || Jal) ? PC + 4 : 32'h0000_0000;
-    assign branch_base_addr = (((Branch == 1) && (Zero == 1 )) || ((nBranch == 1) && (Zero == 0))) ? PC + 4 : 32'h0000_0000;
+    assign link_addr = PC + 4;
+    assign branch_base_addr =  PC + 4;
     
     always @(negedge clock) begin
             if(reset == 1) begin
                 PC <= 32'h0000_0000;
             end
             else begin
+                if (~confirm_button && confirm_state) confirm_state = 1'b0;
                 if((Jmp == 1) || (Jal == 1)) begin
                     PC <= {
                             PC[`ISA_WIDTH - 1:`ADDRESS_WIDTH + 2],
@@ -51,7 +49,12 @@ module IFetch(Instruction,branch_base_addr,IORead,Addr_result,Read_data_1,Branch
                             2'b00
                         };
                 end
-                else if (IORead && ~confirm_button) PC <= PC;
+                else if ((IORead && ~confirm_button)||(IORead && confirm_state) || (PC == 32'h0001_0000))
+                    PC <= PC;
+                else if (IORead && confirm_button && ~confirm_state) begin
+                    PC <= Next_PC;
+                    confirm_state = 1'b1;
+                end
                 else PC <= Next_PC;
             end
         end

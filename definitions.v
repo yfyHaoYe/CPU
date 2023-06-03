@@ -105,7 +105,7 @@
 //------------------------------------------------------------------------------//
 
 //-----------------------------------IO-----------------------------------------//
-`define SWITCH_CNT          8                   // number of physical switches used
+`define IO_WIDTH            16                  // number of physical switches and leds used
 
 // seven seg tube parameters
 `define SEGMENT_CNT         8                   // number of segments (including the dot segment)
