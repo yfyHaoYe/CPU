@@ -12,11 +12,15 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
     // Outputs
     output [15:0] ledss;
 
-    wire clk;
+    wire clk1;
+    wire clk2;
+    wire clk3;
 
     cpuclk cclk(
         .clk_in1(clock),
-        .clk_out1(clk)
+        .clk_out1(clk1),
+        .clk_out2(clk2),
+        .clk_out3(clk3)
     );
 
     wire [`ISA_WIDTH - 1 : 0] Instruction; // output IFetch  input Controller, Decoder, ALU,
@@ -84,7 +88,7 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
         );
 
     Decoder de(
-        .clock(clk),
+        .clock(clk1),
         .reset(rst),
         .Instruction(Instruction),
         .opcplus4(LinkAddr),
@@ -117,7 +121,7 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
     );
 
     Data_mem dm(
-        .clock(clk),
+        .clock(clk3),
         .memWrite(MemWrite),
         .address(MemWriteAddr),
         .writeData(MemWriteData),
@@ -125,7 +129,7 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
         );
 
     IFetch ife(
-        .clock(clk),
+        .clock(clk1),
         .reset(rst),
         .IORead(IORead),
         .Addr_result(Addr_result),
@@ -171,7 +175,7 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
 
     leds le(
         .ledrst(rst),		// reset, active high 
-        .led_clk(clk),	// clk for led 
+        .led_clk(clk1),	// clk1 for led 
         .ledwrite(LEDCtrl),	// led write enable, active high 
         .ledcs(1'b1),		// 1 means the leds are selected as output 
         .ledaddr(2'b00),	// 2'b00 means updata the low 16bits of ledout

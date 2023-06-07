@@ -39,7 +39,7 @@ module register_file (
         if (rst_n)
             for (i = 0; i < `ISA_WIDTH; i = i + 1)
                 registers[i] <= 0;
-        else if (write_en & (write_reg_addr != 0)) 
+        else if (write_en & (write_reg_addr != 0))
             registers[write_reg_addr] <= write_data;
         else 
             registers[0] <= 0;

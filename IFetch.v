@@ -41,7 +41,6 @@ module IFetch(Instruction,branch_base_addr,IORead,Addr_result,Read_data_1,Branch
                 PC <= 32'h0000_0000;
             end
             else begin
-                if (~confirm_button && confirm_state) confirm_state = 1'b0;
                 if((Jmp == 1) || (Jal == 1)) begin
                     PC <= {
                             PC[`ISA_WIDTH - 1:`ADDRESS_WIDTH + 2],
@@ -49,12 +48,27 @@ module IFetch(Instruction,branch_base_addr,IORead,Addr_result,Read_data_1,Branch
                             2'b00
                         };
                 end
-                else if ((IORead && ~confirm_button)||(IORead && confirm_state) || (PC == 32'h0001_0000))
-                    PC <= PC;
-                else if (IORead && confirm_button && ~confirm_state) begin
-                    PC <= Next_PC;
-                    confirm_state = 1'b1;
+                // else if ((IORead && ~confirm_button) || (IORead && confirm_state) || (PC > 32'h0001_0000))
+                //     PC <= PC;
+                // else if (IORead && confirm_button && ~confirm_state) begin
+                //     PC <= Next_PC;
+                //     confirm_state = 1'b1;
+                // end
+                else if (IORead) begin
+                    if (~confirm_button) begin 
+                        confirm_state = 1'b0;
+                        PC <= PC;
+                    end
+                    else if(confirm_state) begin
+                        confirm_state = 1'b1;
+                        PC <= PC;
+                    end
+                    else begin
+                        confirm_state = 1'b1;
+                        PC <= Next_PC;
+                    end
                 end
+                else if (PC == 32'h0000_1000) PC<=PC;
                 else PC <= Next_PC;
             end
         end
