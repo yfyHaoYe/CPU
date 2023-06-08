@@ -1,9 +1,6 @@
 module scan4 (
     input clk,
-    input [3:0] l0,
-    l1,
-    l2,
-    l3,  //4个灯的数字，从右到左，取值0~9
+    input [7:0] in//8位输入
     output reg [3:0] ena,  //使能信号
     output [7:0] light  //显像
 );
@@ -12,6 +9,12 @@ module scan4 (
   parameter x = 200000;
   reg [17:0] cnt = 0;
   reg [ 3:0] num;
+
+  wire l0, l1, l2, l3;
+  assign l3 = in[7]? 4'ha : 4'h0;
+  assign l2 = in[6:0]%1000/100;
+  assign l1 = in[6:0]%100/10;
+  assign l0 = in[6:0]%10;
   
   num_to_signal f (
       num,
@@ -50,7 +53,7 @@ module scan4 (
   end
 endmodule
 
-module num_to_signal (//最高位绑A位
+module num_to_signal (
     input [3:0] num,
     output reg [7:0] seg_out
 );
@@ -66,11 +69,8 @@ module num_to_signal (//最高位绑A位
       4'h7: seg_out = 8'b1110_0000;  //7
       4'h8: seg_out = 8'b1111_1110;  //8
       4'h9: seg_out = 8'b1110_0110;  //9
-      4'ha: seg_out = 8'b0011_1011;  //a
-      4'hb: seg_out = 8'b0011_1110;  //b
-      4'hc: seg_out = 8'b0001_1010;  //c
-      4'hd: seg_out = 8'b0111_1010;  //d
-      4'he: seg_out = 8'b1001_1110;  //E
-      default: seg_out = 8'b0000_0000;
+      4'ha: seg_out = 8'b0000_0010;  //negitive sign
+      
+
     endcase
 endmodule
