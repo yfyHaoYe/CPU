@@ -10,12 +10,12 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led
     input [15:0] switches;
     input confirm_bt;
     // Outputs
-    output [15:0] ledss;
+    output reg [15:0] ledss;
     
-    output [3:0] ena_r;
-    output [3:0] ena_l;
-    output [7:0] led_r;
-    output [7:0] led_l;
+    output reg [3:0] ena_r;
+    output reg [3:0] ena_l;
+    output reg [7:0] led_r;
+    output reg [7:0] led_l;
 
     wire clk1;
     wire clk2;
