@@ -12,20 +12,19 @@ start:
 		ori $a0,$zero, 0xff60
 		addi $a2,$a0,16
 
-		#0.5s
-		lui $s1, 0x0075
-		ori $s1,$s1, 0x0000
 		#2s 
-		lui $s2, 0x0150
+		lui $s1, 0x0200
+		ori $s1,$s1, 0x0000
+		#0.5s
+		lui $s2, 0x0080
 		ori $s2,$s2, 0x0000
 		#5s
-		lui $s3, 0x0700
+		lui $s3, 0x0b00
 		ori $s3,$s3, 0x0000
 
 		lw $a1,0($a0)
-		andi $a1,$a1,0x0007
+		andi $a1,$a1,7
 		or $a3, $a1, $zero
-		ori $s0,$s0,0x
 		jal output_and_back
 		
 		ori $at,$zero,0
@@ -195,12 +194,12 @@ test3:
 		or $a3,$t2,$zero
 		j exit
 
-	func3: 
+	
 		# $t0: input data
 		# $t1: i from 1 to $v0
-		# $t2: in and out ti
+		# $t2: in and out tim
 		# $t3: sum of i
-		addi $t2,$t2,1
+		# addi $t2,$t2,1
 
 		addi $sp, $sp, -8
 		sw $t1, 4($sp)
@@ -251,8 +250,9 @@ test4:
 		and $t4,$t5,$t4
 		
 		xori $t6,$t2,1
-		xori $t7,$t3,1
-		and $t6,$t6,$t7
+		nop
+		xori $at,$t3,1
+		and $t6,$t6,$at
 		and $t6,$t6,$t1
 
 		or $t4,$t4,$t6
@@ -264,7 +264,6 @@ test4:
 		or $a3,$a3,$t1
 		j output_and_exit
 		
-
 test5:
 		jal input_signed
 		or $t0,$v0,$zero
@@ -298,76 +297,4 @@ test5:
 		or $a3,$a3,$t1
 		j output_and_exit
 
-test6:
-		jal input_signed
-		or $t0,$v0,$zero
-		or $t1,$v1,$zero
-		ori $t5,$t5,8
-		# t0:lier, t1:cand t2:product t3:cnt
-	loop6:
-		ori $t4,$t0,1
-		beq $t4,$zero,out6
-		add $t2,$t2,$t1
-		
-	out6:
-		sll $t1,$t1,1
-		srl $t0,$t0,1
-		addi $t3,$t3,1
-		bne $t3,$t5, loop6
-		or $a3,$t2,$zero
-		j output_and_exit
-		
-		
-test7:
-		jal input_signed
-		or $t0,$v0,$zero
-		or $t1,$v1,$zero
-		ori $t5,$t5,8
-		# t0:dend, t1:sor t2:quotient t3:remainder t4 cnt
-	loop7:
-		sub $t3,$t3,$t1
-		slt $t6,$t3,$zero
-		beq $t6,$zero,case1
-		j case2
-	case1:
-		sll $t2,$t2,1
-		ori $t2,$t2,1
-		j out7
-	case2:
-		add $t3,$t1,$t3
-		sll $t2,$t2,1
-		j out7
-	out7:
-		srl $t1,$t1,1
-		addi $t4,$t4,1
-		bne $t4,$t5,loop7
-		or $s0,$s3,$zero
-	endloop7:
-		or $a3,$t2,$zero
-		jal output_and_back
-		or $a3,$t3,$zero
-		jal output_and_back
-		j endloop7
 
-output_and_back:
-		addi $sp,$sp,-4
-		sw $at,0($sp)
-		
-		sw $a3, 10($a2)
-		ori $at, $zero, 1
-		
-
-	out_loop:
-		addi $at, $at, 1
-		bne $at, $s0, out_loop
-
-		lw $at,0($sp)
-		lw $at,0($sp)
-		addi $sp,$sp,4
-		jr $ra
-
-output_and_exit:
-		sw $a3, 10($a2)
-
-exit:
-		nop

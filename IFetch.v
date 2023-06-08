@@ -41,7 +41,8 @@ module IFetch(Instruction,branch_base_addr,IORead,Addr_result,Read_data_1,Branch
                 PC <= 32'h0000_0000;
             end
             else begin
-                if((Jmp == 1) || (Jal == 1)) begin
+                if (PC == 32'h0000_3f00) PC <= PC;
+                else if((Jmp == 1) || (Jal == 1)) begin
                     PC <= {
                             PC[`ISA_WIDTH - 1:`ADDRESS_WIDTH + 2],
                             Instruction[`ADDRESS_WIDTH - 1:0], 
@@ -74,7 +75,7 @@ module IFetch(Instruction,branch_base_addr,IORead,Addr_result,Read_data_1,Branch
 
     prgrom instmem(
     .clka(clock),
-    .addra({2'b00,PC[31:2]}),
+    .addra(PC[15:2]),
     .douta(Inst)
     );
     

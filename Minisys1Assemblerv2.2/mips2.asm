@@ -12,20 +12,22 @@ start:
 		ori $a0,$zero, 0xff60
 		addi $a2,$a0,16
 
-		#0.5s
-		lui $s1, 0x0075
+		#0.5s 
+		lui $s1, 0x00a8
 		ori $s1,$s1, 0x0000
-		#2s 
+		#2s
 		lui $s2, 0x0150
 		ori $s2,$s2, 0x0000
 		#5s
-		lui $s3, 0x0700
+		lui $s3, 0x0690
 		ori $s3,$s3, 0x0000
 
+		#input testcase
 		lw $a1,0($a0)
-		andi $a1,$a1,0x0007
+		andi $a1,$a1,7
 		or $a3, $a1, $zero
-		ori $s0,$s0,0x
+		
+		ori $s0,$s0,0x0010
 		jal output_and_back
 		
 		ori $at,$zero,0
@@ -55,12 +57,12 @@ input_signed:
 		ori $s7,$s7,0xff00
 		
 		ori $at,$v0,0x0080
-		beq $at,$zero,input_case1
+		beq $at,$zero,input_case1 #v0 is positive
 		or $v0,$v0,$s7	
 	input_case1:
 
 		ori $at,$v1,0x0080
-		beq $at,$zero,input_case2
+		beq $at,$zero,input_case2 #v1 is positive
 		or $v1,$v1,$s7	
 	input_case2:
 		
@@ -74,15 +76,16 @@ input_unsigned:
 
 test0:
 		jal input_signed
-		
-		or $s0,$s2, $zero
+		or $s0,$s1, $zero #flash time 0.5s
 
 		slt $t0,$a0,$zero
 		bne $t0,$zero,flash
 		
 		or $t0,$a0,$zero
-		ori $t1,$zero,0
-		ori $t2,$zero,0
+		or $t1,$zero,$zero
+		or $t2,$zero,$zero
+		
+		#t0 input data, t1 i from 1 to t0, t2 sum of i
 
 	loop0:
 		addi $t1,$t1,1
@@ -93,7 +96,7 @@ test0:
 		j output_and_exit
 
 	flash:
-		ori $a3,$zero,1
+		ori $a3, $zero, 1
 		jal output_and_back
 		ori $a3,$zero,0
 		jal output_and_back
@@ -103,57 +106,66 @@ test0:
 test1:
 		jal input_unsigned
 
-		or $s0,$s1, $zero
-		or $t0,$v0,$zero
-		or $t1,$zero,$zero
-		or $t2,$zero,$zero
-		or $t3,$zero,$zero
+		or $s0,$s2, $zero #output 2s
+
+		or $t0, $v0, $zero
+		or $t1, $zero, $zero
+		or $t2, $zero, $zero
+		ori $t3, $zero, 1
 		jal func1
-		
+
 		or $a3,$t2,$zero
 		j output_and_exit
 
 	func1: 
-		# $t0: input data
-		# $t1: i from 1 to $v0
-		# $t2: in and out times
-		# $t3: sum of i
-		addi $t2,$t2,1
-		addi $sp, $sp, -4
+		# $t0: input data from n to 1
+		# $t1: in and out times
+		# $t2: sum of i
+		# $t3: constant 1
+
+		addi $t1, $t1, 1
+		addi $sp, $sp, -8
+		sw $t0, 4($sp)
 		sw $ra, 0($sp)
-		addi $t1,$t1,1
-		add $t3,$t3,$t1
-		beq $t1, $t0 , return1
+		
+
+		addi $t0, $t0, -1
+		beq $t0, $t3, return1
 		jal func1
 
 	return1:
-		addi $t2,$t2,1
+		add $t2, $t2, $t0
 		lw $ra, 0($sp)
 		lw $ra, 0($sp)
-		addi $sp,$sp,4
+		lw $t0, 4($sp)
+		lw $t0, 4($sp)
+		addi $sp, $sp, 8
+		addi $t1, $t1, 1
 		jr $ra
 		
 test2:
 		jal input_unsigned
-		
-		or $s0,$s1, $zero
-		or $t0,$v0,$zero
-		or $t1,$zero,$zero
-		or $t2,$zero,$zero
-		or $t3,$zero,$zero
+
+		or $s0,$s2, $zero #output 2s
+
+		or $t0, $v0, $zero
+		or $t1, $zero, $zero
+		or $t2, $zero, $zero
+		ori $t3, $zero, 1
 		jal func2
-		or $a3,$t2,$zero
-		j exit
+
+		or $a3, $t1, $zero
+		j output_and_exit
 
 	func2: 
-		# $t0: input data
-		# $t1: i from 1 to $v0
-		# $t2: in and out times
-		# $t3: sum of i
-		addi $t2,$t2,1
+		# $t0: input data from n to 1
+		# $t1: in and out times
+		# $t2: sum of i
+		# $t3: constant 1
 
+		addi $t1, $t1, 1
 		addi $sp, $sp, -8
-		sw $t1, 4($sp)
+		sw $t0, 4($sp)
 		sw $ra, 0($sp)
 
 		or $a3, $zero, $t0
@@ -167,57 +179,56 @@ test2:
 		or $a3, $zero, $sp
 		jal output_and_back
 
-
-		addi $t1,$t1,1
-		beq $t1, $t0 ,return2
+		addi $t0, $t0, -1
+		beq $t0, $t3, return2
 		jal func2
 
 	return2:
-		add $t3,$t1,$t3
-		addi $t2,$t2,1
+		add $t2, $t2, $t0
 		lw $ra, 0($sp)
 		lw $ra, 0($sp)
-		lw $t1, 4($sp)
-		lw $t1, 4($sp)
-		addi $sp,$sp,8
-
+		lw $t0, 4($sp)
+		lw $t0, 4($sp)
+		addi $sp, $sp, 8
+		addi $t1, $t1, 1
 		jr $ra
-
+		
 test3:
 		jal input_unsigned
-		
-		or $s0,$s1, $zero
-		or $t0,$v0,$zero
-		or $t1,$zero,$zero
-		or $t2,$zero,$zero
-		or $t3,$zero,$zero
+
+		or $s0,$s2, $zero #output 2s
+
+		or $t0, $v0, $zero
+		or $t1, $zero, $zero
+		or $t2, $zero, $zero
+		ori $t3, $zero, 1
 		jal func3
-		or $a3,$t2,$zero
-		j exit
+
+		or $a3, $t1, $zero
+		j output_and_exit
 
 	func3: 
-		# $t0: input data
-		# $t1: i from 1 to $v0
-		# $t2: in and out ti
-		# $t3: sum of i
-		addi $t2,$t2,1
+		# $t0: input data from n to 1
+		# $t1: in and out ti
+		# $t2: sum of i
+		# $t3: constant 1
 
+		addi $t1, $t1, 1
 		addi $sp, $sp, -8
-		sw $t1, 4($sp)
+		sw $t0, 4($sp)
 		sw $ra, 0($sp)
 
-		addi $t1,$t1,1
-		beq $t1, $t0 ,return3
+		addi $t0, $t0, -1
+		beq $t0, $t3, return3
 		jal func3
 
 	return3:
-		add $t3,$t1,$t3
-		addi $t2,$t2,1
+		add $t2, $t2, $t0
+		
 		lw $ra, 0($sp)
 		lw $ra, 0($sp)
-		lw $t1, 4($sp)
-		lw $t1, 4($sp)
-		addi $sp,$sp,8
+		lw $t0, 4($sp)
+		lw $t0, 4($sp)
 
 		or $a3, $zero, $t0
 		jal output_and_back
@@ -230,6 +241,8 @@ test3:
 		or $a3, $zero, $sp
 		jal output_and_back
 
+		addi $sp, $sp, 8
+		addi $t1, $t1, 1
 		jr $ra
 
 test4:
@@ -251,8 +264,9 @@ test4:
 		and $t4,$t5,$t4
 		
 		xori $t6,$t2,1
-		xori $t7,$t3,1
-		and $t6,$t6,$t7
+		nop
+		xori $at,$t3,1
+		and $t6,$t6,$at
 		and $t6,$t6,$t1
 
 		or $t4,$t4,$t6
@@ -264,7 +278,6 @@ test4:
 		or $a3,$a3,$t1
 		j output_and_exit
 		
-
 test5:
 		jal input_signed
 		or $t0,$v0,$zero
@@ -297,6 +310,8 @@ test5:
 		or $a3,$t0,$zero
 		or $a3,$a3,$t1
 		j output_and_exit
+
+
 
 test6:
 		jal input_signed

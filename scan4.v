@@ -24,9 +24,7 @@ module scan4 (
 
   
   always @ (posedge clk or posedge LEDCtrl) begin
-    if (rst)
-      {regl0,regl1,regl2,regl3} <= 16'h000000;
-	  else if (LEDCtrl)
+    if (LEDCtrl)
 			{regl0,regl1,regl2,regl3} <= {l0,l1,l2,l3};
 		else
 			{regl0,regl1,regl2,regl3} <= {regl0,regl1,regl2,regl3};
@@ -44,6 +42,11 @@ module scan4 (
     scan <= scan + 1;
   end
   always @(*) begin
+    if (rst) begin
+      ena = 4'h01;
+      num = 0;
+    end
+	  else 
     case (scan)
       2'b00: begin //最右边灯亮
         ena = 4'h01;

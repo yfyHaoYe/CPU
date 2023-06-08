@@ -208,6 +208,7 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led
 
     scan4 sc_r(
         .clk(clk1),
+        .rst(rst_bt),
         .LEDCtrl(LEDCtrl),
         .l0(MemWriteData[3:0]),
         .l1(MemWriteData[7:4]),
@@ -219,6 +220,7 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led
 
     scan4 sc_l(
         .clk(clk1),
+        .rst(rst_bt),
         .LEDCtrl(LEDCtrl),
         .l0(MemWriteData[19:16]),
         .l1(MemWriteData[23:20]),

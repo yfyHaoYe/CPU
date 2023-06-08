@@ -11,7 +11,7 @@ start:
 		addi $a2,$a0,16
 
 		lw $a1,0($a0)
-		andi $a1,$a1,7
+		andi $a1,$a1,0x0007
 		or $a3, $a1, $zero
 		jal output_2sec_and_back
 		
@@ -31,6 +31,8 @@ start:
 		beq $a1,$at,test6
 		ori $at,$zero,7
 		beq $a1,$at,test7
+		ori $a3,$zero,0xffff
+		sw $a3, 0($a2)
 		j exit
 
 input:	
@@ -38,6 +40,7 @@ input:
 		srl $t0,$a1,8
 		andi $t1,$a1,0x00ff
 		jr $ra
+
 
 test0:
 		jal input
@@ -54,7 +57,7 @@ test0:
 		ori $t2, $zero, 0x0100
 
 	output0:
-		or $a3, $t2, $a1 
+		or $a3, $t2, $t0 
 		j output_and_exit
 
 
@@ -69,7 +72,7 @@ test1:
 
 test2:
 		jal test_extra
-		or $a3,$t0,$t1
+		or $a3, $t0, $t1
 		j output_and_exit
 
 test3:
@@ -107,7 +110,9 @@ test6:
 
 test7:
 		jal test_extra
-		j exit
+		or $a3,$a1,$zero
+		j output_and_exit
+		
 
 test_extra:
 		addi $sp,$sp,-4
@@ -129,9 +134,10 @@ output_2sec_and_back:
 		sw $at,0($sp)
 		
 		sw $a3, 10($a2)
-		ori $at, $zero, 1
-		lui $s0, 0x0000
-		ori $s0,$s0, 0x0004
+		ori $at, $zero, 0
+
+		lui $s0, 0x0150
+		ori $s0,$s0, 0x0000
 
 	out_loop:
 		addi $at, $at, 1
