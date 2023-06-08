@@ -6,9 +6,9 @@
 module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss);
     // Inputs
     input clock;
-    input rst;
+    input rst_bt;
     input [15:0] switches;
-    input confirm_button;
+    input confirm_bt;
     // Outputs
     output [15:0] ledss;
 
