@@ -1,11 +1,12 @@
 module scan4 (
     input clk,
-    input ioWrite,
+    input rst,
+    input LEDCtrl,
     input [3:0] l0,l1,l2,l3,  //输入数字
     output reg [3:0] ena,  //使能信号
     output [7:0] light  //显像
 );
-  reg clk_2 = 0;//降频后时钟
+  // reg clk_2 = 0;//降频后时钟
   reg [1:0] scan = 0;
   parameter x = 2000;
   reg [17:0] cnt = 0;
@@ -21,31 +22,25 @@ module scan4 (
   reg [3:0]regl2 = 0;
   reg [3:0]regl3 = 0;
 
-  always @(ioWrite) begin
-    if(ioWrite) begin
-      regl0 = l0;
-      regl1 = l1;
-      regl2 = l2;
-      regl3 = l3;
-    end
-    else begin
-      regl0 = regl0;
-      regl1 = regl1;
-      regl2 = regl2;
-      regl3 = regl3;
-    end
-  end
-
-
-  //降频
-  always @(posedge clk) begin
-    if (cnt == (x >> 1) - 1) begin
-      clk_2 <= ~clk_2;
-      cnt   <= 0;
-    end else cnt = cnt + 1;
-  end
   
-  always @(posedge clk_2) begin
+  always @ (posedge clk or posedge LEDCtrl) begin
+    if (rst)
+      {regl0,regl1,regl2,regl3} <= 16'h000000;
+	  else if (LEDCtrl)
+			{regl0,regl1,regl2,regl3} <= {l0,l1,l2,l3};
+		else
+			{regl0,regl1,regl2,regl3} <= {regl0,regl1,regl2,regl3};
+    end
+
+  // //降频
+  // always @(posedge clk) begin
+  //   if (cnt == (x >> 1) - 1) begin
+  //     clk_2 <= ~clk_2;
+  //     cnt   <= 0;
+  //   end else cnt = cnt + 1;
+  // end
+  
+  always @(posedge clk) begin
     scan <= scan + 1;
   end
   always @(*) begin
