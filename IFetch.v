@@ -68,7 +68,7 @@ module IFetch(Instruction,branch_base_addr,IORead,Addr_result,Read_data_1,Branch
                         PC <= Next_PC;
                     end
                 end
-                else if (PC == 32'h0000_1000) PC<=PC;
+                else if (PC == 32'h1111_1100) PC<=PC;
                 else PC <= Next_PC;
             end
         end

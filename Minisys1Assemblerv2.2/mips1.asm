@@ -4,15 +4,14 @@
 		# a1: input data
 		# a2: 0xffffff70 output address
 		# a3: output data
-start:	
-		ori $sp, $sp, 0x0100
+start:
+		ori $sp, $sp, 0x1000
 		lui $a0, 0xffff
 		ori $a0,$zero, 0xff60
-		addi $a2,$a0,10
+		addi $a2,$a0,16
 
-loop:	
 		lw $a1,0($a0)
-		andi $a1, $a1, 7
+		andi $a1,$a1,7
 		or $a3, $a1, $zero
 		jal output_2sec_and_back
 		
@@ -76,15 +75,26 @@ test2:
 test3:
 		jal test_extra
 		nor $a3,$t0,$t1
+		andi $a3,$a3,0x1111
 		j output_and_exit
 
 test4:
 		jal test_extra
 		xor $a3,$t0,$t1
+		andi $a3,$a3,0x1111
 		j output_and_exit
 
 test5:
 		jal test_extra
+		lui $t2,0xffff
+		srl $at, $t0,7
+		beq $at, $zero, test5_case1
+		or $t0,$t0,$t2
+	test5_case1:
+		srl $at, $t1,7
+		beq $at, $zero, test5_case2
+		or $t1,$t1,$t2
+	test5_case2:
 		slt $a3,$t0,$t1
 		j output_and_exit
 
@@ -99,8 +109,7 @@ test7:
 
 test_extra:
 		addi $sp,$sp,-4
-		#sw $ra, 0($sp) #64
-		or $t7,$zero,$ra
+		sw $ra,0($sp) #64
 
 		jal input
 		or $t0, $zero, $a1
@@ -109,11 +118,10 @@ test_extra:
 		sll $a3, $t0, 8
 		or $a3,$a3,$t1
 		jal output_2sec_and_back
-
-		#lw $ra, 0($sp)
-		or $ra, $t7, $zero
+		
+		lw $ra,0($sp)
+		lw $ra,0($sp)
 		addi $sp,$sp,4
-
 		jr $ra
 
 
@@ -122,25 +130,24 @@ output_2sec_and_back:
 		sw $s0,4($sp)
 		sw $at,0($sp)
 		
-		sw $a3, 2($a2)
+		sw $a3, 10($a2)
 		ori $at, $zero, 1
-
-		lui $s0, 0x0200
-		ori $s0,$s0, 0x0000
+		lui $s0, 0x0000
+		ori $s0,$s0, 0x0004
 
 	out_loop:
 		addi $at, $at, 1
 		bne $at, $s0, out_loop
 
 		lw $at,0($sp)
+		lw $at,0($sp)
+		lw $s0,4($sp)
 		lw $s0,4($sp)
 		addi $sp,$sp,8
 		jr $ra
 
 output_and_exit:
-
-		sw $a3, 10($a2)
 		sw $a3, 10($a2)
 
 exit:
-		j exit
+		nop

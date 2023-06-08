@@ -8,7 +8,7 @@ module Data_mem(clock, memWrite, address, writeData, readData);
     input [31:0] writeData; //Data to be wirten to the memory unit.
     output[31:0] readData;  //Data read from memory unit.
     wire clk;
-    assign clk = !clock;
+    assign clk = clock;
 
     RAM ram ( 
     .clka(clk),                // input wire clka

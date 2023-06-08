@@ -14,13 +14,13 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
 
     wire clk1;
     wire clk2;
-    wire clk3;
+    // wire clk3;
 
     cpuclk cclk(
         .clk_in1(clock),
         .clk_out1(clk1),
-        .clk_out2(clk2),
-        .clk_out3(clk3)
+        .clk_out2(clk2)
+        // .clk_out3(clk3)
     );
 
     wire [`ISA_WIDTH - 1 : 0] Instruction; // output IFetch  input Controller, Decoder, ALU,
@@ -120,8 +120,9 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
         .SwitchCtrl(SwitchCtrl)
     );
 
+
     Data_mem dm(
-        .clock(clk3),
+        .clock(clk1),
         .memWrite(MemWrite),
         .address(MemWriteAddr),
         .writeData(MemWriteData),

@@ -13,7 +13,7 @@ sllv	0
 srlv	0
 srav	0
 sll	2
-srl	1
+srl	3
 sra	0
 jr	3
 mfhi	0
@@ -22,7 +22,7 @@ mthi	0
 mtlo	0
 addi	6
 addiu	0
-andi	2
+andi	4
 ori	16
 xori	0
 slti	0
@@ -43,9 +43,9 @@ lbu	0
 lhu	0
 sb	0
 sh	0
-lw	4
+lw	8
 sw	5
-beq	11
+beq	13
 bne	1
 bgez	0
 bgtz	0
@@ -53,7 +53,7 @@ bgezal	0
 blez	0
 bltz	0
 bltzal	0
-lui	2
-j	11
+lui	3
+j	10
 jal	12
-nop	0
+nop	1

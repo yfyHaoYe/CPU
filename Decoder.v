@@ -37,6 +37,10 @@ module Decoder(read_data_1,read_data_2,Instruction,r_wdata,ALU_result,
         else decoder_write_data = ALU_result;// 将ALU模块输出数据写到寄存器
     end
 
+    
+
+
+
     register_file registers(
         .clk(clock),
         .rst_n(reset),
