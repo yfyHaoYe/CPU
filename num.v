@@ -63,7 +63,12 @@ module num_to_signal (
       4'h7: seg_out = 8'b1110_0000;  //7
       4'h8: seg_out = 8'b1111_1110;  //8
       4'h9: seg_out = 8'b1110_0110;  //9
-      4'ha: seg_out = 8'b0000_0010;  //negitive sign
+      4'ha: seg_out = 8'b0011_1011;  //a
+      4'hb: seg_out = 8'b1001_1110;  //b
+      4'hc: seg_out = 8'b0001_1010;  //c
+      4'hd: seg_out = 8'b0111_0010;  //d
+      4'he: seg_out = 8'b1001_1010;  //e
+      4'hf: seg_out = 8'b1000_1010;  //f
       
 
     endcase
