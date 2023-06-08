@@ -1,6 +1,6 @@
 module scan4 (
     input clk,
-    input [7:0] in//8位输入
+    input [7:0] in,//8位输入
     output reg [3:0] ena,  //使能信号
     output [7:0] light  //显像
 );

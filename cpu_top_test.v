@@ -184,4 +184,10 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
         .ledout(ledss)
     );
 
+    scan4 sc(
+        .clk(clk1),
+        .in(MemWriteData),
+        .ena(), 
+        .light() 
+    );
 endmodule
