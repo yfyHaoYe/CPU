@@ -4,7 +4,6 @@ module button (//接受一个按钮的端口，按钮按下1次(clk为原始时�
     input  clk,
     input  bt,
     output pos
-
 );
   reg [ 1:0] trig = 2'b00;  //中按键模拟上升沿
   reg [28:0] cnt_1s;  //

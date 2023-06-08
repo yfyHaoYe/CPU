@@ -3,7 +3,7 @@
 
 // minisys 32 CPU Top Module
 
-module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss);
+module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led_l);
     // Inputs
     input clock;
     input rst_bt;
@@ -11,10 +11,18 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss);
     input confirm_bt;
     // Outputs
     output [15:0] ledss;
+    
+    output [3:0] ena_r;
+    output [3:0] ena_l;
+    output [7:0] led_r;
+    output [7:0] led_l;
 
     wire clk1;
     wire clk2;
     // wire clk3;
+
+    wire rst;
+    wire confirm_button;
 
     //按钮防抖
     button bt1(
@@ -195,12 +203,6 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss);
         .ledwdata(MemWriteData),	// the data (from register/memorio)  waiting for to be writen to the leds of the board
         .ledout(ledss)
     );
-
-    //七段数码管
-    wire [3:0] ena_r;
-    wire [3:0] ena_l;
-    wire [3:0] led_r;
-    wire [3:0] led_l;
 
 
 
