@@ -186,20 +186,20 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
 
     //七段数码管
     wire [3:0] l0, l1, l2, l3, l4, l5, l6, l7;
-    wire [15:0] scan_out;
+    wire [15:0] ledss;
     wire [3:0] ena_r;
     wire [3:0] ena_l;
     wire [3:0] led_r;
     wire [3:0] led_l;
 
-    assign l0 = scan_out%10;
-    assign l1 = (scan_out/10)%10;
-    assign l2 = (scan_out/100)%10;
-    assign l3 = (scan_out/1000)%10;
-    assign l4 = (scan_out/10000)%10;
-    assign l5 = (scan_out/100000)%10;
-    assign l6 = (scan_out/1000000)%10;
-    assign l7 = (scan_out/10000000)%10;
+    assign l0 = ledss%10;
+    assign l1 = (ledss/10)%10;
+    assign l2 = (ledss/100)%10;
+    assign l3 = (ledss/1000)%10;
+    assign l4 = (ledss/10000)%10;
+    assign l5 = (ledss/100000)%10;
+    assign l6 = (ledss/1000000)%10;
+    assign l7 = (ledss/10000000)%10;
 
 
 
