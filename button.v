@@ -14,7 +14,7 @@ module button (//接受一个按钮的端口，按钮按下1次(clk为原始时�
       cnt_1s <= cnt_1s + 1;
     end else begin
       if (cnt_1s != 0)
-        if (cnt_1s <= 25000000) cnt_1s <= cnt_1s + 1;
+        if (cnt_1s <= 2000) cnt_1s <= cnt_1s + 1;
         else cnt_1s <= 0;
       else cnt_1s<=0;
 

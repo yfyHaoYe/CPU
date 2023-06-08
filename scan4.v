@@ -1,19 +1,42 @@
 module scan4 (
     input clk,
+    input ioWrite,
     input [3:0] l0,l1,l2,l3,  //输入数字
     output reg [3:0] ena,  //使能信号
     output [7:0] light  //显像
 );
-  reg clk_2;//降频后时钟
+  reg clk_2 = 0;//降频后时钟
   reg [1:0] scan = 0;
-  parameter x = 200000;
+  parameter x = 2000;
   reg [17:0] cnt = 0;
-  reg [ 3:0] num;
+  reg [3:0] num = 0;
 
   num_to_signal f (
       num,
       light
   );
+
+  reg [3:0]regl0 = 0;
+  reg [3:0]regl1 = 0;
+  reg [3:0]regl2 = 0;
+  reg [3:0]regl3 = 0;
+
+  always @(ioWrite) begin
+    if(ioWrite) begin
+      regl0 = l0;
+      regl1 = l1;
+      regl2 = l2;
+      regl3 = l3;
+    end
+    else begin
+      regl0 = regl0;
+      regl1 = regl1;
+      regl2 = regl2;
+      regl3 = regl3;
+    end
+  end
+
+
   //降频
   always @(posedge clk) begin
     if (cnt == (x >> 1) - 1) begin
@@ -29,19 +52,19 @@ module scan4 (
     case (scan)
       2'b00: begin //最右边灯亮
         ena = 4'h01;
-        num = l0;
+        num = regl0;
       end  
       2'b01: begin
         ena = 4'h02;
-        num = l1;
+        num = regl1;
       end
       2'b10: begin
         ena = 4'h04;
-        num = l2;
+        num = regl2;
       end
       2'b11: begin
         ena = 4'h08;
-        num = l3;
+        num = regl3;
       end
     endcase
   end

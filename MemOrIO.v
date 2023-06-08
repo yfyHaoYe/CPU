@@ -76,6 +76,6 @@ module MemOrIO( mRead, mWrite, ioRead, ioWrite,addr_in, addr_out, m_rdata, io_rd
         //write_data could go to either memory or IO. where is it from?
             write_data = r_rdata;
         else
-            write_data = 32'hzzzz_zzzz;
+            write_data = 32'h0000_0000;
     end
 endmodule

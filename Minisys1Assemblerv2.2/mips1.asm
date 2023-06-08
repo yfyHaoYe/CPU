@@ -35,19 +35,19 @@ start:
 
 input:	
 		lw $a1,2($a0)
-		srl $a1,$a1,8
+		srl $t0,$a1,8
+		andi $t1,$a1,0x00ff
 		jr $ra
 
 test0:
 		jal input
-		or $t0, $a1, $zero
 		ori $t1, $zero, 1
 		ori $t2, $zero, 1
 
 	loop0:	
 		sll $t2,$t2,1
-		beq $t2, $t0, power_of_two0
 		beq $t2, $zero, output0
+		beq $t2, $t0, power_of_two0
 		j loop0
 
 	power_of_two0: 
@@ -60,11 +60,11 @@ test0:
 
 test1:
 		jal input 
-		andi $t0, $a1, 1
-		beq $t0, $zero, even
-		ori $t1, $zero, 0x0100
+		andi $t1, $t0, 1
+		beq $t1, $zero, even
+		ori $t2, $zero, 0x0100
 	even:
-		or $a3, $t1, $a1
+		or $a3, $t2, $t0
 		j output_and_exit
 
 test2:
@@ -75,13 +75,13 @@ test2:
 test3:
 		jal test_extra
 		nor $a3,$t0,$t1
-		andi $a3,$a3,0x1111
+		andi $a3,$a3,0x00ff
 		j output_and_exit
 
 test4:
 		jal test_extra
 		xor $a3,$t0,$t1
-		andi $a3,$a3,0x1111
+		andi $a3,$a3,0x00ff
 		j output_and_exit
 
 test5:
@@ -90,10 +90,12 @@ test5:
 		srl $at, $t0,7
 		beq $at, $zero, test5_case1
 		or $t0,$t0,$t2
+		ori $t0,$t0,0xff00
 	test5_case1:
 		srl $at, $t1,7
 		beq $at, $zero, test5_case2
 		or $t1,$t1,$t2
+		ori $t1,$t1,0xff00
 	test5_case2:
 		slt $a3,$t0,$t1
 		j output_and_exit
@@ -112,11 +114,7 @@ test_extra:
 		sw $ra,0($sp) #64
 
 		jal input
-		or $t0, $zero, $a1
-		jal input
-		or $t1, $zero, $a1
-		sll $a3, $t0, 8
-		or $a3,$a3,$t1
+		or $a3,$a1,$zero
 		jal output_2sec_and_back
 		
 		lw $ra,0($sp)
