@@ -3,7 +3,7 @@
 
 // minisys 32 CPU Top Module
 
-module cpu_top_test(clock,rst,switches,confirm_button,ledss);
+module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss);
     // Inputs
     input clock;
     input rst;
@@ -15,6 +15,18 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
     wire clk1;
     wire clk2;
     // wire clk3;
+
+    //按钮防抖
+    button bt1(
+        .clk(clk1),
+        .bt(rst_bt),
+        .pos(rst)
+    );
+    button bt2(
+        .clk(clk1),
+        .bt(confirm_bt),
+        .pos(confirm_button)
+    );
 
     cpuclk cclk(
         .clk_in1(clock),
@@ -193,7 +205,7 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
 
 
     scan4 sc_r(
-        .clk(clk),
+        .clk(clk1),
         .l0(MemWriteData[3:0]),
         .l1(MemWriteData[7:4]),
         .l2(MemWriteData[11:8]),
@@ -202,7 +214,7 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
         .led(led_r)
     );
     scan4 sc_l(
-        .clk(clk),
+        .clk(clk1),
         .l0(MemWriteData[19:16]),
         .l1(MemWriteData[23:20]),
         .l2(MemWriteData[27:24]),
