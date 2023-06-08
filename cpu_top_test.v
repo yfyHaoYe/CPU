@@ -211,7 +211,7 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss);
         .l2(MemWriteData[11:8]),
         .l3(MemWriteData[15:12]),
         .ena(ena_r),
-        .led(led_r)
+        .light(led_r)
     );
     scan4 sc_l(
         .clk(clk1),
@@ -220,7 +220,7 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss);
         .l2(MemWriteData[27:24]),
         .l3(MemWriteData[31:28]),
         .ena(ena_l),
-        .led(led_l)
+        .light(led_l)
     );
 
 endmodule
