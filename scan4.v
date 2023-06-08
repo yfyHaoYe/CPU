@@ -4,7 +4,7 @@ module scan4 (
     input LEDCtrl,
     input [3:0] l0,l1,l2,l3,  //输入数字
     output reg [3:0] ena,  //使能信号
-    output [7:0] light  //显像
+    output reg [7:0] light  //显像
 );
   // reg clk_2 = 0;//降频后时钟
   reg [1:0] scan = 0;
@@ -85,11 +85,11 @@ module num_to_signal (
       4'h8: seg_out = 8'b1111_1110;  //8
       4'h9: seg_out = 8'b1110_0110;  //9
       4'ha: seg_out = 8'b0011_1011;  //a
-      4'hb: seg_out = 8'b1001_1110;  //b
+      4'hb: seg_out = 8'b0011_1110;  //b
       4'hc: seg_out = 8'b0001_1010;  //c
-      4'hd: seg_out = 8'b0111_0010;  //d
-      4'he: seg_out = 8'b1001_1010;  //e
-      4'hf: seg_out = 8'b1000_1010;  //f
+      4'hd: seg_out = 8'b0111_1010;  //d
+      4'he: seg_out = 8'b1001_1110;  //e
+      4'hf: seg_out = 8'b1000_1110;  //f
       
 
     endcase
