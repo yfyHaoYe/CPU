@@ -1,6 +1,6 @@
 module scan4 (
     input clk,
-    input [7:0] in//8位输入
+    input [3:0] l0,l1,l2,l3,  //输入数字
     output reg [3:0] ena,  //使能信号
     output [7:0] light  //显像
 );
@@ -10,12 +10,6 @@ module scan4 (
   reg [17:0] cnt = 0;
   reg [ 3:0] num;
 
-  wire l0, l1, l2, l3;
-  assign l3 = in[7]? 4'ha : 4'h0;
-  assign l2 = in[6:0]%1000/100;
-  assign l1 = in[6:0]%100/10;
-  assign l0 = in[6:0]%10;
-  
   num_to_signal f (
       num,
       light

@@ -175,13 +175,53 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
     );
 
     leds le(
-        .ledrst(rst),		// reset, active high 
-        .led_clk(clk1),	// clk1 for led 
+        .ledrst(rst),
+        .led_clk(clk1),	
         .ledwrite(LEDCtrl),	// led write enable, active high 
         .ledcs(1'b1),		// 1 means the leds are selected as output 
         .ledaddr(2'b00),	// 2'b00 means updata the low 16bits of ledout
         .ledwdata(MemWriteData),	// the data (from register/memorio)  waiting for to be writen to the leds of the board
         .ledout(ledss)
+    );
+
+    //七段数码管
+    wire [3:0] l0, l1, l2, l3, l4, l5, l6, l7;
+    wire [15:0] scan_out;
+    wire [3:0] ena_r;
+    wire [3:0] ena_l;
+    wire [3:0] led_r;
+    wire [3:0] led_l;
+
+    assign l0 = scan_out%10;
+    assign l1 = (scan_out/10)%10;
+    assign l2 = (scan_out/100)%10;
+    assign l3 = (scan_out/1000)%10;
+    assign l4 = (scan_out/10000)%10;
+    assign l5 = (scan_out/100000)%10;
+    assign l6 = (scan_out/1000000)%10;
+    assign l7 = (scan_out/10000000)%10;
+
+
+
+    scan4 sc_r(
+        .clk(clk),
+        .rst(rst),
+        .l0(l0),
+        .l1(l1),
+        .l2(l2),
+        .l3(l3),
+        .ena(ena_r),
+        .led(led_r),
+    );
+    scan4 sc_l(
+        .clk(clk),
+        .rst(rst),
+        .l0(l4),
+        .l1(l5),
+        .l2(l6),
+        .l3(l7),
+        .ena(ena_l),
+        .led(led_l),
     );
 
 endmodule
