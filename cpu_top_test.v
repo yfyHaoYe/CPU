@@ -205,23 +205,23 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
 
     scan4 sc_r(
         .clk(clk),
-        .rst(rst),
+        // .rst(rst),
         .l0(l0),
         .l1(l1),
         .l2(l2),
         .l3(l3),
-        .ena(ena_r),
-        .led(led_r)
+        .ena(ena_r)
+        // .led(led_r)
     );
     scan4 sc_l(
         .clk(clk),
-        .rst(rst),
+        // .rst(rst),
         .l0(l4),
         .l1(l5),
         .l2(l6),
         .l3(l7),
-        .ena(ena_l),
-        .led(led_l)
+        .ena(ena_l)
+        // .led(led_l)
     );
 
 endmodule
