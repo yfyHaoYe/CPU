@@ -185,41 +185,28 @@ module cpu_top_test(clock,rst,switches,confirm_button,ledss);
     );
 
     //七段数码管
-    wire [3:0] l0, l1, l2, l3, l4, l5, l6, l7;
-    wire [15:0] ledss;
     wire [3:0] ena_r;
     wire [3:0] ena_l;
     wire [3:0] led_r;
     wire [3:0] led_l;
 
-    assign l0 = ledss%10;
-    assign l1 = (ledss/10)%10;
-    assign l2 = (ledss/100)%10;
-    assign l3 = (ledss/1000)%10;
-    assign l4 = (ledss/10000)%10;
-    assign l5 = (ledss/100000)%10;
-    assign l6 = (ledss/1000000)%10;
-    assign l7 = (ledss/10000000)%10;
-
 
 
     scan4 sc_r(
         .clk(clk),
-        .rst(rst),
-        .l0(l0),
-        .l1(l1),
-        .l2(l2),
-        .l3(l3),
+        .l0(MemWriteData[3:0]),
+        .l1(MemWriteData[7:4]),
+        .l2(MemWriteData[11:8]),
+        .l3(MemWriteData[15:12]),
         .ena(ena_r),
         .led(led_r)
     );
     scan4 sc_l(
         .clk(clk),
-        .rst(rst),
-        .l0(l4),
-        .l1(l5),
-        .l2(l6),
-        .l3(l7),
+        .l0(MemWriteData[19:16]),
+        .l1(MemWriteData[23:20]),
+        .l2(MemWriteData[27:24]),
+        .l3(MemWriteData[31:28]),
         .ena(ena_l),
         .led(led_l)
     );
