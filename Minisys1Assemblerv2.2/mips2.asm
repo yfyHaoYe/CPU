@@ -93,7 +93,7 @@ test1:
 		or $t0, $v0, $zero
 		or $t1, $zero, $zero
 		or $t2, $zero, $zero
-		ori $t3, $zero, 1
+
 		jal func1
 		or $a3,$t1,$zero
 		j output_and_exit
@@ -102,7 +102,6 @@ test1:
 		# $t0: input data from n to 1
 		# $t1: in and out times
 		# $t2: sum of i
-		# $t3: constant 1
 
 		addi $t1, $t1, 1
 		addi $sp, $sp, -8
@@ -111,15 +110,17 @@ test1:
 		
 
 		addi $t0, $t0, -1
-		beq $t0, $t3, return1
+		beq $t0, $zero, return1
 		jal func1
 
-	return1:
+	return1:		
+		lw $ra, 0($sp)
+		lw $ra, 0($sp)
+		lw $t0, 4($sp)
+		lw $t0, 4($sp)
+
 		add $t2, $t2, $t0
-		lw $ra, 0($sp)
-		lw $ra, 0($sp)
-		lw $t0, 4($sp)
-		lw $t0, 4($sp)
+
 		addi $sp, $sp, 8
 		addi $t1, $t1, 1
 		jr $ra
@@ -132,7 +133,6 @@ test2:
 		or $t0, $v0, $zero
 		or $t1, $zero, $zero
 		or $t2, $zero, $zero
-		ori $t3, $zero, 1
 		jal func2
 
 		or $a3, $t1, $zero
@@ -142,7 +142,6 @@ test2:
 		# $t0: input data from n to 1
 		# $t1: in and out times
 		# $t2: sum of i
-		# $t3: constant 1
 
 		addi $t1, $t1, 1
 		addi $sp, $sp, -8
@@ -161,15 +160,18 @@ test2:
 		jal output_and_back
 
 		addi $t0, $t0, -1
-		beq $t0, $t3, return2
+		beq $t0, $zero, return2
 		jal func2
 
 	return2:
+		
+		lw $ra, 0($sp)
+		lw $ra, 0($sp)
+		lw $t0, 4($sp)
+		lw $t0, 4($sp)
+
 		add $t2, $t2, $t0
-		lw $ra, 0($sp)
-		lw $ra, 0($sp)
-		lw $t0, 4($sp)
-		lw $t0, 4($sp)
+
 		addi $sp, $sp, 8
 		addi $t1, $t1, 1
 		jr $ra
@@ -182,7 +184,6 @@ test3:
 		or $t0, $v0, $zero
 		or $t1, $zero, $zero
 		or $t2, $zero, $zero
-		ori $t3, $zero, 1
 		jal func3
 
 		or $a3, $t1, $zero
@@ -192,7 +193,6 @@ test3:
 		# $t0: input data from n to 1
 		# $t1: in and out
 		# $t2: sum of i
-		# $t3: constant 1
 
 		addi $t1, $t1, 1
 		addi $sp, $sp, -8
@@ -200,17 +200,16 @@ test3:
 		sw $ra, 0($sp)
 
 		addi $t0, $t0, -1
-		beq $t0, $t3, return3
+		beq $t0, $zero, return3
 		jal func3
 
 	return3:
+		
+		lw $t0, 4($sp)
+		lw $t0, 4($sp)
+		
 		add $t2, $t2, $t0
 		
-		
-		
-		lw $t0, 4($sp)
-		lw $t0, 4($sp)
-
 		or $a3, $zero, $t0
 		jal output_and_back
 		or $a3, $zero, $t1
@@ -287,6 +286,19 @@ test6:
 		jal input
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
+		srl $t5, $t0,7
+		srl $t6, $t1,7
+		beq $t5,$zero,case6_1
+		xori $t0,$t0,0x00ff
+		addi $t0,$t0,1
+		
+	case6_1:
+		beq $t6,$zero,case6_2
+		xori $t1,$t1,0x00ff
+		addi $t1,$t1,1
+		
+	case6_2:
+
 		ori $t3,$zero,8
 		# t0:lier, t1:cand t2:product t3:cnt
 	loop6:
@@ -299,7 +311,13 @@ test6:
 		srl $t0,$t0,1
 		addi $t3,$t3,-1
 		bne $t3,$zero, loop6
+		
+		beq $t5,$t6,exit6
+		#signal handle
+		xori $t2,$t2,0xffff
+		addi $t2,$t2,1
 
+	exit6:
 		or $a3,$t2,$zero
 		j output_and_exit
 		
@@ -310,33 +328,57 @@ test7:
 
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
+
+		srl $t6, $t0,7
+		srl $t7, $t1,7
+		beq $t6,$zero,case7_1
+		xori $t0,$t0,0x00ff
+		addi $t0,$t0,1
+		
+	case7_1:
+
+		beq $t7,$zero,case7_2
+		xori $t1,$t1,0x00ff
+		addi $t1,$t1,1
+		
+	case7_2:
+
 		ori $t4,$zero,8
 		# t0:dend, t1:sor t2:quotient t3:remainder t4 cnt
 	loop7:
 		sub $t3,$t3,$t1
-		slt $t6,$t3,$zero
-		beq $t6,$zero,case1
-		j case2
-	case1:
+		slt $t5,$t3,$zero
+		bne $t5,$zero,remainder_neg
+	
 		sll $t2,$t2,1
 		ori $t2,$t2,1
 		j out7
-	case2:
+
+	remainder_neg:
 		add $t3,$t1,$t3
 		sll $t2,$t2,1
-		j out7
+
 	out7:
 		srl $t1,$t1,1
 		addi $t4,$t4,-1
 		bne $t4,$zero,loop7
-
 		
-	endloop7:
+		# signal handle
+		beq $t6,$t7, exit7
+
+		beq $t6,$zero,pos_div_neg7
+		xori $t3,$t3,0x00ff
+		addi $t3,$t3,1
+	pos_div_neg7:
+		xori $t2,$t2,0x00ff
+		addi $t2,$t2,1
+
+	exit7:
 		or $a3,$t2,$zero
 		jal output_and_back
 		or $a3,$t3,$zero
 		jal output_and_back
-		j endloop7
+		j exit7
 
 output_and_back:
 		addi $sp,$sp,-4

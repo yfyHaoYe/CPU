@@ -8,7 +8,7 @@ module scan4 (
 );
   // reg clk_2 = 0;//降频后时钟
   reg [1:0] scan = 0;
-  parameter x = 200000;
+  parameter x = 2000;
   reg [17:0] cnt = 0;
   reg [3:0] num = 0;
 
