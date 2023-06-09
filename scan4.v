@@ -2,13 +2,13 @@ module scan4 (
     input clk,
     input rst,
     input LEDCtrl,
-    input [3:0] l0,l1,l2,l3,  //输入数字
-    output reg [3:0] ena,  //使能信号
-    output reg [7:0] light  //显像
+    input [15:0]led,  //输入数字
+    output reg [3:0] ena = 0,  //使能信号
+    output [7:0] light  //显像
 );
   // reg clk_2 = 0;//降频后时钟
   reg [1:0] scan = 0;
-  parameter x = 2000;
+  parameter x = 200000;
   reg [17:0] cnt = 0;
   reg [3:0] num = 0;
 
@@ -17,30 +17,46 @@ module scan4 (
       light
   );
 
-  reg [3:0]regl0 = 0;
-  reg [3:0]regl1 = 0;
-  reg [3:0]regl2 = 0;
-  reg [3:0]regl3 = 0;
+  // reg [3:0]regl0 = 0;
+  // reg [3:0]regl1 = 0;
+  // reg [3:0]regl2 = 0;
+  // reg [3:0]regl3 = 0;
 
   
-  always @ (posedge clk or posedge LEDCtrl) begin
-    if (LEDCtrl)
-			{regl0,regl1,regl2,regl3} <= {l0,l1,l2,l3};
-		else
-			{regl0,regl1,regl2,regl3} <= {regl0,regl1,regl2,regl3};
-    end
-
-  // //降频
-  // always @(posedge clk) begin
-  //   if (cnt == (x >> 1) - 1) begin
-  //     clk_2 <= ~clk_2;
-  //     cnt   <= 0;
-  //   end else cnt = cnt + 1;
+  // always @ (posedge clk or posedge LEDCtrl) begin
+  //   if (rst) begin
+  //     regl0 <= 0;
+  //     regl1 <= 0;
+  //     regl2 <= 0;
+  //     regl3 <= 0;
+  //   end
+  //   else if (LEDCtrl) begin
+	// 		regl0 <= l0;
+  //     regl1 <= l1;
+  //     regl2 <= l2;
+  //     regl3 <= l3;
+  //   end
+	// 	else begin
+  //     regl0 <= regl0;
+  //     regl1 <= regl1;
+  //     regl2 <= regl2;
+  //     regl3 <= regl3;
+  //   end
   // end
-  
+
+  reg clk_2 =0 ;
+  //降频
   always @(posedge clk) begin
+    if (cnt == (x >> 1) - 1) begin
+      clk_2 <= ~clk_2;
+      cnt   <= 0;
+    end else cnt <= cnt + 1;
+  end
+  
+  always @(posedge clk_2) begin
     scan <= scan + 1;
   end
+
   always @(*) begin
     if (rst) begin
       ena = 4'h01;
@@ -49,20 +65,20 @@ module scan4 (
 	  else 
     case (scan)
       2'b00: begin //最右边灯亮
-        ena = 4'h01;
-        num = regl0;
+        ena = 4'h1;
+        num = led[3:0];
       end  
       2'b01: begin
-        ena = 4'h02;
-        num = regl1;
+        ena = 4'h2;
+        num = led[7:4];
       end
       2'b10: begin
-        ena = 4'h04;
-        num = regl2;
+        ena = 4'h4;
+        num = led[11:8];
       end
       2'b11: begin
-        ena = 4'h08;
-        num = regl3;
+        ena = 4'h8;
+        num = led[15:12];
       end
     endcase
   end
@@ -90,7 +106,7 @@ module num_to_signal (
       4'hd: seg_out = 8'b0111_1010;  //d
       4'he: seg_out = 8'b1001_1110;  //e
       4'hf: seg_out = 8'b1000_1110;  //f
-      
+      default: seg_out = 8'b1111_1100;
 
     endcase
 endmodule

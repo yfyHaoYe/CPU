@@ -13,14 +13,14 @@ start:
 		addi $a2,$a0,16
 
 		#0.5s 
-		lui $s1, 0x00a8
-		ori $s1,$s1, 0x0000
+		lui $s1, 0x0000
+		ori $s1,$s1, 0x0004
 		#2s
-		lui $s2, 0x0150
-		ori $s2,$s2, 0x0000
+		lui $s2, 0x0000
+		ori $s2,$s2, 0x0004
 		#5s
-		lui $s3, 0x0690
-		ori $s3,$s3, 0x0000
+		lui $s3, 0x0000
+		ori $s3,$s3, 0x0004
 
 		#input testcase
 		lw $a1,0($a0)
@@ -48,40 +48,22 @@ start:
 		beq $a1,$at,test7
 		j exit
 
-input_signed:	
-		lw $a1,2($a0)
-		srl $v0,$a1,8
-		andi $v1,$a1,0x00ff
-		
-		lui $s7,0xffff
-		ori $s7,$s7,0xff00
-		
-		ori $at,$v0,0x0080
-		beq $at,$zero,input_case1 #v0 is positive
-		or $v0,$v0,$s7	
-	input_case1:
 
-		ori $at,$v1,0x0080
-		beq $at,$zero,input_case2 #v1 is positive
-		or $v1,$v1,$s7	
-	input_case2:
-		
-		jr $ra
-
-input_unsigned:
+input:
 		lw $a1,2($a0)
 		srl $v0,$a1,8
 		andi $v1,$a1,0x00ff
 		jr $ra
 
 test0:
-		jal input_signed
-		or $s0,$s1, $zero #flash time 0.5s
-
-		slt $t0,$a0,$zero
+		jal input
+		or $s0, $s1, $zero #flash time 0.5s
+		srl $t0,$v0,7
+		or $a3,$t0,$zero
+		jal output_and_back
 		bne $t0,$zero,flash
 		
-		or $t0,$a0,$zero
+		or $t0,$v0,$zero
 		or $t1,$zero,$zero
 		or $t2,$zero,$zero
 		
@@ -104,16 +86,15 @@ test0:
 		
 
 test1:
-		jal input_unsigned
+		jal input
 
-		or $s0,$s2, $zero #output 2s
+		or $s0, $s2, $zero #output 2s
 
 		or $t0, $v0, $zero
 		or $t1, $zero, $zero
 		or $t2, $zero, $zero
 		ori $t3, $zero, 1
 		jal func1
-
 		or $a3,$t2,$zero
 		j output_and_exit
 
@@ -144,7 +125,7 @@ test1:
 		jr $ra
 		
 test2:
-		jal input_unsigned
+		jal input
 
 		or $s0,$s2, $zero #output 2s
 
@@ -194,7 +175,7 @@ test2:
 		jr $ra
 		
 test3:
-		jal input_unsigned
+		jal input
 
 		or $s0,$s2, $zero #output 2s
 
@@ -209,7 +190,7 @@ test3:
 
 	func3: 
 		# $t0: input data from n to 1
-		# $t1: in and out ti
+		# $t1: in and out
 		# $t2: sum of i
 		# $t3: constant 1
 
@@ -225,8 +206,8 @@ test3:
 	return3:
 		add $t2, $t2, $t0
 		
-		lw $ra, 0($sp)
-		lw $ra, 0($sp)
+		
+		
 		lw $t0, 4($sp)
 		lw $t0, 4($sp)
 
@@ -241,80 +222,69 @@ test3:
 		or $a3, $zero, $sp
 		jal output_and_back
 
+		lw $ra, 0($sp)
+		lw $ra, 0($sp)
 		addi $sp, $sp, 8
 		addi $t1, $t1, 1
 		jr $ra
 
 test4:
-		jal input_signed
+		jal input
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
-
-		slt $t2,$t0,$zero
-		slt $t3,$t1,$zero
-		add $t0,$t0,$t1
-		slt $t1,$t0,$zero
-		# t0: in1+in2
-		# t1: in1+in2 signal
-		# t2: in1 signal
-		# t3: in2 signal
-
-		and $t4,$t2,$t3
-		xori $t5,$t1,1
-		and $t4,$t5,$t4
 		
-		xori $t6,$t2,1
-		nop
-		xori $at,$t3,1
-		and $t6,$t6,$at
-		and $t6,$t6,$t1
+		add $t2,$t0,$t1
 
-		or $t4,$t4,$t6
-		or $t1,$zero,$zero
-		beq $t4,$zero,no_overflow4
-		ori $t1, $zero, 0x0100
+		srl $t2,$t0,7
+		srl $t3,$t1,7
+		add $t0,$t0,$t1
+		andi $t0,$t0,0x00ff
+		srl $t1,$t0,7
+		
+		# t0: in1+in2
+		# t1: in1+in2 negetive
+		# t2: in1 negetive
+		# t3: in2 negetive
+
+		or $t4,$zero,$zero
+		beq $t1,$t2,no_overflow4
+		beq $t1,$t3,no_overflow4
+		ori $t4, $zero, 0x0100
+
 	no_overflow4:
 		or $a3,$t0,$zero
-		or $a3,$a3,$t1
+		or $a3,$a3,$t4
 		j output_and_exit
 		
+
 test5:
-		jal input_signed
+		jal input
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
 
-		slt $t2,$t0,$zero
-		slt $t3,$t1,$zero
-		sub $t0,$t0,$t1
-		slt $t1,$t0,$zero
+		srl $t2,$t0,7
+		srl $t3,$t1,7
+		add $t0,$t0,$t1
+		andi $t0,$t0,0x00ff
+		srl $t1,$t0,7
 		# t0: in1-in2
 		# t1: in1-in2 signal
 		# t2: in1 signal
 		# t3: in2 signal
-		
-		xori $t4,$t3,1
-		and $t4,$t2,$t4
-		xori $t5,$t1,1
-		and $t4,$t5,$t4
-		
-		xori $t6,$t2,1
-		and $t6,$t6,$t3
-		and $t6,$t6,$t1
+		or $t4,$zero,$zero
+		beq $t1,$t2,no_overflow5
+		bne $t1,$t3,no_overflow5
+		ori $t4, $zero, 0x0100
 
-		or $t4,$t4,$t6
-		or $t1,$zero,$zero
-		beq $t4,$zero,no_overflow5
-		ori $t1, $zero, 0x0100
-	
 	no_overflow5:
 		or $a3,$t0,$zero
-		or $a3,$a3,$t1
+		or $a3,$a3,$t4
 		j output_and_exit
 
 
 
 test6:
-		jal input_signed
+		jal input
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
 		ori $t5,$t5,8
@@ -334,7 +304,7 @@ test6:
 		
 		
 test7:
-		jal input_signed
+		jal input
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
 		ori $t5,$t5,8

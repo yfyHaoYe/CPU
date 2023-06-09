@@ -10,12 +10,12 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led
     input [15:0] switches;
     input confirm_bt;
     // Outputs
-    output reg [15:0] ledss;
+    output [15:0] ledss;
     
-    output reg [3:0] ena_r;
-    output reg [3:0] ena_l;
-    output reg [7:0] led_r;
-    output reg [7:0] led_l;
+    output [3:0] ena_r;
+    output [3:0] ena_l;
+    output [7:0] led_r;
+    output [7:0] led_l;
 
     wire clk1;
     wire clk2;
@@ -210,10 +210,7 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led
         .clk(clk1),
         .rst(rst_bt),
         .LEDCtrl(LEDCtrl),
-        .l0(MemWriteData[3:0]),
-        .l1(MemWriteData[7:4]),
-        .l2(MemWriteData[11:8]),
-        .l3(MemWriteData[15:12]),
+        .led(ledss),
         .ena(ena_r),
         .light(led_r)
     );
@@ -222,10 +219,7 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led
         .clk(clk1),
         .rst(rst_bt),
         .LEDCtrl(LEDCtrl),
-        .l0(MemWriteData[19:16]),
-        .l1(MemWriteData[23:20]),
-        .l2(MemWriteData[27:24]),
-        .l3(MemWriteData[31:28]),
+        .led(ledss),
         .ena(ena_l),
         .light(led_l)
     );
