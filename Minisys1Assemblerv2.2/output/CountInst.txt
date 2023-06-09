@@ -22,8 +22,8 @@ mthi	0
 mtlo	0
 addi	29
 addiu	0
-andi	4
-ori	23
+andi	5
+ori	22
 xori	7
 slti	0
 sltiu	0

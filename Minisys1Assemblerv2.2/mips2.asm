@@ -303,7 +303,7 @@ test6:
 		ori $t3,$zero,8
 		# t0:lier, t1:cand t2:product t3:cnt
 	loop6:
-		ori $t4,$t0,1
+		andi $t4,$t0,1
 		beq $t4,$zero,out6
 		add $t2,$t2,$t1
 		
@@ -330,7 +330,7 @@ test7:
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
 		or $t2,$zero,$zero
-		or $t3,$t3,$t0
+		or $t3,$zero,$t0
 
 		srl $t6, $t0,7
 		srl $t7, $t1,7

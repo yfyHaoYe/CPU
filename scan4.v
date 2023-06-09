@@ -17,17 +17,17 @@ module scan4 (
       light
   );
 
-  reg [15:0]ledout = 16'h0000;
+  reg [15:0] ledout = 16'h0000;
 
 
-  always @ (posedge clk or posedge rst) begin
-    if (rst)
-      ledout <=16'h0000;
-		else if (LEDCtrl) 
-				ledout[15:0] <= ledwdata[15:0];
-    else 
-      ledout <= ledout;
-  end
+  // always @ (posedge clk or posedge rst) begin
+  //   if (rst)
+  //     ledout <=16'h0000;
+	// 	else if (LEDCtrl) 
+	// 			ledout[15:0] <= ledwdata[15:0];
+  //   else 
+  //     ledout <= ledout;
+  // end
 
   reg clk_2 =0 ;
   //降频

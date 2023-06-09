@@ -20,7 +20,7 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led
     wire clk1;
     wire clk2;
     // wire clk3;
-
+    wire [15:0] ledsshigh;
     wire rst;
     wire confirm_button;
 
@@ -201,7 +201,7 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led
         .ledcs(1'b1),		// 1 means the leds are selected as output 
         .ledaddr(2'b00),	// 2'b00 means updata the low 16bits of ledout
         .ledwdata(MemWriteData),	// the data (from register/memorio)  waiting for to be writen to the leds of the board
-        .ledout(ledss)
+        .ledout({ledsshigh,ledss})
     );
 
 
@@ -210,7 +210,7 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led
         .clk(clk1),
         .rst(rst_bt),
         .LEDCtrl(LEDCtrl),
-        .ledwdata(MemWriteData),
+        .ledwdata(ledss),
         .ena(ena_r),
         .light(led_r)
     );
@@ -219,7 +219,7 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led
         .clk(clk1),
         .rst(rst_bt),
         .LEDCtrl(LEDCtrl),
-        .ledwdata(MemWriteData),
+        .ledwdata(ledsshigh),
         .ena(ena_l),
         .light(led_l)
     );
