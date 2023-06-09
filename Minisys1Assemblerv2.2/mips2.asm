@@ -231,9 +231,6 @@ test4:
 		jal input
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
-		
-		add $t2,$t0,$t1
-
 		srl $t2,$t0,7
 		srl $t3,$t1,7
 		add $t0,$t0,$t1
@@ -260,17 +257,17 @@ test5:
 		jal input
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
-
 		srl $t2,$t0,7
 		srl $t3,$t1,7
+		or $t4,$zero,$zero
+
 		add $t0,$t0,$t1
 		andi $t0,$t0,0x00ff
 		srl $t1,$t0,7
 		# t0: in1-in2
 		# t1: in1-in2 signal
 		# t2: in1 signal
-		# t3: in2 signal
-		or $t4,$zero,$zero
+		# t3: in2 signal		
 		beq $t1,$t2,no_overflow5
 		bne $t1,$t3,no_overflow5
 		ori $t4, $zero, 0x0100
@@ -286,8 +283,12 @@ test6:
 		jal input
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
+		or $t2,$zero,$zero
+		or $t3,$zero,$zero
+		or $t4,$t4,$zero
 		srl $t5, $t0,7
 		srl $t6, $t1,7
+
 		beq $t5,$zero,case6_1
 		xori $t0,$t0,0x00ff
 		addi $t0,$t0,1
@@ -296,7 +297,7 @@ test6:
 		beq $t6,$zero,case6_2
 		xori $t1,$t1,0x00ff
 		addi $t1,$t1,1
-		
+
 	case6_2:
 
 		ori $t3,$zero,8
@@ -328,6 +329,8 @@ test7:
 
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
+		or $t2,$zero,$zero
+		or $t3,$t3,$t0
 
 		srl $t6, $t0,7
 		srl $t7, $t1,7
@@ -345,6 +348,7 @@ test7:
 
 		ori $t4,$zero,8
 		# t0:dend, t1:sor t2:quotient t3:remainder t4 cnt
+
 	loop7:
 		sub $t3,$t3,$t1
 		slt $t5,$t3,$zero
