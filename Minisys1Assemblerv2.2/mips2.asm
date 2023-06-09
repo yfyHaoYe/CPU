@@ -95,7 +95,7 @@ test1:
 		or $t2, $zero, $zero
 		ori $t3, $zero, 1
 		jal func1
-		or $a3,$t2,$zero
+		or $a3,$t1,$zero
 		j output_and_exit
 
 	func1: 
@@ -287,7 +287,7 @@ test6:
 		jal input
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
-		ori $t5,$t5,8
+		ori $t3,$zero,8
 		# t0:lier, t1:cand t2:product t3:cnt
 	loop6:
 		ori $t4,$t0,1
@@ -297,17 +297,20 @@ test6:
 	out6:
 		sll $t1,$t1,1
 		srl $t0,$t0,1
-		addi $t3,$t3,1
-		bne $t3,$t5, loop6
+		addi $t3,$t3,-1
+		bne $t3,$zero, loop6
+
 		or $a3,$t2,$zero
 		j output_and_exit
 		
 		
 test7:
 		jal input
+		or $s0,$s3,$zero
+
 		or $t0,$v0,$zero
 		or $t1,$v1,$zero
-		ori $t5,$t5,8
+		ori $t4,$zero,8
 		# t0:dend, t1:sor t2:quotient t3:remainder t4 cnt
 	loop7:
 		sub $t3,$t3,$t1
@@ -324,9 +327,10 @@ test7:
 		j out7
 	out7:
 		srl $t1,$t1,1
-		addi $t4,$t4,1
-		bne $t4,$t5,loop7
-		or $s0,$s3,$zero
+		addi $t4,$t4,-1
+		bne $t4,$zero,loop7
+
+		
 	endloop7:
 		or $a3,$t2,$zero
 		jal output_and_back
