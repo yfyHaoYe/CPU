@@ -210,7 +210,7 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led
         .clk(clk1),
         .rst(rst_bt),
         .LEDCtrl(LEDCtrl),
-        .led(ledss),
+        .ledwdata(MemWriteData),
         .ena(ena_r),
         .light(led_r)
     );
@@ -219,7 +219,7 @@ module cpu_top_test(clock,rst_bt,switches,confirm_bt,ledss,ena_r,ena_l,led_r,led
         .clk(clk1),
         .rst(rst_bt),
         .LEDCtrl(LEDCtrl),
-        .led(ledss),
+        .ledwdata(MemWriteData),
         .ena(ena_l),
         .light(led_l)
     );

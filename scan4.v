@@ -2,7 +2,7 @@ module scan4 (
     input clk,
     input rst,
     input LEDCtrl,
-    input [15:0]led,  //输入数字
+    input [15:0]ledwdata,  //输入数字
     output reg [3:0] ena = 0,  //使能信号
     output [7:0] light  //显像
 );
@@ -17,32 +17,17 @@ module scan4 (
       light
   );
 
-  // reg [3:0]regl0 = 0;
-  // reg [3:0]regl1 = 0;
-  // reg [3:0]regl2 = 0;
-  // reg [3:0]regl3 = 0;
+  reg [15:0]ledout = 16'h0000;
 
-  
-  // always @ (posedge clk or posedge LEDCtrl) begin
-  //   if (rst) begin
-  //     regl0 <= 0;
-  //     regl1 <= 0;
-  //     regl2 <= 0;
-  //     regl3 <= 0;
-  //   end
-  //   else if (LEDCtrl) begin
-	// 		regl0 <= l0;
-  //     regl1 <= l1;
-  //     regl2 <= l2;
-  //     regl3 <= l3;
-  //   end
-	// 	else begin
-  //     regl0 <= regl0;
-  //     regl1 <= regl1;
-  //     regl2 <= regl2;
-  //     regl3 <= regl3;
-  //   end
-  // end
+
+  always @ (posedge clk or posedge rst) begin
+    if (rst)
+      ledout <=16'h0000;
+		else if (LEDCtrl) 
+				ledout[15:0] <= ledwdata[15:0];
+    else 
+      ledout <= ledout;
+  end
 
   reg clk_2 =0 ;
   //降频
@@ -66,19 +51,19 @@ module scan4 (
     case (scan)
       2'b00: begin //最右边灯亮
         ena = 4'h1;
-        num = led[3:0];
+        num = ledwdata[3:0];
       end  
       2'b01: begin
         ena = 4'h2;
-        num = led[7:4];
+        num = ledwdata[7:4];
       end
       2'b10: begin
         ena = 4'h4;
-        num = led[11:8];
+        num = ledwdata[11:8];
       end
       2'b11: begin
         ena = 4'h8;
-        num = led[15:12];
+        num = ledwdata[15:12];
       end
     endcase
   end
@@ -99,10 +84,10 @@ module num_to_signal (
       4'h6: seg_out = 8'b1011_1110;  //6
       4'h7: seg_out = 8'b1110_0000;  //7
       4'h8: seg_out = 8'b1111_1110;  //8
-      4'h9: seg_out = 8'b1110_0110;  //9
-      4'ha: seg_out = 8'b0011_1011;  //a
+      4'h9: seg_out = 8'b1111_0110;  //9
+      4'ha: seg_out = 8'b1110_1110;  //a
       4'hb: seg_out = 8'b0011_1110;  //b
-      4'hc: seg_out = 8'b0001_1010;  //c
+      4'hc: seg_out = 8'b1001_1100;  //c
       4'hd: seg_out = 8'b0111_1010;  //d
       4'he: seg_out = 8'b1001_1110;  //e
       4'hf: seg_out = 8'b1000_1110;  //f
